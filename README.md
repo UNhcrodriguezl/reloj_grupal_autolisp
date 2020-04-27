@@ -5,3 +5,5 @@ Hola
 Hola
 
 Este es un comentario hecho por Juan Camilo Cárdenas Gómez ([perfil de github](https://github.com/juaccardenasgom))
+
+Me gustaría recrear este reloj! ![](reference_clock.jpg)
