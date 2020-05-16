@@ -1,1 +1,39 @@
+;Edisson David Prieto Vargas
+;Computación gráfica
+;Reloj vl - Función que busca el sonido y lo reproduce
+(defun alarma (nombre)
+(vl-load-com)
+(setq sonido "4.mp3")
+(setq mp (vlax-create-object "wmplayer.OCX"))
+(vlax-invoke mp 'openPlayer (findfile sonido))
+(command "_delay" 1000)
+;(vlax-dump-object mp T) ; to look full functions
+(vlax-release-object mp)
+  )
 
+
+;Inserta el bloque llamado Alarma en el reloj, alli se capturan la hora, minutos y si esta o no activada la alarma.
+(command "_insert" "Alarma" (list (+ coor_x -156.1654) (+ coor_y 77.2511) 0) 1 1 0)
+		(setq objBloque (vlax-ename->vla-object (entlast)))
+		(setq atributos (vla-GetAttributes objBloque))
+		(setq n (vlax-variant-value atributos))
+		(setq sa (vlax-safearray->list n))
+		(setq objeto (nth 0 sa))
+      (setq hora_alarma (atoi (vlax-get-property objeto "TextString")))
+		(setq objeto (nth 1 sa))
+   (setq min_alarma (atoi (vlax-get-property objeto "TextString")))
+		(setq objeto (nth 2 sa))
+  (setq alarma_d(vlax-get-property objeto "TextString"))
+  
+  
+  				;Bloque para comprobar si la alarma debe sonar en donde minutos, hora son los datos del reloj
+  (if (= minutos min_alarma )
+	 (if (= hora hora_alarma)
+       (if (= alarma_d "S")
+        (progn
+			 (alarma "1.mp3")
+			 )
+			)
+		)
+	 )
+  
