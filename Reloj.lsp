@@ -1,3 +1,16 @@
 ; Archivo para la creacion del reloj
-
+(defun c:dib()
+	(setq acadObj (vlax-get-acad-object))
+	(setq doc (vla-get-ActiveDocument acadObj))	   
+	(setq centerPoint (vlax-3d-point 0 0 0) radius 5)
+  	(setq centerPoint2 (vlax-3d-point 0 15 0) radius2 7)
+	(setq centerPoint3 (vlax-3d-point 0 30 0))
+	(setq modelSpace (vla-get-ModelSpace doc))
+	(setq circleObj (vla-AddCircle modelSpace centerPoint radius))
+  	(vla-AddCircle modelSpace centerPoint radius2)
+  	(vla-AddCircle modelSpace centerPoint2 radius)
+  	(vla-AddCircle modelSpace centerPoint2 radius2)
+  	(vla-AddCircle modelSpace centerPoint3 radius)
+  	(vla-AddCircle modelSpace centerPoint3 radius2)
+)
 ;Funcion para dibujar el reloj
