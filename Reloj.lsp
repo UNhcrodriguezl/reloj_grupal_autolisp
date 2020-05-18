@@ -31,33 +31,24 @@
   	(vla-AddCircle modelSpace centerPoint2 radius2)
   	(vla-AddCircle modelSpace centerPoint3 radius)
   	(vla-AddCircle modelSpace centerPoint3 radius2)
-  	(vla-addline modelSpace centerPoint Pt)
- 	(vla-addline modelSpace centerPoint2 Pt2)
-  	(vla-addline modelSpace centerPoint3 Pt3)
-  	(setq thetext (vla-AddText modelSpace "Horas" 
-                                (vlax-3d-point 0 0 0) 5))
-  	(setq thetext (vla-AddText modelSpace "Minutos" 
-                                (vlax-3d-point 0 15 0) 5))
-  	(setq thetext (vla-AddText modelSpace "Segundos" 
-                                (vlax-3d-point 0 30 0) 5))
+  
+  	(setq horasl (vla-addline modelSpace centerPoint Pt))
+ 	(setq minutosl (vla-addline modelSpace centerPoint2 Pt2))
+  	(setq segundosl (vla-addline modelSpace centerPoint3 Pt3))
+  
+  	(setq thetextH (vla-AddText modelSpace "Horas" 
+                                (vlax-3d-point 7 0 0) 5))
+  	(setq thetextM (vla-AddText modelSpace "Minutos" 
+                                (vlax-3d-point 7 15 0) 5))
+  	(setq thetextS (vla-AddText modelSpace "Segundos" 
+                                (vlax-3d-point 7 30 0) 5))
 )
 
 
 
 
 (defun c:alr ()
-
-	(vl-load-com)
-
-	(setq util (vla-get-utility 
-	                   (vla-get-activedocument 
-	                        (vlax-get-acad-object))))
-	                        
-	(vla-getentity util 'obj 'ip "\nSelect Object: ")
-
-	(setq bpoint (vla-getpoint util nil "\nSpecify base point: "))
-
-	(setq rangle (vla-getangle util bpoint "\nRotation Angle: "))
-
-	(vla-Rotate obj bpoint rangle)
+	(vl-load-com)	
+	(vla-Rotate segundosl (vlax-3d-point 0 30 0) -0.10471975512)
  )
+
