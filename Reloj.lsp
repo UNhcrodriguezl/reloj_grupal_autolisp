@@ -1,4 +1,3 @@
-; Archivo para la creacion del reloj
 (vl-load-com)
 (defun c:Exa()
     ;; This example creates a text object in model space.
@@ -44,4 +43,21 @@
 )
 
 
-;Funcion para dibujar el reloj
+
+
+(defun c:alr ()
+
+	(vl-load-com)
+
+	(setq util (vla-get-utility 
+	                   (vla-get-activedocument 
+	                        (vlax-get-acad-object))))
+	                        
+	(vla-getentity util 'obj 'ip "\nSelect Object: ")
+
+	(setq bpoint (vla-getpoint util nil "\nSpecify base point: "))
+
+	(setq rangle (vla-getangle util bpoint "\nRotation Angle: "))
+
+	(vla-Rotate obj bpoint rangle)
+ )
