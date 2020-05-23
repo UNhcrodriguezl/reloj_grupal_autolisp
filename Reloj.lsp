@@ -48,7 +48,23 @@
 
 
 (defun c:alr ()
-	(vl-load-com)	
-	(vla-Rotate segundosl (vlax-3d-point 0 30 0) -0.10471975512)
+  	(setq count 0)
+	(while (< count 60)
+	  	(vla-Rotate segundosl (vlax-3d-point 0 30 0) -0.10471975512)
+		(princ count)
+		(setq count (1+ count))
+	  	(command "_delay" 1000)
+	  	
+	  	
+	)
+	
+
  )
 
+
+
+(defun delay_ms (Ms / T1) ;million second
+	(setq T1 (getvar "cdate"))
+	(setq Ms (* 0.000000001 Ms))
+	(while (< (getvar "cdate") (+ T1 Ms)))
+)
