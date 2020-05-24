@@ -1,8 +1,8 @@
-
+;Caja de diálogo
 UTCs: dialog {
   label= "Cambio de hora";
       :row {
-        label= "Seleccione hora de pa�s o ciudad";
+        label= "Seleccione hora de país o ciudad";
         :list_box{
            key="ciudad";
            width=38;
