@@ -1,3 +1,5 @@
+;Maria Paula Carvajal
+;Configuración cambio zona horaria reloj 
 ;Acepta el día, la hora y los minutos actuales
 (defun CambiarHora ()
   
