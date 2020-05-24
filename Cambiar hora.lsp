@@ -1,6 +1,7 @@
-(defun ChangeHour ()
+;Acepta el día, la hora y los minutos actuales
+(defun CambiarHora ()
   
-   ;Caja de diálogo 
+   ;Funcionalidad caja de diálogo 
 	(setq arch (load_dialog (findfile "CambioHusos.dcl")))
 
 	(setq lista '("Hora de Australia oriental (Sidney)" "Hora oriental (Nueva York)" "Hora de Argentina (Buenos Aires)" "Afganistán"
@@ -18,30 +19,30 @@
 
 	(if (/= select nil)
 		(cond ((= city 0)(progn (setq dias (+ 1 dias))
-								 (setq horas (+ 3 horas))));Sidney
-				((= city 1)(setq horas (+ 1 horas)));NY
-				((= city 2)(setq horas (+ 2 horas)));BA
-				((= city 3)(progn (setq horas (+ 9 horas))
-								 (setq minutos (+ 30 minutos))));Afg
-				((= city 4)(setq horas (+ 7 horas)));Áms
-				((= city 5)(setq horas (+ 6 horas)));Lon
-				((= city 6)(setq horas (+ 14 horas)));Tokio
-				((= city 7)(setq horas (- 2 horas)));LA
-				((= city 8)(setq horas (+ 8 horas)));Moscú
-			        ((= city 9)(setq horas (+ 2 horas)));Río
-				((= city 10)(setq horas (+ 8 horas)));Estam
-				((= city 11)(setq horas (+ 8 horas))); Nair
-				((= city 12)(setq horas (+ 13 horas)));Pekín
-				((= city 13)(setq horas (+ 14 horas)));Seúl
-				((= city 14)(setq horas (+ 13 horas)));HK
-				((= city 15)(setq horas (+ 10 horas)));Tij
-				((= city 16)(progn (setq horas (+ 10 horas))
-								  (setq minutos (+ 30 minutos))));India
-				((= city 17)(setq horas (+ 1 horas)));Manaos
-				((= city 18)(setq horas (+ 0 horas)));Montev
-				((= city 19)(setq horas (+ 8 horas)));Atenas
-				((= city 20)(setq horas (+ 8 horas)));Kuwait
-				((= city 21)(setq horas (+ 0 horas)));Bgt DC
+					(setq horas (+ 3 horas))));Sidney
+		      ((= city 1)(setq horas (+ 1 horas)));NY
+		      ((= city 2)(setq horas (+ 2 horas)));BA
+		      ((= city 3)(progn (setq horas (+ 9 horas))
+					(setq minutos (+ 30 minutos))));Afg
+		      ((= city 4)(setq horas (+ 7 horas)));Áms
+		      ((= city 5)(setq horas (+ 6 horas)));Lon
+		      ((= city 6)(setq horas (+ 14 horas)));Tokio
+		      ((= city 7)(setq horas (- 2 horas)));LA
+		      ((= city 8)(setq horas (+ 8 horas)));Moscú
+		      ((= city 9)(setq horas (+ 2 horas)));Río
+		      ((= city 10)(setq horas (+ 8 horas)));Estam
+		      ((= city 11)(setq horas (+ 8 horas))); Nair
+		      ((= city 12)(setq horas (+ 13 horas)));Pekín
+		      ((= city 13)(setq horas (+ 14 horas)));Seúl
+		      ((= city 14)(setq horas (+ 13 horas)));HK
+		      ((= city 15)(setq horas (+ 10 horas)));Tij
+		      ((= city 16)(progn (setq horas (+ 10 horas))
+					 (setq minutos (+ 30 minutos))));India
+	       	      ((= city 17)(setq horas (+ 1 horas)));Manaos
+		      ((= city 18)(setq horas (+ 0 horas)));Montev
+		      ((= city 19)(setq horas (+ 8 horas)));Atenas
+		      ((= city 20)(setq horas (+ 8 horas)));Kuwait
+		      ((= city 21)(setq horas (+ 0 horas)));Bgt DC
 		   );cond
 	    );if
  );defun
