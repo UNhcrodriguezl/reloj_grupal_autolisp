@@ -13,4 +13,4 @@
  **INSTRUCCIONES**
 1. Cargar `recordatorio.lsp` .
 2. En caso de no haber creado el botón como se sugirió anteriormente, ejecutar el comando `(recordatorio)` para abrir la caja de diálogo. 
-3. Una vez puestos los datos de la primera caja (Mes, Año y Etiqueta) se abrirá una segunda donde debéra seleccionar el día únicamente.
+3. Una vez puestos los datos de la primera caja (Mes, Año y Etiqueta) se abrirá una segunda donde deberá seleccionar únicamente el día .
