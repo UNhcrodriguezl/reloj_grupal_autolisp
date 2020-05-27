@@ -1,0 +1,11 @@
+(setq excel (vlax-get-or-create-object "Excel.Application"));abre la aplicación de excel
+
+(repeat 60
+(vla-put-visible excel :vlax-true);Hace visible a excel
+(setq archivo(vl-catch-all-apply 'vla-open (list (vlax-get-property excel "WorkBooks") (findfile "Grup.xlsm"))));abrir archivo con la información
+
+  (command "_delay" 2000)
+  (vl-catch-all-apply 'vlax-invoke-method (list excel "Quit"));Cierra excel
+  )
+  ;Es necesario tener el archivo Grup.xlsm (excel habilitado para macros) en la misma carpeta
+  ;El repeat hace que se abra y cierre excel durante 2 minutos, actualizando la hora (por el delay de 2 segundos)
