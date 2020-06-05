@@ -1,8 +1,10 @@
 ;Configuración Fecha Digital del reloj
 ;Santiago Valdés Ledesma
-(vl-load-com)
-(setq acadObj (vlax-get-acad-object))
-(setq doc (vla-get-ActiveDocument acadObj))
+;Se inserta la fecha mediante la función fecha-digital, para evitar conflictos con las demás partes
+(defun fecha-digital ()
+	(vl-load-com)
+	(setq acadObj (vlax-get-acad-object))
+	(setq doc (vla-get-ActiveDocument acadObj))
 
   	(setq insertionPointDD (vlax-3d-point 1057 430 0)  ;el punto de inserción es la posición en el dibujo
 	textStringDD "DD" 
@@ -44,3 +46,4 @@
  	(entmod M2)
 	(setq ObjMM (setq M2 (subst (cons 62  07) (assoc 62 ObjMM) ObjMM))) ;Cambia el color de el texto al color 7:Blanco
  	(entmod M2)
+  )
