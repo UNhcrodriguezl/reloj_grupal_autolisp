@@ -48,6 +48,10 @@
 
 (defun changeColor()
 
+		(setq flag 1)
+  
+		(while (not (= flag 0))
+  
   		(new_dialog "Color_reactor" archivo)
   		(setq color 255)
 			(action_tile "colorR" "(updateR $value)")
@@ -77,20 +81,26 @@
 		(mapcar 'add_list itemsList)
 		(end_list)
 
-		(action_tile "ch" "(setq shape (atoi (get_tile \"shapes\")))")
+		(action_tile "ch" "(setq shape (atoi (get_tile \"shapes\"))) (done_dialog 1)")
+		(action_tile "accept" "(done_dialog 0)")
+		(setq flag (start_dialog))
+
+		(if (= flag 1)
+		  	(progn
+			  	(setq alertString (strcat "Color cambiado a " (itoa color) ". Presione Aceptar"))
+				(alert alertString)
+				(setq cursor (vl-remove 0.0 (nth 0 (cdr (grread T 1 15)))))
+		  
+		  ;(setq ent1 (entlast))
+		  ;(setq vla1 (vlax-ename->vla-object ent1))
+
+		  		(setq itemsList2 (list vla1 vla2 vla3 vla4 vla5))
+		  		(vla-put-color (nth shape itemsList2) color)
+		  		(vla-get-color vla1)
+			)
+		)
+	)
   
-		(start_dialog)
-  
-		(setq alertString (strcat "Color cambiado a " (itoa color) ". Presione Aceptar"))
-		(alert alertString)
-		(setq cursor (vl-remove 0.0 (nth 0 (cdr (grread T 1 15)))))
-  
-  
-  ;(setq ent1 (entlast))
-  ;(setq vla1 (vlax-ename->vla-object ent1))
-  (setq itemsList2 (list vla1 vla2 vla3 vla4 vla5))
-  (vla-put-color (nth shape itemsList2) color)
-  (vla-get-color vla1)
 )
 
 ;Función cambiar hora
@@ -143,13 +153,13 @@
 	(setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginRightClick  . change))))
 )
 
-(vlax-dump-object vla1);obtener info
+;(vlax-dump-object vla1)obtener info
 ;------------Temporizador-------------
 
-(defun Tempo(hor minu secu x1 y1)
+(defun Tempo(hor minu secu x y)
 	(vl-load-com)
 	(vl-cmdf "_erase" "_all" "");BORRA TODO
- 	(drawTemp x1 y1)
+ 	(drawTemp x y)
 	(updTemp hor minu secu)
 )
 
@@ -273,8 +283,8 @@
 	(setq hora 0)
 	(setq minuto 0)
 	(setq segundo 0)
-	(setq xp 0)
-  	(setq yp 0)
+	(setq xTempo 0)
+  	(setq yTempo 0)
   	
   	(set_tile "hora" "0")
   	(mode_tile "hora" 1)
@@ -284,9 +294,9 @@
   	(mode_tile "secu" 1)
 
   	(action_tile "px"
-	  	"(setq xp (atoi $value))")
+	  	"(setq xTempo (atoi $value))")
   	(action_tile "py"
-	  	"(setq yp (atoi $value))")
+	  	"(setq yTempo (atoi $value))")
 
   	(action_tile "horaSlider"				
 	 	"(slider_action1 $value $reason)")
@@ -329,7 +339,5 @@
 	  	(setq segundo (atoi $value)))
 
   	(setq seleccion (start_dialog))
-  	(tempo hora minuto segundo xp yp)
+  	(tempo hora minuto segundo xTempo yTempo)
 )
-
-
