@@ -3,20 +3,54 @@
 (vl-load-reactors)
 (vlr-remove-all)
 
-;Funcion de borrado
+;Funciones
 (defun c:borrar ()
 			(vl-cmdf "_erase" "_all" ""))
-
-;punto base
-(setq	base '(0 0)
-			listaobj '(""))
+(defun c:ver ()
+			(setq xd (getint "Parte que quiere ver (1-9): ")
+			     	xd2 (nth xd listaobj))
+			(vl-cmdf "_zoom" "_o" xd2 ""))
+(defun c:vertodo ()
+			(vla-zoomextents (vlax-get-acad-object)))
+	
+						
+;variables
+(setq	basedig1 '(0 0)
+			basedig2 '(1600 750)
+			basedig3 '(50 600)
+			baseanl1 '(0 750)
+			baseanl2 '(1600 2350)
+			baseanl3 '(50 2200)
+			basealm1 '(1650 0)
+			basealm2 '(3250 750)
+			basealm3 '(1700 600)
+			basetemp1 '(1650 800)
+			basetemp2 '(3250 1550)
+			basetemp3 '(1700 1400)
+			baserecor1 '(1650 1600)
+			baserecor2 '(3250 2350)
+			baserecor3 '(1700 2200)
+			basecal1 '(3300 0)
+			basecal2 '(4900 750)
+			basecal3 '(3350 600)
+			basezhor1 '(3300 800)
+			basezhor2 '(4900 1550)
+			basezhor3 '(3350 1400)
+			basecrono1 '(3300 1600)
+			basecrono2 '(4900 2350)
+			basecrono3 '(3350 2200)
+			listaobj '("0"))
 
 ;parte reloj digital (1)
 (vl-cmdf "_color" 7)
-(vl-cmdf "_rectang" base '(1600 750))
-(setq digital (entget (entlast)))
+(vl-cmdf "_rectang" basedig1 basedig2)
+(setq dig (ssget "W" basedig1 basedig2)
+			listaobj (cons dig listaobj))
 
 (vl-cmdf "_rectang" '(200 200) '(1400 550))
+
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" basedig3 100 0 "1. Digital")
 
 (vl-cmdf "_color" 1)
 (vl-cmdf "_rectang" '(250 250) '(550 500))
@@ -33,18 +67,28 @@
 
 ;parte reloj analogico (2)
 (vl-cmdf "_color" 7)
-(vl-cmdf "_rectang" '(0 750) '(1600 2350))
+(vl-cmdf "_rectang" baseanl1 baseanl2)
+(setq analogo (ssget "W" baseanl1 baseanl2)
+			listaobj (cons analogo listaobj))
 
 (vl-cmdf "_rectang" '(200 950) '(1400 2150))
+
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" baseanl3 100 0 "2. Analogo")
 
 (vl-cmdf "_color" 1)
 (vl-cmdf "_circle" '(800 1550) 550)
 
 ;parte alarma (4)
 (vl-cmdf "_color" 7)
-(vl-cmdf "_rectang" '(1650 0) '(3250 750))
+(vl-cmdf "_rectang" basealm1 basealm2)
+(setq alarma (ssget "W" basealm1 basealm2)
+			listaobj (cons alarma listaobj))
 
 (vl-cmdf "_rectang" '(1850 200) '(3050 550))
+
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" basealm3 100 0 "3. Alarma")
 
 (vl-cmdf "_color" 1)
 (vl-cmdf "_rectang" '(1900 250) '(2200 500))
@@ -61,9 +105,14 @@
 
 ;parte temporizador (5)
 (vl-cmdf "_color" 7)
-(vl-cmdf "_rectang" '(1650 800) '(3250 1550))
+(vl-cmdf "_rectang" basetemp1 basetemp2)
+(setq temp (ssget "W" basetemp1 basetemp2)
+			listaobj (cons temp listaobj))
 
 (vl-cmdf "_rectang" '(1850 1000) '(3050 1350))
+
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" basetemp3 100 0 "4. Temporizador")
 
 (vl-cmdf "_color" 1)
 (vl-cmdf "_rectang" '(1900 1050) '(2200 1300))
@@ -80,21 +129,36 @@
 
 ;parte recordatorio (6)
 (vl-cmdf "_color" 7)
-(vl-cmdf "_rectang" '(1650 1600) '(3250 2350))
+(vl-cmdf "_rectang" baserecor1 baserecor2)
+(setq recor (ssget "W" baserecor1 baserecor2)
+			listaobj (cons recor listaobj))
 
 (vl-cmdf "_rectang" '(1850 1800) '(3050 2150))
 
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" baserecor3 100 0 "5. Recordatorio")
+
 ;parte calendario (7)
 (vl-cmdf "_color" 7)
-(vl-cmdf "_rectang" '(3300 0) '(4900 750))
+(vl-cmdf "_rectang" basecal1 basecal2)
+(setq cal (ssget "W" basecal1 basecal2)
+			listaobj (cons cal listaobj))
 
 (vl-cmdf "_rectang" '(3500 200) '(4700 550))
 
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" basecal3 100 0 "6. Calendario")
+
 ;parte zona horaria (8)
 (vl-cmdf "_color" 7)
-(vl-cmdf "_rectang" '(3300 800) '(4900 1550))
+(vl-cmdf "_rectang" basezhor1 basezhor2)
+(setq zhor (ssget "W" basezhor1 basezhor2)
+			listaobj (cons zhor listaobj))
 
 (vl-cmdf "_rectang" '(3500 1000) '(4700 1350))
+
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" basezhor3 100 0 "7. Zona Horaria")
 
 (vl-cmdf "_color" 1)
 (vl-cmdf "_rectang" '(3550 1050) '(3850 1300))
@@ -111,9 +175,14 @@
 
 ;parte cronometro (9)
 (vl-cmdf "_color" 7)
-(vl-cmdf "_rectang" '(3300 1600) '(4900 2350))
+(vl-cmdf "_rectang" basecrono1 basecrono2)
+(setq crono (ssget "W" basecrono1 basecrono2)
+			listaobj (cons crono listaobj))
 
 (vl-cmdf "_rectang" '(3500 1800) '(4700 2150))
+
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" basecrono3 100 0 "8. Cronometro")
 
 (vl-cmdf "_color" 1)
 (vl-cmdf "_rectang" '(3550 1850) '(3850 2100))
@@ -141,6 +210,11 @@
 (vl-cmdf "_rectang" '(4950 1600) '(5700 2350))
 
 (vl-cmdf "_rectang" '(5100 1750) '(5550 2200))
+(setq cronog (ssget "W" '(4950 0) '(5550 2200))
+			listaobj (cons cronog listaobj))
+
+(vl-cmdf "_color" 30)
+(vl-cmdf "_text" '(5850 750) 100 90 "9. Cronografo")
 
 (vl-cmdf "_color" 1)
 (vl-cmdf "_circle" '(5325 375) 200)
@@ -149,4 +223,6 @@
 
 (vl-cmdf "_circle" '(5325 1975) 200)
 
-(vla-zoomextents "")
+(setq listaobj (reverse listaobj))
+
+(vla-zoomextents (vlax-get-acad-object))
