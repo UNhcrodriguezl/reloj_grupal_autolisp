@@ -1,13 +1,11 @@
 (vl-load-com)
 (setq option 0)
-
-(defun Trut ()
-	(setq pt (getpoint "\nSpecify a point :"))
-  )
+(setq bua 0)
+(vlr-mouse-reactor nil '((:vlr-beginDoubleClick . dbclick)))
 
 
 (defun c:dib()
-  	(setq pt (getpoint "\nSpecify a point :"))
+  	(setq pt (list 5325 375 0))
   	
 	(setq acadObj (vlax-get-acad-object))
 	(setq doc (vla-get-ActiveDocument acadObj))
@@ -17,13 +15,13 @@
   	(setq py (nth 1 pt))
 	(setq pz (nth 2 pt))
   	
-	(setq centerPoint (vlax-3d-point px py pz) radius 5)
-  	(setq centerPoint2 (vlax-3d-point px (+ 15 (nth 1 pt)) pz) radius2 6.5)
-	(setq centerPoint3 (vlax-3d-point px (+ 30 (nth 1 pt)) pz))
+	(setq centerPoint (vlax-3d-point px py pz) radius 170)
+  	(setq centerPoint2 (vlax-3d-point px (+ 800 (nth 1 pt)) pz) radius2 200)
+	(setq centerPoint3 (vlax-3d-point px (+ 1600 (nth 1 pt)) pz))
   
-	(setq Pt1 (vlax-3d-point px (+ 4 (nth 1 pt)) py))
-  	(setq Pt2 (vlax-3d-point px (+ 19 (nth 1 pt)) py))
-  	(setq Pt3 (vlax-3d-point px (+ 34 (nth 1 pt)) py))  	
+	(setq Pt1 (vlax-3d-point px (+ 150 (nth 1 pt)) py))
+  	(setq Pt2 (vlax-3d-point px (+ 950 (nth 1 pt)) py))
+  	(setq Pt3 (vlax-3d-point px (+ 1750 (nth 1 pt)) py))  	
 
   	(setq modelSpace (vla-get-ModelSpace doc))
   
@@ -38,12 +36,28 @@
  	(setq minutosl (vla-addline modelSpace centerPoint2 Pt2))
   	(setq segundosl (vla-addline modelSpace centerPoint3 Pt3))
   
-  	(setq thetextH (vla-AddText modelSpace "Horas" 
-                                (vlax-3d-point 7 0 0) 5))
-  	(setq thetextM (vla-AddText modelSpace "Minutos" 
-                                (vlax-3d-point 7 15 0) 5))
-  	(setq thetextS (vla-AddText modelSpace "Segundos" 
-                                (vlax-3d-point 7 30 0) 5))
+  	(setq thetextH (vla-AddText modelSpace "vuelta 3" 
+                                (vlax-3d-point (- px 150) (+ 250 py) pz) 75))
+
+
+  	(setq ENT (entlast)
+		vuelta1 (vlax-ename->vla-object ENT)
+	)
+  
+  	(setq thetextM (vla-AddText modelSpace "vuelta 2" 
+                                (vlax-3d-point (- px 150) (+ 1050 py) pz) 75))
+
+	(setq ENT (entlast)
+		vuelta2 (vlax-ename->vla-object ENT)
+	)
+  	
+  	(setq thetextS (vla-AddText modelSpace "vuelta 1" 
+                                (vlax-3d-point (- px 150) (+ 1850 py) pz) 75))
+
+  	(setq ENT (entlast)
+		vuelta3 (vlax-ename->vla-object ENT)
+	)
+  
 )
 
 
@@ -51,51 +65,65 @@
 (defun c:alr ()  	
   	(setq count 0)  	
   	(setq secs 0)
-  
+  	(setq bua 0)
+  	(setq option (+ 1 option))
 ;seleccion vuelta uno
-  	(if (= option 0)	  
-		((while (< count 60)
-			(vla-Rotate segundosl (vlax-3d-point 0 30 0) -0.10471975512)
+  	(if (= option 1)	  
+		((while (= bua 0)
+			(vla-Rotate segundosl (vlax-3d-point px (+ 30 py) pz) -0.10471975512)
+		   	(vlax-put-property vuelta3 "TextString" secs)					  
+			(setq count (1+ count))
+		  	(setq secs (1+ secs))
+		  	(vl-cmdf "._delay" 1000)
+		   	(print bua)
+		)	  
+	  	)
+	  	
+	  )
+;seleccion vuelta dos
+	(if (= option 2)
+	  	((while (= bua 0)
+			(vla-Rotate minutosl (vlax-3d-point px (+ 15 py) pz) -0.10471975512)
+		   	(vlax-put-property vuelta2 "TextString" secs)
 			(print count)		  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
 		  	(vl-cmdf "._delay" 1000)		  
-		)
-	  (setq option (+ 1 option))
-	  )	  
+		)	  
+	  	)
 	  )
 
-  ;seleccion vuelta dos
-	(if (= option 1)
-	  	((while (< count 60)
-			(vla-Rotate minutosl (vlax-3d-point 0 15 0) -0.10471975512)
-			(print count)		  
-			(setq count (1+ count))
-		  	(setq secs (1+ secs))
-		  	(vl-cmdf "._delay" 1000)		  
-		)
-	  (setq option (+ 1 option)))
-	  )
-
-  ;seleccion vuelta tres
-  	(if (= option 2)
-		((while (< count 60)
-			(vla-Rotate horasl (vlax-3d-point 0 0 0) -0.10471975512)
+ ;seleccion vuelta tres
+  	(if (= option 3)
+		((while (= bua 0)
+			(vla-Rotate horasl (vlax-3d-point px py pz) -0.10471975512)
+		   	(vlax-put-property vuelta1 "TextString" secs)
 			(print count)		  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
 		  	(vl-cmdf "._delay" 1000)		 
 		)
-	  (setq option 0))
-	  )   
+	 	 (setq option 0)
+		)
+	)  
+ 
+	
  )
 
 
-(defun delay_ms (Ms / T1) ;million second
-	(setq T1 (getvar "cdate"))
-	(setq Ms (* 0.000000001 Ms))
-	(while (< (getvar "cdate") (+ T1 Ms)))
-)
+(vl-load-com)
+(defun dbclick (object-reactor point-reactor)
+	(alr)
+  	(print bua)
+  )
+
+
+
+;(defun delay_ms (Ms / T1) ;million second
+;	(setq T1 (getvar "cdate"))
+;	(setq Ms (* 0.000000001 Ms))
+;	(while (< (getvar "cdate") (+ T1 Ms)))
+;)
 
 
 
