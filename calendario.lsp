@@ -31,3 +31,5 @@
 
 ;supuse que hay varias funciones que se ejecutan al cambiar el dia, así que pense en implementar
 ;un  "if" en la funcion principal que llame a la función una vez al día. 
+
+;Está lista para la implementación...
