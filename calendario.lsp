@@ -1,6 +1,6 @@
-;El siguiente cÛdigo funciona como un calendiario que indica un dato
-;asociado a la fecha tipo "un dia como hoy pero en 19XX naciÛ el escritor..."
-;Esto lo hace al extraer la informaciÛn de un .txt, que consta de tres columnas
+;El siguiente c√≥digo funciona como un calendiario que indica un dato
+;asociado a la fecha tipo "un dia como hoy pero en 19XX naci√≥ el escritor..."
+;Esto lo hace al extraer la informaci√≥n de un .txt, que consta de tres columnas
 ;la primera corresponde al dia, la segunda al mes y la tercera al dato asociado
 ; compara las dos primeras con los datos obtenidos del Cdate e imprime la tercer columna
 
@@ -22,18 +22,14 @@
   (setq a (nth 0 info)
         b (nth 1 info)
         c (nth 2 info))
-  ;Hay dos opciones para imprimir, la primera es un texto que se aÒada al reloj
+  ;Hay dos opciones para imprimir, la primera es un texto que se a√±ada al reloj
   ;la segunda es un cuadro de "alerta" que se imprime cada cambio de dia
 (if (= b "27") (if (= a "5") (command "_text" "0, 0" 500 "0" c "")))
   (if (= b "27") (if (= a "5") (alert c)))
   )
 ;la fecha por defecto es 5/27, pero la idea es comparar a y b con el dia y mes que lea el reloj general
 
-;supuse que hay varias funciones que se ejecutan al cambiar el dia, asÌ que pense en implementar
-;un  "if" en la funcion principal que llame a la funciÛn una vez al dÌa. 
+;supuse que hay varias funciones que se ejecutan al cambiar el dia, as√≠ que pense en implementar
+;un  "if" en la funcion principal que llame a la funci√≥n una vez al d√≠a. 
 
-;Est· lista para la implementaciÛn...
-
-;Esta es una prueba para ver si funcionan las actualizaciones
-
-;NUEVA PRUEBA PARA UN CAMINO MAS R¡PIDO
+;Est√° lista para la implementaci√≥n.
