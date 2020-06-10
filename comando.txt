@@ -1,0 +1,13 @@
+Para cargar este programa en su pc es necesario agregar esta línea de código en
+acad.pgp que se accede a el desde manage - edit alises - edit alises 
+y ubicarlo en la sección que contiene los comandos externos de windows
+
+        ; Examples of external commands for Windows
+        ; See also the (STARTAPP) AutoLISP function for an alternative method.
+
+        EXPLORER,  START EXPLORER, 1,,
+        NOTEPAD,   START NOTEPAD,  1,*File to edit: ,
+        PBRUSH,    START PBRUSH,   1,,
+
+CRONO,	   DISCO: & cd "RUTA" & Cronometro.exe, 1,,
+
