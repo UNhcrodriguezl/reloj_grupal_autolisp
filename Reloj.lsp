@@ -4,10 +4,18 @@
 (vlr-mouse-reactor nil '((:vlr-beginDoubleClick . dbclick)))
 
 
-(defun c:dib()
-  	(setq pt (list 5325 375 0))
+
+(defun c:Cronografo()
   	
-	(setq acadObj (vlax-get-acad-object))
+	(setq option 0)
+	(setq bua 0)
+	(setq pt (list 5325 375 0))
+
+  	(setq secs1 0)
+  	(setq secs2 0)
+  	(setq secs3 0)
+
+  	(setq acadObj (vlax-get-acad-object))
 	(setq doc (vla-get-ActiveDocument acadObj))
   	(setq util (vla-get-utility doc))
 
@@ -26,7 +34,8 @@
   	(setq modelSpace (vla-get-ModelSpace doc))
   
   	(setq circleObj (vla-AddCircle modelSpace centerPoint radius))
-  	(vla-AddCircle modelSpace centerPoint radius2)
+  
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint radius2) 7)
   	(vla-AddCircle modelSpace centerPoint2 radius)
   	(vla-AddCircle modelSpace centerPoint2 radius2)
   	(vla-AddCircle modelSpace centerPoint3 radius)
@@ -57,58 +66,66 @@
   	(setq ENT (entlast)
 		vuelta3 (vlax-ename->vla-object ENT)
 	)
-  
 )
 
-
-
-(defun c:alr ()  	
-  	(setq count 0)  	
+(defun c:inicronografo ()
+	(setq count 0)  	
   	(setq secs 0)
   	(setq bua 0)
+	(if (= option 0)
+	        (vla-Rotate segundosl (vlax-3d-point px (+ 1600 py) pz) (* -0.10471975512 (- 60 secs1)))
+	)(if (= option 0)
+	  	(vlax-put-property vuelta3 "TextString" 0)
+	)(if (= option 0) 
+		(vla-Rotate minutosl (vlax-3d-point px (+ 800 py) pz) (* -0.10471975512 (- 60 secs2)))
+	)(if (= option 0)
+	   	(vlax-put-property vuelta2 "TextString" 0)
+	)(if (= option 0)
+	   	(vla-Rotate horasl (vlax-3d-point px py pz) (* -0.10471975512 (- 60 secs3)))
+	)(if (= option 0)
+	   	(vlax-put-property vuelta1 "TextString" 0)	       
+	)  	
   	(setq option (+ 1 option))
-;seleccion vuelta uno
+	;seleccion vuelta uno
   	(if (= option 1)	  
-		((while (= bua 0)
-			(vla-Rotate segundosl (vlax-3d-point px (+ 30 py) pz) -0.10471975512)
+		((while (< secs 10)
+			(vla-Rotate segundosl (vlax-3d-point px (+ 1600 py) pz) -0.10471975512)
 		   	(vlax-put-property vuelta3 "TextString" secs)					  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
-		  	(vl-cmdf "._delay" 1000)
-		   	(print bua)
+		   	(setq secs1 secs)		   
+		   	()
+		  	(vl-cmdf "._delay" 1000)		   	
 		)	  
-	  	)
-	  	
-	  )
-;seleccion vuelta dos
+	  	)	  	
+	)
+	;seleccion vuelta dos
 	(if (= option 2)
-	  	((while (= bua 0)
-			(vla-Rotate minutosl (vlax-3d-point px (+ 15 py) pz) -0.10471975512)
-		   	(vlax-put-property vuelta2 "TextString" secs)
-			(print count)		  
+	  	((while (< secs 10)
+			(vla-Rotate minutosl (vlax-3d-point px (+ 800 py) pz) -0.10471975512)
+		   	(vlax-put-property vuelta2 "TextString" secs)			  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
+		   	(setq secs2 secs)
 		  	(vl-cmdf "._delay" 1000)		  
 		)	  
 	  	)
-	  )
-
- ;seleccion vuelta tres
-  	(if (= option 3)
-		((while (= bua 0)
+	)
+  	;seleccion vuelta dos
+	(if (= option 3)
+		((while (< secs 10)
 			(vla-Rotate horasl (vlax-3d-point px py pz) -0.10471975512)
-		   	(vlax-put-property vuelta1 "TextString" secs)
-			(print count)		  
+		   	(vlax-put-property vuelta1 "TextString" secs)					  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
+		   	(setq secs3 secs)
 		  	(vl-cmdf "._delay" 1000)		 
 		)
-	 	 (setq option 0)
+	 	 (setq option 0)		 
 		)
-	)  
- 
-	
- )
+	) 
+)
+
 
 
 (vl-load-com)
