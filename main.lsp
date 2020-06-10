@@ -401,17 +401,21 @@
 
 ;---------------------------------Funciones visualización-------------------
 (defun c:borrar ()
-			(vl-cmdf "_erase" "_all" ""))
+			(vl-cmdf "_erase" "_all" "")
+)
 (defun c:verdigital ()
 			(setq xd (nth 1 listaobj))
-			(vl-cmdf "_zoom" "_o" xd ""))
+			(vl-cmdf "_zoom" "_o" xd "")
+)
 (defun c:veranalogo ()
 			(setq xd (nth 2 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
-			(runAnalog))
+			(runAnalog)
+)
 (defun c:veralarma ()
 			(setq xd (nth 3 listaobj))
-			(vl-cmdf "_zoom" "_o" xd ""))
+			(vl-cmdf "_zoom" "_o" xd "")
+)
 (defun c:vertemporizador ()
 			(setq xd (nth 4 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
@@ -419,21 +423,28 @@
 )
 (defun c:verrecordatorio ()
 			(setq xd (nth 5 listaobj))
-			(vl-cmdf "_zoom" "_o" xd ""))
+			(vl-cmdf "_zoom" "_o" xd "")
+)
 (defun c:vercalendario ()
 			(setq xd (nth 6 listaobj))
-			(vl-cmdf "_zoom" "_o" xd ""))
+			(vl-cmdf "_zoom" "_o" xd "")
+)
 (defun c:verzonahor ()
 			(setq xd (nth 7 listaobj))
-			(vl-cmdf "_zoom" "_o" xd ""))
+			(vl-cmdf "_zoom" "_o" xd "")
+)
 (defun c:vercronometro ()
 			(setq xd (nth 8 listaobj))
-			(vl-cmdf "_zoom" "_o" xd ""))
+			(vl-cmdf "_zoom" "_o" xd "")
+      (c:crono2)
+)
 (defun c:vercronografo ()
 			(setq xd (nth 9 listaobj))
-			(vl-cmdf "_zoom" "_o" xd ""))
+			(vl-cmdf "_zoom" "_o" xd "")
+)
 (defun c:vertodo ()
-			(vla-zoomextents (vlax-get-acad-object)))
+			(vla-zoomextents (vlax-get-acad-object))
+)
 	
 (defun c:drawAll()						
 	;variables
@@ -602,26 +613,33 @@
 	;parte cronometro (8)
 	(vl-cmdf "_color" 7)
 	(vl-cmdf "_rectang" basecrono1 basecrono2)
+  
+  (draw_crono)
+  
 	(setq crono (ssget "_W" basecrono1 basecrono2)
 				listaobj (cons crono listaobj))
 
-	(vl-cmdf "_rectang" '(3500 1800) '(4700 2150))
+	(vl-cmdf "_rectang" '(3500 1800) '(4800 2150))
 
 	(vl-cmdf "_color" 30)
+  
 	(vl-cmdf "_text" basecrono3 100 0 "8. Cronometro")
 
 	(vl-cmdf "_color" 1)
+  
 	(vl-cmdf "_rectang" '(3550 1850) '(3850 2100))
 
 	(vl-cmdf "_rectang" '(4000 1850) '(4300 2100))
 
-	(vl-cmdf "_rectang" '(4350 1850) '(4600 1950))
-
-	(vl-cmdf "_rectang" '(4350 2000) '(4650 2100))
+	(vl-cmdf "_rectang" '(4450 1850) '(4750 2100))
 
 	(vl-cmdf "_circle" '(3925 1925) 25)
 
 	(vl-cmdf "_circle" '(3925 2025) 25)
+  
+  (vl-cmdf "_circle" '(4375 1925) 25)
+
+	(vl-cmdf "_circle" '(4375 2025) 25)
 
 	;parte cronografo (9)
 	(vl-cmdf "_color" 7)
@@ -657,62 +675,65 @@
 
 ;-------------------------------Cronometro--------------------------------
 
-;CRONOMETRO DEL RELOJ
+;FUNCIONES PARA EL FUNCIONAMIENTO DEL CRONOMETRO
+
+;SEPARAR STRINGS
+(defun splitStr (src delim)
+  (setq wordlist (list))
+  (setq cnt 1)
+  (while (<= cnt (strlen src))
+
+    (setq word "")
+
+    (setq letter (substr src cnt 1))
+    (while (and (/= letter delim) (<= cnt (strlen src)) )
+      (setq word (strcat word letter))
+      (setq cnt (+ cnt 1))      
+      (setq letter (substr src cnt 1))
+    )
+    (setq cnt (+ cnt 1))
+    (setq wordlist (append wordlist (list word)))
+  )
+)
+
 
 ;FUNCIÓN PARA DIBUJO DEL CRONOMETRO
 
 (defun draw_crono ()
   
-  (setq s_cnt2 "00"
-        m_cnt2 "00"
-        h_cnt2 "00"
-        textoh h_cnt2 
-        textom m_cnt2 
-        textos s_cnt2
+  (setq textoh "00"
+        textom "00"
+        textos "00"
   )
-  
-  (vl-cmdf "_text" "J" "C" "0,0" 18 0 texto)
-  
+
+  (vl-cmdf "_text" "J" "MC" "3700,1975" 200 0 textoh)
   (setq ENT (entlast)
-        OBJ (vlax-ename->vla-object ENT)
+        ObjTh (vlax-ename->vla-object ENT)
   )
   
-  (c:crono2)
+  (vl-cmdf "_text" "J" "MC" "4150,1975" 200 0 textom)
+  (setq ENT (entlast)
+        ObjTm (vlax-ename->vla-object ENT)
+  )
+  
+  (vl-cmdf "_text" "J" "MC" "4600,1975" 200 0 textos)
+  (setq ENT (entlast)
+        ObjTs (vlax-ename->vla-object ENT)
+  )
+  
 )
-
-;-------------------------------------------------------------------------------------------------------------------------------------------------------
-
-;CAJA DE DIALOGO PARA EL DIBUJO DEL CRONOMETRO
-(defun c:cronometro ()
-  
-  (setq archivo (load_dialog (findfile "CD_Cronometro1.dcl")))
-  
-  (new_dialog "CDCronometro1" archivo)  ;mismo nombre del DIALOG
-  
-  (action_tile "Draw" "(setq active1 T) (done_dialog)")
-  
-  (start_dialog)
-  
-  (if (= active1 T) (draw_crono))
-  
-
-)
-
-;-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ;FUNCIÓN PARA ABRIR EL CRONOMETRO
 (defun open_crono ()
   (vl-cmdf "CRONO" "")
   (vl-cmdf "_delay" 10000 "")
-  
   (C:crono3)
 )
 
-;-------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ;CAJA DE DIALOGO PARA ABRIR EL CRONOMETRO
 (defun c:crono2 ()
-  (setq archivo (load_dialog (findfile "CD_Cronometro2.dcl")))
+  
+  (setq archivo (load_dialog (findfile "dialogBoxes.dcl")))
   
   (new_dialog "CDCronometro2" archivo)  ;mismo nombre del DIALOG
   
@@ -722,8 +743,6 @@
   
   (if (= active2 T) (open_crono))
 )
-
-;-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ;FUNCIÓN PARA ACTUALIZAR EL DIBUJO
 
@@ -735,15 +754,16 @@
   )
 
   ;Modifica el objeto texto
-  (vlax-put-property OBJ "TextString" hms)  
+  (splitStr hms ":")
+  (vlax-put-property ObjTh "TextString" (nth 0 wordlist))
+  (vlax-put-property ObjTm "TextString" (nth 1 wordlist))
+  (vlax-put-property ObjTs "TextString" (nth 2 wordlist))
 )
-
-;-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ;CAJA DE DIALOGO ACTUALIZAR EL DIBUJO
 
 (defun c:crono3 ()
-  (setq archivo (load_dialog (findfile "CD_Cronometro3.dcl")))
+  (setq archivo (load_dialog (findfile "dialogBoxes.dcl")))
   
   (new_dialog "CDCronometro3" archivo)  ;mismo nombre del DIALOG
   
