@@ -1,6 +1,6 @@
 (vl-load-com)
 (setq option 0)
-(setq bua 0)
+(setq secss 0)
 (vlr-mouse-reactor nil '((:vlr-beginDoubleClick . dbclick)))
 
 
@@ -68,10 +68,19 @@
 	)
 )
 
+(defun wait (seconds / stop)
+	(setq stop (+ (getvar "DATE") (/ seconds 86400.0)))
+	(while (> stop (getvar "DATE")))
+)
+
+
+
 (defun c:inicronografo ()
+  	;(c:prog)
 	(setq count 0)  	
   	(setq secs 0)
   	(setq bua 0)
+  	(setq secss 0)
 	(if (= option 0)
 	        (vla-Rotate segundosl (vlax-3d-point px (+ 1600 py) pz) (* -0.10471975512 (- 60 secs1)))
 	)(if (= option 0)
@@ -88,78 +97,66 @@
   	(setq option (+ 1 option))
 	;seleccion vuelta uno
   	(if (= option 1)	  
-		((while (< secs 10)
+		( (while
+               			(and
+                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
+								       )
+								 )
+				       )
+				     )
+                    	(= 5 (car grr))
+                	)
 			(vla-Rotate segundosl (vlax-3d-point px (+ 1600 py) pz) -0.10471975512)
 		   	(vlax-put-property vuelta3 "TextString" secs)					  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
+		   	(print secs)
 		   	(setq secs1 secs)		   
-		   	()
-		  	(vl-cmdf "._delay" 1000)		   	
+		   	;(vl-cmdf "._delay" 1000)		   
+		   	(wait 1)
 		)	  
 	  	)	  	
 	)
 	;seleccion vuelta dos
 	(if (= option 2)
-	  	((while (< secs 10)
+	  	((while
+               			(and
+                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
+								       )
+								 )
+				       )
+				     )
+                    	(= 5 (car grr))
+                	)
 			(vla-Rotate minutosl (vlax-3d-point px (+ 800 py) pz) -0.10471975512)
 		   	(vlax-put-property vuelta2 "TextString" secs)			  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
 		   	(setq secs2 secs)
-		  	(vl-cmdf "._delay" 1000)		  
+		  	(wait 1)		  
 		)	  
 	  	)
 	)
   	;seleccion vuelta dos
 	(if (= option 3)
-		((while (< secs 10)
+		((while
+               			(and
+                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
+								       )
+								 )
+				       )
+				     )
+                    	(= 5 (car grr))
+                	)
 			(vla-Rotate horasl (vlax-3d-point px py pz) -0.10471975512)
 		   	(vlax-put-property vuelta1 "TextString" secs)					  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
 		   	(setq secs3 secs)
-		  	(vl-cmdf "._delay" 1000)		 
+		  	(wait 1)		 
 		)
 	 	 (setq option 0)		 
 		)
 	) 
 )
 
-
-
-(vl-load-com)
-(defun dbclick (object-reactor point-reactor)
-	(alr)
-  	(print bua)
-  )
-
-
-
-;(defun delay_ms (Ms / T1) ;million second
-;	(setq T1 (getvar "cdate"))
-;	(setq Ms (* 0.000000001 Ms))
-;	(while (< (getvar "cdate") (+ T1 Ms)))
-;)
-
-
-
-;(vlr-mouse-reactor nil '((:vlr-beginDoubleClick . dbclick)))
-;(defun dbclick (object-reactor point-reactor / numhandle)
-	;(setq count 0)
-  	;(setq count2 0)
-  	;(setq secs 0)
-	;(while (< count 1)
-		;(vla-Rotate segundosl (vlax-3d-point 0 30 0) -0.10471975512)
-		;(vl-cmdf "._delay" 1000)
-	  	;(print count)
-		;(setq count (1+ count))
-	  	;(setq secs (1+ secs))
-	  	;(vl-cmdf "._delay" 1000)
-	  	;(if (= secs 60)
-		;	(setq count2(+ 1 count2))
-		; 	(vla-Rotate minutosl (vlax-3d-point 0 30 0) -0.10471975512)
-		;  	(setq secs 0)
-		;  	)
- ;	)
- ;)
