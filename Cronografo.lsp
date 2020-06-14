@@ -23,45 +23,45 @@
   	(setq py (nth 1 pt))
 	(setq pz (nth 2 pt))
   	
-	(setq centerPoint (vlax-3d-point px py pz) radius 170)
-  	(setq centerPoint2 (vlax-3d-point px (+ 800 (nth 1 pt)) pz) radius2 200)
+	(setq centerPoint (vlax-3d-point px py pz) radius 150)
+  	(setq centerPoint2 (vlax-3d-point px (+ 800 (nth 1 pt)) pz) radius2 170)
 	(setq centerPoint3 (vlax-3d-point px (+ 1600 (nth 1 pt)) pz))
   
-	(setq Pt1 (vlax-3d-point px (+ 150 (nth 1 pt)) py))
-  	(setq Pt2 (vlax-3d-point px (+ 950 (nth 1 pt)) py))
-  	(setq Pt3 (vlax-3d-point px (+ 1750 (nth 1 pt)) py))  	
+	(setq Pt1 (vlax-3d-point px (+ 130 (nth 1 pt)) py))
+  	(setq Pt2 (vlax-3d-point px (+ 930 (nth 1 pt)) py))
+  	(setq Pt3 (vlax-3d-point px (+ 1730 (nth 1 pt)) py))  	
 
   	(setq modelSpace (vla-get-ModelSpace doc))
   
-  	(setq circleObj (vla-AddCircle modelSpace centerPoint radius))
+  	(vla-put-Color (setq circleObj (vla-AddCircle modelSpace centerPoint radius))7)
   
   	(vla-put-Color (vla-AddCircle modelSpace centerPoint radius2) 7)
-  	(vla-AddCircle modelSpace centerPoint2 radius)
-  	(vla-AddCircle modelSpace centerPoint2 radius2)
-  	(vla-AddCircle modelSpace centerPoint3 radius)
-  	(vla-AddCircle modelSpace centerPoint3 radius2)
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint2 radius)7)
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint2 radius2)7)
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint3 radius)7)
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint3 radius2)7)
   
-  	(setq horasl (vla-addline modelSpace centerPoint Pt1))
- 	(setq minutosl (vla-addline modelSpace centerPoint2 Pt2))
-  	(setq segundosl (vla-addline modelSpace centerPoint3 Pt3))
+  	(vla-put-Color(setq horasl (vla-addline modelSpace centerPoint Pt1))7)
+ 	(vla-put-Color(setq minutosl (vla-addline modelSpace centerPoint2 Pt2))7)
+  	(vla-put-Color(setq segundosl (vla-addline modelSpace centerPoint3 Pt3))7)
   
-  	(setq thetextH (vla-AddText modelSpace "vuelta 3" 
-                                (vlax-3d-point (- px 150) (+ 250 py) pz) 75))
+  	(vla-put-Color(setq thetextH (vla-AddText modelSpace "vuelta 3" 
+                                (vlax-3d-point (- px 150) (+ 250 py) pz) 75))7)
 
 
   	(setq ENT (entlast)
 		vuelta1 (vlax-ename->vla-object ENT)
 	)
   
-  	(setq thetextM (vla-AddText modelSpace "vuelta 2" 
-                                (vlax-3d-point (- px 150) (+ 1050 py) pz) 75))
+  	(vla-put-Color(setq thetextM (vla-AddText modelSpace "vuelta 2" 
+                                (vlax-3d-point (- px 150) (+ 1050 py) pz) 75))7)
 
 	(setq ENT (entlast)
 		vuelta2 (vlax-ename->vla-object ENT)
 	)
   	
-  	(setq thetextS (vla-AddText modelSpace "vuelta 1" 
-                                (vlax-3d-point (- px 150) (+ 1850 py) pz) 75))
+  	(vla-put-Color(setq thetextS (vla-AddText modelSpace "vuelta 1" 
+                                (vlax-3d-point (- px 150) (+ 1850 py) pz) 75))7)
 
   	(setq ENT (entlast)
 		vuelta3 (vlax-ename->vla-object ENT)
