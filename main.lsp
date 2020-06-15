@@ -557,6 +557,7 @@
 (defun c:verzonahor ()
 			(setq xd (nth 7 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
+      (ChangeTimeZone)
 )
 (defun c:vercronometro ()
 			(setq xd (nth 8 listaobj))
@@ -714,26 +715,22 @@
 	;parte zona horaria (7)
 	(vl-cmdf "_color" 7)
 	(vl-cmdf "_rectang" basezhor1 basezhor2)
-	(setq zhor (ssget "_W" basezhor1 basezhor2)
+  (setq zhor (ssget "_W" basezhor1 basezhor2)
 				listaobj (cons zhor listaobj))
-
 	(vl-cmdf "_rectang" '(3500 1000) '(4700 1350))
+  (vl-cmdf "_text" "J" "MC" "4225,1250" 50 0 "HORAS")
+  (vl-cmdf "_text" "J" "MC" "4525,1250" 50 0 "MINUT")
+  (drawzh)
 
 	(vl-cmdf "_color" 30)
 	(vl-cmdf "_text" basezhor3 100 0 "7. Zona Horaria")
 
 	(vl-cmdf "_color" 1)
-	(vl-cmdf "_rectang" '(3550 1050) '(3850 1300))
-
-	(vl-cmdf "_rectang" '(4000 1050) '(4300 1300))
-
-	(vl-cmdf "_rectang" '(4350 1050) '(4600 1150))
-
-	(vl-cmdf "_rectang" '(4350 1200) '(4650 1300))
-
-	(vl-cmdf "_circle" '(3925 1125) 25)
-
-	(vl-cmdf "_circle" '(3925 1225) 25)
+	(vl-cmdf "_rectangle" '(3550 1050) '(4000 1300))
+  (vl-cmdf "_rectangle" '(4100 1050) '(4350 1175))
+  (vl-cmdf "_rectangle" '(4100 1200) '(4350 1300))
+  (vl-cmdf "_rectangle" '(4400 1050) '(4650 1175))
+  (vl-cmdf "_rectangle" '(4400 1200) '(4650 1300))
 
 	;parte cronometro (8)
 	(vl-cmdf "_color" 7)
@@ -897,4 +894,151 @@
   (start_dialog)
   
   (if (= active3 T) (actu_crono))
+)
+
+
+;-------------------------------Zonas Horarias--------------------------------
+
+;FUNCIÓN PARA DIBUJAR LAS ZONAS HORARIAS
+
+(defun drawzh ()
+  
+  ;Abreviatura
+  (vl-cmdf "_text" "J" "MC" "3775,1175" 140 0 "BOG")
+  (setq ENT (entlast)
+        ObjAbrZh (vlax-ename->vla-object ENT)
+  )
+  
+  ;Cuantas horas aumenta
+  (vl-cmdf "_text" "J" "MC" "4225,1112.5" 75 0 "+00")
+  (setq ENT (entlast)
+        ObjHorZh (vlax-ename->vla-object ENT)
+  )
+  
+  ;Cuantos minutos aumenta
+  (vl-cmdf "_text" "J" "MC" "4525,1112.5" 75 0 "+00")
+  (setq ENT (entlast)
+        ObjMinZh (vlax-ename->vla-object ENT)
+  )
+  
+)
+
+;FUNCIÓN PARA CAMBIAR ZONAS HORARIAS
+
+(defun ChangeTimeZone ()
+  
+  ;Lee la fecha y hora
+  (setq   fecha_hora  (rtos (getvar "cdate") 2 6 )
+			;fecha_hora  "20191231.235855"
+			año		    (atoi (substr fecha_hora 1 4))
+			mes		    (atoi (substr fecha_hora 5 2))
+			dias	    (atoi (substr fecha_hora 7 2))
+			horas	    (atoi (substr fecha_hora 10 2))
+			minutos	  (atoi (substr fecha_hora 12 2))
+	)
+  
+  (setq p0 (strcat (itoa minutos) " " (itoa horas) " " (itoa dias) " " (itoa mes) " " (itoa año)))
+  
+  ;Caja de diálogo 
+	(setq arch (load_dialog (findfile "dialogBoxes.dcl")))
+
+	(setq lista '("Hora de Australia oriental (Sidney)" "Hora oriental (Nueva York)" "Hora de Argentina (Buenos Aires)" "Afganistán"
+					  "Hora estándar Europa Central (Ámsterdam)" "Hora media de Greenwich (Londres)" "Hora estándar de Japón (Tokio)"
+					  "Los Ángeles" "Moscú" "Río de Janeiro" "Estambul" "Nairobi" "Hora de China (Pekín)" "Hora de Corea (Seúl)"
+					  "Hong Kong" "Tijuana" "Hora estándar de India (Calcuta)" "Hora Amazonas (Manaos)" "Hora de Uruguay (Montevideo)"
+					  "Hora estándar de Europa del Este (Atenas)" "Hora de Arabia (Kuwait)" "Hora de Colombia (Bogotá DC)"))
+
+	(new_dialog "UTCs" arch)
+  
+	(start_list "ciudad")
+	(mapcar 'add_list lista)
+	(end_list)
+  
+	(action_tile "ciudad" "(setq city (atoi $value))")
+  
+	(setq select (start_dialog))
+
+	(if (/= select nil)
+		(cond ((= city 0)(progn (setq dias (+ 1 dias)) (setq horas (+ 3 horas))))          ;Sidney
+          ((= city 1)(setq horas (+ 1 horas)))                                         ;NY
+          ((= city 2)(setq horas (+ 2 horas)))                                         ;BA
+          ((= city 3)(progn (setq horas (+ 9 horas)) (setq minutos (+ 30 minutos))))   ;Afg
+          ((= city 4)(setq horas (+ 7 horas)))                                         ;Áms
+          ((= city 5)(setq horas (+ 6 horas)))                                         ;Lon
+          ((= city 6)(setq horas (+ 14 horas)))                                        ;Tokio
+          ((= city 7)(setq horas (- 2 horas)))                                         ;LA
+          ((= city 8)(setq horas (+ 8 horas)))                                         ;Moscú
+          ((= city 9)(setq horas (+ 8 horas)))                                         ;Estam
+          ((= city 10)(setq horas (+ 8 horas)))                                        ;Nair
+          ((= city 11)(setq horas (+ 13 horas)))                                       ;Pekín
+          ((= city 12)(setq horas (+ 14 horas)))                                       ;Seúl
+          ((= city 13)(setq horas (+ 13 horas)))                                       ;HK
+          ((= city 14)(setq horas (+ 10 horas)))                                       ;Tij
+          ((= city 15)(progn (setq horas (+ 10 horas)) (setq minutos (+ 30 minutos)))) ;India
+          ((= city 17)(setq horas (+ 1 horas)))                                        ;Manaos
+          ((= city 18)(setq horas (+ 0 horas)))                                        ;Montev
+          ((= city 19)(setq horas (+ 8 horas)))                                        ;Atenas
+          ((= city 20)(setq horas (+ 8 horas)))                                        ;Kuwait
+          ((= city 21)(setq horas (+ 0 horas)))                                        ;Bgt DC
+		);cond
+	);if
+
+  (if (> minutos 59); Condición que determina la hora 
+    (progn
+      (setq horas (1+ horas)
+            minutos (+ minutos -60)
+      )
+    )
+  )
+  
+  (if (> horas 23); Condición que determina el día
+    (progn
+      (setq dias (1+ dias)
+            horas (+ horas -24)
+      )
+    )
+  )
+
+  (setq dias_mes '(0 31 (if (= (rem año 4) 0)(29)(28)) 31 30 31 30 31 31 30 31 30 31)); Determina si un año es bisiesto 
+
+  (if (= dias (1+ (nth mes dias_mes))); Condición que determina el mes
+    (progn
+      (setq mes (1+ mes)
+	    dias 1)
+    )
+  )
+
+  (if (= mes 13); Condición que determina el año
+    (progn
+      (setq año (1+ año)
+	          mes 1)
+    )
+  )
+  
+  (setq minutos (itoa minutos))
+  (setq horas (itoa horas))
+  (setq dias (itoa dias))
+  (setq mes (itoa mes))
+  (setq año (itoa año))
+  
+  (CambiObjetos city)
+  
+ );defun
+
+(defun CambiObjetos (c)
+  
+  (setq lista_abr     (list "SID" "NY" "ARG" "AFG" "AMS" "LDN" "JPN" "LA" "MOS" "RIO" "EST" "NAI" "CN" "KR" "HKN" "MX" "IN" "AMZ" "URG" "ATN" "ARB" "COL")
+        lista_hormas  (list "+03" "+01" "+02" "+09" "+07" "+06" "+14" "-02" "+08" "+02" "+08" "+08" "+13" "+14" "+13" "+10" "+10" "+01" "+00" "+08" "+08" "+00")
+        lista_minmas  (list "+00" "+00" "+00" "+30" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+30" "+00" "+00" "+00" "+00" "+00")
+  )
+  
+  (setq NewAbr    (nth c lista_abr)
+        NewHormas (nth c lista_hormas)
+        NewMinmas (nth c lista_minmas)
+  )
+  
+  (vlax-put-property ObjAbrZh "TextString" NewAbr)
+  (vlax-put-property ObjHorZh "TextString" NewHormas)
+  (vlax-put-property ObjMinZh "TextString" NewMinmas)
+  
 )
