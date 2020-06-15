@@ -26,8 +26,8 @@
     m_delta -0.00174533
     s_delta -0.10472
     h_rot (* h_delta (+ (* 3600 h) (* 60 m) s)) 
-    m_rot (* m_delta (+ (* 60 m) s)) 
-    s_rot (* s_delta s) 
+    m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2)) 
+    s_rot (+ (* s_delta s) (/ pi 2)) 
     c_block (vla-InsertBlock modelspace insertion_point c_ref 1 1 1 0)
     h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 h_rot)
     m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 m_rot)
@@ -1094,7 +1094,6 @@
   (setq p0 (strcat (itoa minutos) " " (itoa horas) " " (itoa dias) " " (itoa mes) " " (itoa año)))
   
   ;Caja de diálogo 
-	(setq arch (load_dialog (findfile "dialogBoxes.dcl")))
 
 	(setq lista '("Hora de Australia oriental (Sidney)" "Hora oriental (Nueva York)" "Hora de Argentina (Buenos Aires)" "Afganistán"
 					  "Hora estándar Europa Central (Ámsterdam)" "Hora media de Greenwich (Londres)" "Hora estándar de Japón (Tokio)"
@@ -1102,7 +1101,7 @@
 					  "Hong Kong" "Tijuana" "Hora estándar de India (Calcuta)" "Hora Amazonas (Manaos)" "Hora de Uruguay (Montevideo)"
 					  "Hora estándar de Europa del Este (Atenas)" "Hora de Arabia (Kuwait)" "Hora de Colombia (Bogotá DC)"))
 
-	(new_dialog "UTCs" arch)
+	(new_dialog "UTCs" archivo)
   
 	(start_list "ciudad")
 	(mapcar 'add_list lista)
