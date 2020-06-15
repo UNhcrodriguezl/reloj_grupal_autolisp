@@ -1,3 +1,5 @@
+
+
 (vl-load-com)
 (setq option 0)
 (setq secss 0)
@@ -30,7 +32,7 @@
 	(setq pz (nth 2 pt))
   	
 	(setq centerPoint (vlax-3d-point px py pz) radius 170)
-  	(setq centerPoint2 (vlax-3d-point px (+ 800 (nth 1 pt)) pz) radius2 200)
+  	(setq centerPoint2 (vlax-3d-point px (+ 800 (nth 1 pt)) pz) radius2 190)
 	(setq centerPoint3 (vlax-3d-point px (+ 1600 (nth 1 pt)) pz))
   
 	(setq Pt1 (vlax-3d-point px (+ 150 (nth 1 pt)) py))
@@ -39,8 +41,7 @@
 
   	(setq modelSpace (vla-get-ModelSpace doc))
   
-  	(setq circleObj (vla-AddCircle modelSpace centerPoint radius))
-  
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint radius)7)  
   	(vla-put-Color (vla-AddCircle modelSpace centerPoint radius2) 7)
   	(vla-put-Color (vla-AddCircle modelSpace centerPoint2 radius)7)
   	(vla-put-Color (vla-AddCircle modelSpace centerPoint2 radius2)7)
@@ -175,27 +176,3 @@
 		)
 	) 
 )
-
-
-(defun c:prog ()
-  
-  (setq dcl_id (load_dialog "C:\\Users\\Administrador\\Documents\\Tareas_CG\\Cronografobox.DCL"))
-  (if(not (new_dialog "mensaje1" dcl_id))
-    (exit)	
-    )    
-  (action_tile "accept" "(suman)(inicronografo)")
-  
-  (action_tile "pausar" "(print Nn1)")
-  
-  (action_tile "cerrar" "(done_dialog)")	
-
-  (defun suman()
-	(setq Nn1 (atof (get_tile "n1")))
-    	(setq Nn2 (atof (get_tile "n2")))
-    	(setq Nn3 (atof (get_tile "n3")))
-    )
-  
-
-  (start_dialog)
-  (unload_dialog dcl_id)
-  )
