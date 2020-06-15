@@ -155,3 +155,20 @@ CDCronometro3 : dialog {
   }
   ok_cancel;
 }
+
+//--------------------------Zonas Horarias----------------------------
+
+UTCs: dialog {
+  label= "Cambio de hora";
+    :row {
+      label= "Seleccione hora de paÄ‚Â­s o ciudad";
+      :list_box{
+         key="ciudad";
+         width=38; 
+         list="";
+         value=0;
+         allow_accept=true;
+      }
+    }     
+  ok_cancel;
+}
