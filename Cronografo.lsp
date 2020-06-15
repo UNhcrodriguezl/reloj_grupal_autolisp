@@ -3,7 +3,7 @@
 (setq secss 0)
 (vlr-mouse-reactor nil '((:vlr-beginDoubleClick . dbclick)))
 
-; se crea el cronografo se necesita el archivo con el indicador esta en la carpeta
+; se crea el cronografo se necesita el archivo con el bloque con nombre indicador en el archivo indicador.dwg que esta en la carpeta
 ; la funcion se activa desde autocad con la funcion cronografo o desde lisp con (c:Cronografo)
 
 ; se activa usando inicronografo desde autocad o (c:inicronografo) desde lisp funciona mientras se mueva el mouse
