@@ -71,16 +71,104 @@
   )
 )
 
+;------------------------------Reloj digital-------------------------------
+
+
+(defun digital ()
+  
+	(setq acadObj (vlax-get-acad-object))
+	(setq doc (vla-get-ActiveDocument acadObj))
+
+  	(setq insertionPointDD1 (vlax-3d-point 1057 430 0)  ;el punto de inserción es la posición en el dibujo
+	textStringDD1 "DD" 
+	height 35)
+	(setq insertionPointMM1 (vlax-3d-point 1119 430 0)  
+	textStringMM1 "MM"
+	height 35)
+	(setq insertionPointAA1 (vlax-3d-point 1235 430 0)  
+	textStringAA1 "AA"
+	height 35)
+	   	    
+   ;; Crea el texto en el espacio modelo
+  
+	(setq modelSpace (vla-get-ModelSpace doc))
+  
+   ;Colocacion de los textos iniciales dia dd, mes mm, año aa
+	(setq textObjDD1 (vla-AddText modelSpace textStringDD1 insertionPointDD1 height))
+	(setq ObjDD1 (entget(entlast)))
+ 	(setq textObjMM1 (vla-AddText modelSpace textStringMM1 insertionPointMM1 height))
+	(setq ObjMM1 (entget(entlast)))
+	(setq textObjAA1 (vla-AddText modelSpace textStringAA1 insertionPointAA1 height))
+	(setq ObjAA1 (entget(entlast)))
+
+
+	(setq  Date (rtos (getvar "cdate") 2 6)	
+	anot (substr Date 1 4)
+	mest (substr Date 5 2)
+	diat (substr Date 7 2)
+	)
+	(setq mes (nth 	(setq nummes (atoi mest)) '(nil "ENE" "FEB" "MAR" "ABR" "MAY" "JUN" "JUL" "AGO" "SEP" "OCT" "NOV" "DEC")))
+
+	(setq ObjDD1 (setq D12 (subst (cons 1  diat) (assoc 1 ObjDD1) ObjDD1)))
+ 	(entmod D12)
+	(setq ObjDD1 (setq D12 (subst (cons 62  07) (assoc 62 ObjAA1) ObjDD1)));Cambia el color de el texto al color 7:Blanco
+ 	(entmod D12)
+	(setq ObjAA1 (setq A12 (subst (cons 1   anot) (assoc 1 ObjAA1) ObjAA1)))
+ 	(entmod A12)
+	(setq ObjAA1 (setq A12 (subst (cons 62  07) (assoc 62 ObjAA1) ObjAA1)));Cambia el color de el texto al color 7:Blanco
+ 	(entmod A12)
+  	(setq ObjMM1 (setq M12 (subst (cons 1  mes) (assoc 1 ObjMM1) ObjMM1)))
+ 	(entmod M12)
+	(setq ObjMM1 (setq M12 (subst (cons 62  07) (assoc 62 ObjMM1) ObjMM1))) ;Cambia el color de el texto al color 7:Blanco
+ 	(entmod M12)
+
+	; Define the text object
+	(setq insertionPointDD2 (vlax-3d-point 245 280 0)  ;el punto de inserción es la posición en el dibujo
+	textStringHH2 "HH" 
+	;height 10
+	)
+	(setq insertionPointMM2 (vlax-3d-point 695 280 0)  
+	textStringMM2 "MM"
+	;height 10
+	)
+	(setq insertionPointAA2 (vlax-3d-point 1110 260 0)  
+	textStringSS2 "SS"
+	;height 10
+	)
+
+	(vl-cmdf "_color" 255)
+  
+	(setq textObjHH2 (vla-AddText modelSpace textStringHH2 insertionPointDD2 200))
+	(setq ObjHH2 (entget(entlast)))
+	(setq textObjMM2 (vla-AddText modelSpace textStringMM2 insertionPointMM2 200))
+	(setq ObjMM2 (entget(entlast)))
+	(setq textObjSS2 (vla-AddText modelSpace textStringSS2 insertionPointAA2 80))
+	(setq ObjSS2 (entget(entlast)))
+  	
+  	(setq Da (rtos (getvar "cdate") 2 6))	
+  	(setq ht (substr Da 10 2))  ;sustraigo el valor del hora
+  	(setq mt (substr Da 12 2))  ;sustraigo el valor del min
+ 	(setq st (substr Da 14 2))  ;sustraigo el valor del seg
+
+		
+  	(setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
+ 	(entmod H22)
+  	(setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
+ 	(entmod M22)
+	(setq ObjSS2 (setq S22 (subst (cons 1   st) (assoc 1 ObjSS2) ObjSS2)))
+ 	(entmod S22)
+  
+  )
 
 ;------------------------------------Reactores-----------------------------
 
 
-;FunciÃ³n de cambio (click derecho)
+;Función de cambio (click derecho)
 (defun change (Caller CmdSet)
 	(check)
 )
 
-;FunciÃ³n de selecciÃ³n/menu (doble click)
+;Función de selección/menu (doble click)
 (defun option (Caller CmdSet)
 	(new_dialog "Menu_reactor" archivo)
   		(action_tile "b1" "(setq op 1)")
@@ -89,7 +177,7 @@
   	(start_dialog)
 )
 
-;Verificar opciÃ³n de menu
+;Verificar opción de menu
 
 (defun check()
 	(if (= op 1)
@@ -109,7 +197,7 @@
 	)
 )
 
-;FunciÃ³n cambiar color de figura
+;Función cambiar color de figura
 
 (defun changeColor()
 
@@ -167,7 +255,7 @@
   
 )
 
-;FunciÃ³n cambiar hora
+;Función cambiar hora
 
 (defun changeHour()
 
@@ -210,7 +298,7 @@
   )
 )
 
-;DefiniciÃ³n de reactores
+;Definición de reactores
 
 (defun c:init()
   	(setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginDoubleClick  . option))))
@@ -334,124 +422,6 @@
 
 
 
-;------------------------------------Cronografo---------------------------------------------------
-
-
-
-
-(defun Cronografo()
-
-	(setq pt (list 5325 375 0))
-  	
-	(setq acadObj (vlax-get-acad-object))
-	(setq doc (vla-get-ActiveDocument acadObj))
-  	(setq util (vla-get-utility doc))
-
-  	(setq px (nth 0 pt))
-  	(setq py (nth 1 pt))
-	(setq pz (nth 2 pt))
-  	
-	(setq centerPoint (vlax-3d-point px py pz) radius 170)
-  	(setq centerPoint2 (vlax-3d-point px (+ 800 (nth 1 pt)) pz) radius2 200)
-	(setq centerPoint3 (vlax-3d-point px (+ 1600 (nth 1 pt)) pz))
-  
-	(setq Pt1 (vlax-3d-point px (+ 150 (nth 1 pt)) py))
-  	(setq Pt2 (vlax-3d-point px (+ 950 (nth 1 pt)) py))
-  	(setq Pt3 (vlax-3d-point px (+ 1750 (nth 1 pt)) py))  	
-
-  	(setq modelSpace (vla-get-ModelSpace doc))
-  
-  	(setq circleObj (vla-AddCircle modelSpace centerPoint radius))
-  	(vla-AddCircle modelSpace centerPoint radius2)
-  	(vla-AddCircle modelSpace centerPoint2 radius)
-  	(vla-AddCircle modelSpace centerPoint2 radius2)
-  	(vla-AddCircle modelSpace centerPoint3 radius)
-  	(vla-AddCircle modelSpace centerPoint3 radius2)
-  
-  	(setq horasl (vla-addline modelSpace centerPoint Pt1))
- 	(setq minutosl (vla-addline modelSpace centerPoint2 Pt2))
-  	(setq segundosl (vla-addline modelSpace centerPoint3 Pt3))
-  
-  	(setq thetextH (vla-AddText modelSpace "vuelta 3" 
-                                (vlax-3d-point (- px 150) (+ 250 py) pz) 75))
-
-
-  	(setq ENT (entlast)
-		vuelta1 (vlax-ename->vla-object ENT)
-	)
-  
-  	(setq thetextM (vla-AddText modelSpace "vuelta 2" 
-                                (vlax-3d-point (- px 150) (+ 1050 py) pz) 75))
-
-	(setq ENT (entlast)
-		vuelta2 (vlax-ename->vla-object ENT)
-	)
-  	
-  	(setq thetextS (vla-AddText modelSpace "vuelta 1" 
-                                (vlax-3d-point (- px 150) (+ 1850 py) pz) 75))
-
-  	(setq ENT (entlast)
-		vuelta3 (vlax-ename->vla-object ENT)
-	)
-)
-
-(defun inicronografo ()
-
-	(setq count 0)  	
-  	(setq secs 0)
-  	(setq bua 0)
-  	(setq option (+ 1 option))
-	;seleccion vuelta uno
-  	(if (= option 1)	  
-		((while (< secs 10)
-			(vla-Rotate segundosl (vlax-3d-point px (+ 30 py) pz) -0.10471975512)
-		   	(vlax-put-property vuelta3 "TextString" secs)					  
-			(setq count (1+ count))
-		  	(setq secs (1+ secs))
-		  	(vl-cmdf "._delay" 1000)
-		   	(print bua)
-		)	  
-	  	)
-	  	
-	  )
-	;seleccion vuelta dos
-	(if (= option 2)
-	  	((while ((< secs 10))
-			(vla-Rotate minutosl (vlax-3d-point px (+ 15 py) pz) -0.10471975512)
-		   	(vlax-put-property vuelta2 "TextString" secs)
-			(print count)		  
-			(setq count (1+ count))
-		  	(setq secs (1+ secs))
-		  	(vl-cmdf "._delay" 1000)		  
-		)	  
-	  	)
-	  )
-
- 	;seleccion vuelta tres
-  	(if (= option 3)
-		((while ((< secs 10))
-			(vla-Rotate horasl (vlax-3d-point px py pz) -0.10471975512)
-		   	(vlax-put-property vuelta1 "TextString" secs)
-			(print count)		  
-			(setq count (1+ count))
-		  	(setq secs (1+ secs))
-		  	(vl-cmdf "._delay" 1000)		 
-		)
-	 	 (setq option 0)
-		 (vla-Rotate segundosl (vlax-3d-point px (+ 1600 py) pz) (* -0.10471975512 (- 60 secs)))
-		 (vla-Rotate minutosl (vlax-3d-point px (+ 800 py) pz) (* -0.10471975512 (- 60 secs)))
-		 (vla-Rotate horasl (vlax-3d-point px py pz) (* -0.10471975512 (- 60 secs)))
-		)
-	)  
- 
-	
-)
-
-
-
-
-
-
 
 
 ;--------------------------------------Temporizador-------------------------------------------------
@@ -524,7 +494,185 @@
 )
 
 
-;---------------------------------Funciones visualizaciÃ³n-------------------
+;---------------------------------Cronografo---------------------------------
+
+(setq option 0)
+(setq secss 0)
+
+(defun c:Cronografo()
+  	
+	(setq option 0)
+	(setq bua 0)
+	(setq pt (list 5325 375 0))
+  	(setq ptt2 (list 5325 1175 0))
+  	(setq ptt3 (list 5325 1975 0))
+
+  	(setq secs1 0)
+  	(setq secs2 0)
+  	(setq secs3 0)
+
+  	(setq acadObj (vlax-get-acad-object))
+	(setq doc (vla-get-ActiveDocument acadObj))
+  	(setq util (vla-get-utility doc))
+
+  	(setq px (nth 0 pt))
+  	(setq py (nth 1 pt))
+	(setq pz (nth 2 pt))
+  	
+	(setq centerPoint (vlax-3d-point px py pz) radius 170)
+  	(setq centerPoint2 (vlax-3d-point px (+ 800 (nth 1 pt)) pz) radius2 190)
+	(setq centerPoint3 (vlax-3d-point px (+ 1600 (nth 1 pt)) pz))
+  
+	(setq Pt1 (vlax-3d-point px (+ 150 (nth 1 pt)) py))
+  	(setq Pt2 (vlax-3d-point px (+ 950 (nth 1 pt)) py))
+  	(setq Pt3 (vlax-3d-point px (+ 1750 (nth 1 pt)) py))  	
+
+  	(setq modelSpace (vla-get-ModelSpace doc))
+  
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint radius)7)  
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint radius2) 7)
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint2 radius)7)
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint2 radius2)7)
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint3 radius)7)
+  	(vla-put-Color (vla-AddCircle modelSpace centerPoint3 radius2)7)
+  
+  	(command "_insert" "Indicador" pt 22 22 0 )
+  	(setq horasl (entget (entlast)))
+  	(command "_insert" "Indicador" ptt2 22 22 0 )
+  	(setq minutosl (entget (entlast)))
+  	(command "_insert" "Indicador" ptt3 22 22 0 )
+  	(setq segundosl (entget (entlast)))
+ 	
+  	(setq thetextH (vla-AddText modelSpace "vuelta 3" 
+                                (vlax-3d-point (- px 150) (+ 250 py) pz) 75))
+
+
+  	(setq ENT (entlast)
+		vuelta1 (vlax-ename->vla-object ENT)
+	)
+  
+  	(setq thetextM (vla-AddText modelSpace "vuelta 2" 
+                                (vlax-3d-point (- px 150) (+ 1050 py) pz) 75))
+
+	(setq ENT (entlast)
+		vuelta2 (vlax-ename->vla-object ENT)
+	)
+  	
+  	(setq thetextS (vla-AddText modelSpace "vuelta 1" 
+                                (vlax-3d-point (- px 150) (+ 1850 py) pz) 75))
+
+  	(setq ENT (entlast)
+		vuelta3 (vlax-ename->vla-object ENT)
+	)
+)
+
+(defun wait (seconds / stop)
+	(setq stop (+ (getvar "DATE") (/ seconds 86400.0)))
+	(while (> stop (getvar "DATE")))
+)
+
+
+(defun c:fo ()	
+	(command "_insert" "Indicador" pt 1 1 1)
+  )
+
+
+(defun pasarGrados(grados) 
+	(* pi (/ grados 180.0))
+)
+(setq twopi 6.28319)
+(defun c:inicronografo ()
+  	;(c:prog)
+	(setq count 0)  	
+  	(setq secs 0)
+  	(setq bua 0)
+  	(setq secss 0)	
+  	(setq option (+ 1 option))
+	;seleccion vuelta uno
+  	(if (= option 1)	  
+		( (while
+               			(and
+                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
+								       )
+								 )
+				       )
+				     )
+                    	(= 5 (car grr))				
+                	)
+		    
+			(setq angCalcSeg (* twopi (- 1.0 (/ secs 60.0))))
+			(setq segundos1 (subst (cons 50 angCalcSeg) (assoc 50 segundosl) segundosl))
+			(entmod segundos1)
+		    
+		   	(vlax-put-property vuelta3 "TextString" secs)					  
+			(setq count (1+ count))
+		  	(setq secs (1+ secs))
+		   	(print secs)
+		   	(setq secs1 secs)		   
+		   	;(vl-cmdf "._delay" 1000)		   
+		   	(wait 1)
+		)	  
+	  	)	  	
+	)
+	;seleccion vuelta dos
+	(if (= option 2)
+	  	((while
+               			(and
+                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
+								       )
+								 )
+				       )
+				     )
+                    	(= 5 (car grr))
+                	)
+		   
+			(setq angCalcSeg (* twopi (- 1.0 (/ secs 60.0))))
+			(setq minutos1 (subst (cons 50 angCalcSeg) (assoc 50 minutosl) minutosl))
+			(entmod minutos1)
+		   
+		   	(vlax-put-property vuelta2 "TextString" secs)			  
+			(setq count (1+ count))
+		  	(setq secs (1+ secs))
+		   	(setq secs2 secs)
+		  	(wait 1)		  
+		)	  
+	  	)
+	)
+  	;seleccion vuelta dos
+	(if (= option 3)
+		((while
+               			(and
+                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
+								       )
+								 )
+				       )
+				     )
+                    	(= 5 (car grr))
+                	)
+		   
+			(setq angCalcSeg (* twopi (- 1.0 (/ secs 60.0))))
+			(setq horas1 (subst (cons 50 angCalcSeg) (assoc 50 horasl) horasl))
+			(entmod horas1)
+		   
+		   	(vlax-put-property vuelta1 "TextString" secs)					  
+			(setq count (1+ count))
+		  	(setq secs (1+ secs))
+		   	(setq secs3 secs)
+		  	(wait 1)		 
+		)
+	 	 (setq option 0)		 
+		)
+	) 
+)
+
+(defun c:resetCronografo()
+  
+	(setq option 0)
+
+)
+
+
+;---------------------------------Funciones visualización-------------------
 (defun c:borrar ()
 			(vl-cmdf "_erase" "_all" "")
 )
@@ -567,12 +715,14 @@
 (defun c:vercronografo ()
 			(setq xd (nth 9 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
+  			(c:inicronografo)
 )
 (defun c:vertodo ()
 			(vla-zoomextents (vlax-get-acad-object))
 )
 	
-(defun c:drawAll()						
+(defun c:drawAll()
+   (c:borrar)
 	;variables
 	(setq	basedig1 '(0 0)
 				basedig2 '(1600 750)
@@ -623,6 +773,8 @@
 	(vl-cmdf "_circle" '(625 325) 25)
 
 	(vl-cmdf "_circle" '(625 425) 25)
+
+  	(digital)
 
 	;parte reloj analogico (2)
 	(vl-cmdf "_color" 7)
@@ -718,8 +870,8 @@
   (setq zhor (ssget "_W" basezhor1 basezhor2)
 				listaobj (cons zhor listaobj))
 	(vl-cmdf "_rectang" '(3500 1000) '(4700 1350))
-  (vl-cmdf "_text" "J" "MC" "4225,1250" 50 0 "HORAS")
-  (vl-cmdf "_text" "J" "MC" "4525,1250" 50 0 "MINUT")
+  (vl-cmdf "_text" "_J" "_MC" "4225,1250" 50 0 "HORAS")
+  (vl-cmdf "_text" "_J" "_MC" "4525,1250" 50 0 "MINUT")
   (drawzh)
 
 	(vl-cmdf "_color" 30)
@@ -789,6 +941,8 @@
 
 	(vl-cmdf "_circle" '(5325 1975) 200)
 
+	(c:cronografo)
+  
 	(setq listaobj (reverse listaobj))
 
 	(vla-zoomextents (vlax-get-acad-object))
@@ -819,7 +973,7 @@
 )
 
 
-;FUNCIÃ“N PARA DIBUJO DEL CRONOMETRO
+;FUNCIÓN PARA DIBUJO DEL CRONOMETRO
 
 (defun draw_crono ()
   
@@ -828,24 +982,24 @@
         textos "00"
   )
 
-  (vl-cmdf "_text" "J" "MC" "3700,1975" 200 0 textoh)
+  (vl-cmdf "_text" "_J" "_MC" "3700,1975" 200 0 textoh)
   (setq ENT (entlast)
         ObjTh (vlax-ename->vla-object ENT)
   )
   
-  (vl-cmdf "_text" "J" "MC" "4150,1975" 200 0 textom)
+  (vl-cmdf "_text" "_J" "_MC" "4150,1975" 200 0 textom)
   (setq ENT (entlast)
         ObjTm (vlax-ename->vla-object ENT)
   )
   
-  (vl-cmdf "_text" "J" "MC" "4600,1975" 200 0 textos)
+  (vl-cmdf "_text" "_J" "_MC" "4600,1975" 200 0 textos)
   (setq ENT (entlast)
         ObjTs (vlax-ename->vla-object ENT)
   )
   
 )
 
-;FUNCIÃ“N PARA ABRIR EL CRONOMETRO
+;FUNCIÓN PARA ABRIR EL CRONOMETRO
 (defun open_crono ()
   (vl-cmdf "CRONO" "")
   (vl-cmdf "_delay" 10000 "")
@@ -866,7 +1020,7 @@
   (if (= active2 T) (open_crono))
 )
 
-;FUNCIÃ“N PARA ACTUALIZAR EL DIBUJO
+;FUNCIÓN PARA ACTUALIZAR EL DIBUJO
 
 (defun actu_crono ()
   ;Abrir el archivo y guardar los valores
@@ -899,54 +1053,54 @@
 
 ;-------------------------------Zonas Horarias--------------------------------
 
-;FUNCIÃ“N PARA DIBUJAR LAS ZONAS HORARIAS
+;FUNCIÓN PARA DIBUJAR LAS ZONAS HORARIAS
 
 (defun drawzh ()
   
   ;Abreviatura
-  (vl-cmdf "_text" "J" "MC" "3775,1175" 140 0 "BOG")
+  (vl-cmdf "_text" "_J" "_MC" "3775,1175" 140 0 "BOG")
   (setq ENT (entlast)
         ObjAbrZh (vlax-ename->vla-object ENT)
   )
   
   ;Cuantas horas aumenta
-  (vl-cmdf "_text" "J" "MC" "4225,1112.5" 75 0 "+00")
+  (vl-cmdf "_text" "_J" "_MC" "4225,1112.5" 75 0 "+00")
   (setq ENT (entlast)
         ObjHorZh (vlax-ename->vla-object ENT)
   )
   
   ;Cuantos minutos aumenta
-  (vl-cmdf "_text" "J" "MC" "4525,1112.5" 75 0 "+00")
+  (vl-cmdf "_text" "_J" "_MC" "4525,1112.5" 75 0 "+00")
   (setq ENT (entlast)
         ObjMinZh (vlax-ename->vla-object ENT)
   )
   
 )
 
-;FUNCIÃ“N PARA CAMBIAR ZONAS HORARIAS
+;FUNCIÓN PARA CAMBIAR ZONAS HORARIAS
 
 (defun ChangeTimeZone ()
   
   ;Lee la fecha y hora
   (setq   fecha_hora  (rtos (getvar "cdate") 2 6 )
 			;fecha_hora  "20191231.235855"
-			aÃ±o		    (atoi (substr fecha_hora 1 4))
+			año		    (atoi (substr fecha_hora 1 4))
 			mes		    (atoi (substr fecha_hora 5 2))
 			dias	    (atoi (substr fecha_hora 7 2))
 			horas	    (atoi (substr fecha_hora 10 2))
 			minutos	  (atoi (substr fecha_hora 12 2))
 	)
   
-  (setq p0 (strcat (itoa minutos) " " (itoa horas) " " (itoa dias) " " (itoa mes) " " (itoa aÃ±o)))
+  (setq p0 (strcat (itoa minutos) " " (itoa horas) " " (itoa dias) " " (itoa mes) " " (itoa año)))
   
-  ;Caja de diÃ¡logo 
+  ;Caja de diálogo 
 	(setq arch (load_dialog (findfile "dialogBoxes.dcl")))
 
-	(setq lista '("Hora de Australia oriental (Sidney)" "Hora oriental (Nueva York)" "Hora de Argentina (Buenos Aires)" "AfganistÃ¡n"
-					  "Hora estÃ¡ndar Europa Central (Ãmsterdam)" "Hora media de Greenwich (Londres)" "Hora estÃ¡ndar de JapÃ³n (Tokio)"
-					  "Los Ãngeles" "MoscÃº" "RÃ­o de Janeiro" "Estambul" "Nairobi" "Hora de China (PekÃ­n)" "Hora de Corea (SeÃºl)"
-					  "Hong Kong" "Tijuana" "Hora estÃ¡ndar de India (Calcuta)" "Hora Amazonas (Manaos)" "Hora de Uruguay (Montevideo)"
-					  "Hora estÃ¡ndar de Europa del Este (Atenas)" "Hora de Arabia (Kuwait)" "Hora de Colombia (BogotÃ¡ DC)"))
+	(setq lista '("Hora de Australia oriental (Sidney)" "Hora oriental (Nueva York)" "Hora de Argentina (Buenos Aires)" "Afganistán"
+					  "Hora estándar Europa Central (Ámsterdam)" "Hora media de Greenwich (Londres)" "Hora estándar de Japón (Tokio)"
+					  "Los Ángeles" "Moscú" "Río de Janeiro" "Estambul" "Nairobi" "Hora de China (Pekín)" "Hora de Corea (Seúl)"
+					  "Hong Kong" "Tijuana" "Hora estándar de India (Calcuta)" "Hora Amazonas (Manaos)" "Hora de Uruguay (Montevideo)"
+					  "Hora estándar de Europa del Este (Atenas)" "Hora de Arabia (Kuwait)" "Hora de Colombia (Bogotá DC)"))
 
 	(new_dialog "UTCs" arch)
   
@@ -963,15 +1117,15 @@
           ((= city 1)(setq horas (+ 1 horas)))                                         ;NY
           ((= city 2)(setq horas (+ 2 horas)))                                         ;BA
           ((= city 3)(progn (setq horas (+ 9 horas)) (setq minutos (+ 30 minutos))))   ;Afg
-          ((= city 4)(setq horas (+ 7 horas)))                                         ;Ãms
+          ((= city 4)(setq horas (+ 7 horas)))                                         ;Áms
           ((= city 5)(setq horas (+ 6 horas)))                                         ;Lon
           ((= city 6)(setq horas (+ 14 horas)))                                        ;Tokio
           ((= city 7)(setq horas (- 2 horas)))                                         ;LA
-          ((= city 8)(setq horas (+ 8 horas)))                                         ;MoscÃº
+          ((= city 8)(setq horas (+ 8 horas)))                                         ;Moscú
           ((= city 9)(setq horas (+ 8 horas)))                                         ;Estam
           ((= city 10)(setq horas (+ 8 horas)))                                        ;Nair
-          ((= city 11)(setq horas (+ 13 horas)))                                       ;PekÃ­n
-          ((= city 12)(setq horas (+ 14 horas)))                                       ;SeÃºl
+          ((= city 11)(setq horas (+ 13 horas)))                                       ;Pekín
+          ((= city 12)(setq horas (+ 14 horas)))                                       ;Seúl
           ((= city 13)(setq horas (+ 13 horas)))                                       ;HK
           ((= city 14)(setq horas (+ 10 horas)))                                       ;Tij
           ((= city 15)(progn (setq horas (+ 10 horas)) (setq minutos (+ 30 minutos)))) ;India
@@ -983,7 +1137,7 @@
 		);cond
 	);if
 
-  (if (> minutos 59); CondiciÃ³n que determina la hora 
+  (if (> minutos 59); Condición que determina la hora 
     (progn
       (setq horas (1+ horas)
             minutos (+ minutos -60)
@@ -991,7 +1145,7 @@
     )
   )
   
-  (if (> horas 23); CondiciÃ³n que determina el dÃ­a
+  (if (> horas 23); Condición que determina el día
     (progn
       (setq dias (1+ dias)
             horas (+ horas -24)
@@ -999,18 +1153,18 @@
     )
   )
 
-  (setq dias_mes '(0 31 (if (= (rem aÃ±o 4) 0)(29)(28)) 31 30 31 30 31 31 30 31 30 31)); Determina si un aÃ±o es bisiesto 
+  (setq dias_mes '(0 31 (if (= (rem año 4) 0)(29)(28)) 31 30 31 30 31 31 30 31 30 31)); Determina si un año es bisiesto 
 
-  (if (= dias (1+ (nth mes dias_mes))); CondiciÃ³n que determina el mes
+  (if (= dias (1+ (nth mes dias_mes))); Condición que determina el mes
     (progn
       (setq mes (1+ mes)
 	    dias 1)
     )
   )
 
-  (if (= mes 13); CondiciÃ³n que determina el aÃ±o
+  (if (= mes 13); Condición que determina el año
     (progn
-      (setq aÃ±o (1+ aÃ±o)
+      (setq año (1+ año)
 	          mes 1)
     )
   )
@@ -1019,7 +1173,7 @@
   (setq horas (itoa horas))
   (setq dias (itoa dias))
   (setq mes (itoa mes))
-  (setq aÃ±o (itoa aÃ±o))
+  (setq año (itoa año))
   
   (CambiObjetos city)
   

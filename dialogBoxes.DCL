@@ -161,7 +161,7 @@ CDCronometro3 : dialog {
 UTCs: dialog {
   label= "Cambio de hora";
     :row {
-      label= "Seleccione hora de paÄ‚Â­s o ciudad";
+      label= "Seleccione hora de pais o la ciudad";
       :list_box{
          key="ciudad";
          width=38; 
