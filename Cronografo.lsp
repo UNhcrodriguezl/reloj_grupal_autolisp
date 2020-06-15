@@ -9,12 +9,11 @@
 ; se activa usando inicronografo desde autocad o (c:inicronografo) desde lisp funciona mientras se mueva el mouse
 ; para cancelar el movimiento se presiona esc  y una vez se regrese a la pestaña de lisp presionar ctrl + r 
 
-
 (defun c:Cronografo()
   	
 	(setq option 0)
 	(setq bua 0)
-	(setq ptt (list 5325 375 0))
+	(setq pt (list 5325 375 0))
   	(setq ptt2 (list 5325 1175 0))
   	(setq ptt3 (list 5325 1975 0))
 
@@ -48,7 +47,7 @@
   	(vla-put-Color (vla-AddCircle modelSpace centerPoint3 radius)7)
   	(vla-put-Color (vla-AddCircle modelSpace centerPoint3 radius2)7)
   
-  	(command "insert" "Indicador" ptt 1 1 0 )
+  	(command "insert" "Indicador" pt 1 1 0 )
   	(setq horasl (entget (entlast)))
   	(command "insert" "Indicador" ptt2 1 1 0 )
   	(setq minutosl (entget (entlast)))
