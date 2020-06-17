@@ -755,6 +755,7 @@
 (defun c:veralarma ()
 			(setq xd (nth 3 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
+      (setalarm entonoff minalarm horalarm)
 )
 (defun c:vertemporizador ()
 			(setq xd (nth 4 listaobj))
@@ -862,27 +863,40 @@
   
 	;parte alarma (3)
 	(vl-cmdf "_color" 7)
+  
 	(vl-cmdf "_rectang" basealm1 basealm2)
-	(setq alarma (ssget "_W" basealm1 basealm2)
-				listaobj (cons alarma listaobj))
+	
+  (setq alarma (ssget "_W" basealm1 basealm2)
+				listaobj (cons alarma listaobj)
+  )
 
-	(vl-cmdf "_rectang" '(1850 200) '(3050 550))
+	(vl-cmdf "_rectang" '(1850 200) '(3150 550))
 
+  (vl-cmdf "_text" "J" "MC" "2945,375" 100 0 "OFF")
+  (setq entonoff (entlast))
+  
+  (vl-cmdf "_text" "J" "MC" "2500,375" 200 0 "--")
+  (setq minalarm (entlast))
+  
+  (vl-cmdf "_text" "J" "MC" "2050,375" 200 0 "--")
+  (setq horalarm (entlast))
+  
 	(vl-cmdf "_color" 30)
+  
 	(vl-cmdf "_text" basealm3 100 0 "3. Alarma")
-
-	(vl-cmdf "_color" 1)
+  
+  (vl-cmdf "_color" 1)
+  
 	(vl-cmdf "_rectang" '(1900 250) '(2200 500))
 
 	(vl-cmdf "_rectang" '(2350 250) '(2650 500))
 
-	(vl-cmdf "_rectang" '(2700 250) '(2950 350))
+	(vl-cmdf "_rectang" '(2800 250) '(3100 500))
 
-	(vl-cmdf "_rectang" '(2700 400) '(3000 500))
+	(vl-cmdf "_circle" '(2275 305) 25)
 
-	(vl-cmdf "_circle" '(2275 325) 25)
+	(vl-cmdf "_circle" '(2275 405) 25)
 
-	(vl-cmdf "_circle" '(2275 425) 25)
 
 	;parte temporizador (4)
 	(vl-cmdf "_color" 7)
@@ -1263,4 +1277,29 @@
   (vlax-put-property ObjHorZh "TextString" NewHormas)
   (vlax-put-property ObjMinZh "TextString" NewMinmas)
   
+)
+
+;-----------------------------------------Alarma--------------------------------------------------
+
+(defun setalarm (ent1 ent2 ent3)
+  
+  ;Crea los objetos
+  (setq obj_onoff    (vlax-ename->vla-object ent1)
+        obj_minalarm (vlax-ename->vla-object ent2)
+        obj_horalarm (vlax-ename->vla-object ent3)
+  )
+  
+  (setq archivo (load_dialog (findfile "dialogBoxes.dcl")))
+  
+  (new_dialog "CDSetalarm" archivo)  ;mismo nombre del DIALOG
+
+  (action_tile "horset" "(setq horset (get_tile \"horset\"))")
+  (action_tile "minset" "(setq minset (get_tile \"minset\"))")
+  
+  (start_dialog)
+  
+  (vlax-put-property obj_onoff    "TextString"  "ON")
+  (vlax-put-property obj_minalarm "TextString"  minset)
+  (vlax-put-property obj_horalarm "TextString"  horset)
+
 )
