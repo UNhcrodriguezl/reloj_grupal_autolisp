@@ -25,9 +25,9 @@
     h_delta -0.000145444
     m_delta -0.00174533
     s_delta -0.10472
-    h_rot (* h_delta (+ (* 3600 h) (* 60 m) s)) 
-    m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2)) 
-    s_rot (+ (* s_delta s) (/ pi 2)) 
+    h_rot (*  h_delta (+ (* 3600 h) (* 60 m) s))
+    m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2))
+    s_rot (+ (* s_delta s) (/ pi 2))
     c_block (vla-InsertBlock modelspace insertion_point c_ref 1 1 1 0)
     h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 h_rot)
     m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 m_rot)
@@ -43,7 +43,32 @@
   
 )
 
-(defun runAnalog()
+(defun c:runAnalog(c_ref h_ref m_ref s_ref)
+
+
+  (vla-delete h_block)
+  (vla-delete m_block)
+  (vla-delete s_block)
+
+  (setq
+	 date (rtos (getvar "CDATE") 2 6)
+    h (atoi (substr date 10 2))
+    m (atoi (substr date 12 2))
+    s (atoi (substr date 14 2))
+    h_delta -0.000145444
+    m_delta -0.00174533
+    s_delta -0.10472
+    h_rot (*  h_delta (+ (* 3600 h) (* 60 m) s))
+    m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2))
+    s_rot (+ (* s_delta s) (/ pi 2))
+    h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 (- h_rot h_delta))
+    m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 (- m_rot m_delta))
+    s_block (vla-InsertBlock modelspace insertion_point s_ref 1 1 1 (- s_rot s_delta))
+  )
+
+ 	(vla-scaleEntity h_block (vla-get-Insertionpoint h_block)  22)
+	(vla-scaleEntity m_block (vla-get-Insertionpoint m_block)  22)
+	(vla-scaleEntity s_block (vla-get-Insertionpoint s_block)  22)
   
   (defun silent(com val)
     (setq old (getvar "cmdecho"))
@@ -54,7 +79,9 @@
 
   (silent "_vscurrent" "_r")
 
-  (while 
+  (while
+
+	 (setq date (rtos (getvar "CDATE") 2 6))
     (setq s (rem (1+ s) 60))
     (if (= s 0) (progn
       (setq m (rem (1+ m) 60))
@@ -67,6 +94,8 @@
     (vla-rotate m_block insertion_point m_delta)
     (vla-rotate s_block insertion_point s_delta)
 
+	 (runDigital)
+	 
     (silent "_.delay" 1000)
   )
 )
@@ -102,10 +131,10 @@
 	(setq ObjAA1 (entget(entlast)))
 
 
-	(setq  Date (rtos (getvar "cdate") 2 6)	
-	anot (substr Date 1 4)
-	mest (substr Date 5 2)
-	diat (substr Date 7 2)
+	(setq
+		anot (substr date 1 4)
+		mest (substr date 5 2)
+		diat (substr date 7 2)
 	)
 	(setq mes (nth 	(setq nummes (atoi mest)) '(nil "ENE" "FEB" "MAR" "ABR" "MAY" "JUN" "JUL" "AGO" "SEP" "OCT" "NOV" "DEC")))
 
@@ -144,11 +173,10 @@
 	(setq ObjMM2 (entget(entlast)))
 	(setq textObjSS2 (vla-AddText modelSpace textStringSS2 insertionPointAA2 80))
 	(setq ObjSS2 (entget(entlast)))
-  	
-  	(setq Da (rtos (getvar "cdate") 2 6))	
-  	(setq ht (substr Da 10 2))  ;sustraigo el valor del hora
-  	(setq mt (substr Da 12 2))  ;sustraigo el valor del min
- 	(setq st (substr Da 14 2))  ;sustraigo el valor del seg
+  		
+  	(setq ht (substr date 10 2))  ;sustraigo el valor del hora
+  	(setq mt (substr date 12 2))  ;sustraigo el valor del min
+ 	(setq st (substr date 14 2))  ;sustraigo el valor del seg
 
 		
   	(setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
@@ -160,6 +188,20 @@
   
   )
 
+(defun runDigital()
+  	
+  	(setq ht (substr date 10 2))  ;sustraigo el valor del hora
+  	(setq mt (substr date 12 2))  ;sustraigo el valor del min
+ 	(setq st (substr date 14 2))  ;sustraigo el valor del seg
+		
+  	(setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
+ 	(entmod H22)
+  	(setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
+ 	(entmod M22)
+	(setq ObjSS2 (setq S22 (subst (cons 1   st) (assoc 1 ObjSS2) ObjSS2)))
+ 	(entmod S22)
+  
+)
 ;------------------------------------Reactores-----------------------------
 
 
@@ -420,14 +462,7 @@
 	)
 )
 
-
-
-
-
-;--------------------------------------Temporizador-------------------------------------------------
-
-
-(defun Temporizador()
+(defun c:Temporizador()
   	
 	(if (not (new_dialog "temporizador" archivo)	;test for dialog
 		);not
@@ -493,6 +528,57 @@
   	(updTemp hora minuto segundo)
 )
 
+
+;---------------------------------Calendario---------------------------------
+
+(defun c:calendario(alertDate)
+
+	 (vl-cmdf "_color" 255)
+  
+    (setq file (open (findfile "calendario.txt") "r"))
+    (while (setq line (read-line file))
+    (setq l (list nil))
+    (while (> (setq pos (vl-string-search "**" line)) 0)
+          (setq value (substr line 1 pos))
+          (setq line (vl-string-left-trim "**" (vl-string-left-trim value line)))
+          (setq l (append l (list value)))
+    )
+    (imprimir (append (cdr l) (list line)) alertDate)
+  )
+  (close file)
+)
+
+(defun imprimir (info alertDate)
+   (setq a (nth 0 info)
+         b (nth 1 info)
+		   c (nth 2 info)
+   )
+
+  (if (= alertDate nil)
+	 (if (= b (itoa (atoi diat)))
+	   (if (= a (itoa (atoi mest)))
+		  (progn
+			  (vl-cmdf "_text" "3500, 405" 60 "0" (strcat (substr c 1 28) "-") "")
+			  (vl-cmdf "_text" "3500, 237" 60 "0" (strcat (substr c 19 25)"...") "")
+		  )
+		)
+	 )
+	 (if (= b (itoa (atoi diat)))
+		(if (= a (itoa (atoi mest)))
+		  (progn
+			 	(voz c)
+		  		(alert c)
+		  )
+		)
+	 )
+  )
+)
+
+(defun Voz (str)
+  (setq tts (vlax-create-object "Sapi.SpVoice"));crea el objeto tts
+  (vlax-invoke tts "Speak" str 0) ;invoca o llama el objeto tts
+  (vlax-release-object tts) ; libera el objeto tts
+)
 
 ;---------------------------------Cronografo---------------------------------
 
@@ -590,21 +676,14 @@
   	(setq option (+ 1 option))
 	;seleccion vuelta uno
   	(if (= option 1)	  
-		( (while
-               			(and
-                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
-								       )
-								 )
-				       )
-				     )
-                    	(= 5 (car grr))				
-                	)
-		    
+		( (while (and (not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)))))
+               	  (= 5 (car grr))				
+               )
 			(setq angCalcSeg (* twopi (- 1.0 (/ secs 60.0))))
 			(setq segundos1 (subst (cons 50 angCalcSeg) (assoc 50 segundosl) segundosl))
 			(entmod segundos1)
 		    
-		   	(vlax-put-property vuelta3 "TextString" secs)					  
+		   (vlax-put-property vuelta3 "TextString" secs)					  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
 		   	(print secs)
@@ -616,21 +695,15 @@
 	)
 	;seleccion vuelta dos
 	(if (= option 2)
-	  	((while
-               			(and
-                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
-								       )
-								 )
-				       )
-				     )
-                    	(= 5 (car grr))
-                	)
+	  	((while	(and (not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)))))
+               	  (= 5 (car grr))				
+               )
 		   
 			(setq angCalcSeg (* twopi (- 1.0 (/ secs 60.0))))
 			(setq minutos1 (subst (cons 50 angCalcSeg) (assoc 50 minutosl) minutosl))
 			(entmod minutos1)
 		   
-		   	(vlax-put-property vuelta2 "TextString" secs)			  
+		   (vlax-put-property vuelta2 "TextString" secs)			  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
 		   	(setq secs2 secs)
@@ -640,21 +713,15 @@
 	)
   	;seleccion vuelta dos
 	(if (= option 3)
-		((while
-               			(and
-                    		(not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)
-								       )
-								 )
-				       )
-				     )
-                    	(= 5 (car grr))
-                	)
-		   
+		((while	(and (not (vl-catch-all-error-p (setq grr (vl-catch-all-apply 'grread '(t 15 1)))))
+               	  (= 5 (car grr))				
+               )
+               			
 			(setq angCalcSeg (* twopi (- 1.0 (/ secs 60.0))))
 			(setq horas1 (subst (cons 50 angCalcSeg) (assoc 50 horasl) horasl))
 			(entmod horas1)
 		   
-		   	(vlax-put-property vuelta1 "TextString" secs)					  
+		   (vlax-put-property vuelta1 "TextString" secs)					  
 			(setq count (1+ count))
 		  	(setq secs (1+ secs))
 		   	(setq secs3 secs)
@@ -682,8 +749,8 @@
 )
 (defun c:veranalogo ()
 			(setq xd (nth 2 listaobj))
-			(vl-cmdf "_zoom" "_o" xd "")
-			(runAnalog)
+			;(vl-cmdf "_zoom" "_o" xd "")
+			(c:runAnalog "case" "hor" "min" "sec")
 )
 (defun c:veralarma ()
 			(setq xd (nth 3 listaobj))
@@ -692,7 +759,7 @@
 (defun c:vertemporizador ()
 			(setq xd (nth 4 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
-  			(temporizador)
+  			(c:temporizador)
 )
 (defun c:verrecordatorio ()
 			(setq xd (nth 5 listaobj))
@@ -701,16 +768,17 @@
 (defun c:vercalendario ()
 			(setq xd (nth 6 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
+  			(c:calendario T)
 )
 (defun c:verzonahor ()
 			(setq xd (nth 7 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
-      (ChangeTimeZone)
+      	(c:changeTimeZone)
 )
 (defun c:vercronometro ()
 			(setq xd (nth 8 listaobj))
 			(vl-cmdf "_zoom" "_o" xd "")
-      (c:crono2)
+      	(c:crono2)
 )
 (defun c:vercronografo ()
 			(setq xd (nth 9 listaobj))
@@ -863,7 +931,8 @@
 
 	(vl-cmdf "_color" 30)
 	(vl-cmdf "_text" basecal3 100 0 "6. Calendario")
-
+  
+	(c:calendario nil)
 	;parte zona horaria (7)
 	(vl-cmdf "_color" 7)
 	(vl-cmdf "_rectang" basezhor1 basezhor2)
@@ -1079,7 +1148,7 @@
 
 ;FUNCIÓN PARA CAMBIAR ZONAS HORARIAS
 
-(defun ChangeTimeZone ()
+(defun c:ChangeTimeZone ()
   
   ;Lee la fecha y hora
   (setq   fecha_hora  (rtos (getvar "cdate") 2 6 )
