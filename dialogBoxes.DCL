@@ -172,3 +172,21 @@ UTCs: dialog {
     }     
   ok_cancel;
 }
+
+//--------------------------Alarma------------------------------------
+
+CDSetalarm: dialog {
+  label= "Fijar una Alarma";
+    :row{
+      label="Configurar hora y minutos";
+      :edit_box{
+        label="Hora (00 a 23)";
+        key="horset";
+      }
+      :edit_box{
+        label="Minutos (00 a 59)";
+        key="minset";
+      }
+    }
+  ok_cancel;
+}
