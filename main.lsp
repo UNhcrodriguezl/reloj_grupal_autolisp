@@ -131,7 +131,7 @@
 	(setq ObjAA1 (entget(entlast)))
 
 
-	(setq
+	(setq  date (rtos (getvar "CDATE") 2 6)
 		anot (substr date 1 4)
 		mest (substr date 5 2)
 		diat (substr date 7 2)
@@ -146,7 +146,7 @@
  	(entmod A12)
 	(setq ObjAA1 (setq A12 (subst (cons 62  07) (assoc 62 ObjAA1) ObjAA1)));Cambia el color de el texto al color 7:Blanco
  	(entmod A12)
-  	(setq ObjMM1 (setq M12 (subst (cons 1  mes) (assoc 1 ObjMM1) ObjMM1)))
+  	(setq ObjMM1 (setq M12 (subst (cons 1  mest) (assoc 1 ObjMM1) ObjMM1)))
  	(entmod M12)
 	(setq ObjMM1 (setq M12 (subst (cons 62  07) (assoc 62 ObjMM1) ObjMM1))) ;Cambia el color de el texto al color 7:Blanco
  	(entmod M12)
