@@ -9,45 +9,30 @@ Menu_reactor: dialog{
 			key = "b1";
 		}
 		:radio_button{
-			label = "Cambiar texto reloj";
+			label = "Cambiar función a ejecutar";
 			key = "b2"; 
-		}
-		:radio_button{
-			label = "Iniciar temporizador";
-			key = "b3";
 		}
 	}
 	ok_cancel;
 }
 
-Texto_reactor: dialog{
-	label = "Menu texto";
+Funciones_reactor: dialog{
+	label = "Menu funciones";
 	:boxed_column{ 
-		label = "Opciones";
-		:edit_box{
-			label = "Ingrese horas: ";
-			min_value = 0;
-			max_value = 23;
-			key = "hs";
+		label = "Funciones";
+		:popup_list{
+			key = "functions";
 		}
-		:edit_box{
-			label = "Ingrese minutos: ";
-			min_value = 0;
-			max_value = 59;
-			key = "ms";
-		}
-		:edit_box{
-			label = "Ingrese segundos: ";
-			min_value = 0;
-			max_value = 59;
-			key = "ss";
+		:button{
+			label = "Cambiar";
+			key = "chf";
 		}
 	}
 	ok_cancel;
 }
 
 Color_reactor: dialog{
-	label = "Menu reloj";
+	label = "Menu color";
 	:boxed_column{
 		label = "Color";
 		:text{

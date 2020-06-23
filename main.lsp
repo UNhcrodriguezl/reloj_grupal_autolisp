@@ -73,9 +73,16 @@
 
   (silent "_vscurrent" "_r")
 
+	(setq ObjHH2 (setq H22 (subst (cons 62 colorD) (assoc 62 ObjHH2) ObjHH2)));Cambia el color de el texto al color 7:Blanco
+ 	(entmod H22)
+  	(setq ObjMM2 (setq M22 (subst (cons 62 colorD) (assoc 62 ObjMM2) ObjMM2)))
+ 	(entmod M22)
+  	(setq ObjSS2 (setq S22 (subst (cons 62 colorD) (assoc 62 ObjSS2) ObjSS2)))
+ 	(entmod S22)
+  
   (while
 
-	  (setq date (rtos (getvar "CDATE") 2 6))
+	 (setq date (rtos (getvar "CDATE") 2 6))
     (setq s (rem (1+ s) 60))
     (if (= s 0) (progn
       (setq m (rem (1+ m) 60))
@@ -121,10 +128,13 @@
    ;Colocacion de los textos iniciales dia dd, mes mm, aï¿½o aa
 	(setq textObjDD1 (vla-AddText modelSpace textStringDD1 insertionPointDD1 height))
 	(setq ObjDD1 (entget(entlast)))
+   (setq vlaDiaDig (vlax-ename->vla-object (entlast)))
  	(setq textObjMM1 (vla-AddText modelSpace textStringMM1 insertionPointMM1 height))
 	(setq ObjMM1 (entget(entlast)))
+ 	(setq vlaMesDig (vlax-ename->vla-object (entlast)))
 	(setq textObjAA1 (vla-AddText modelSpace textStringAA1 insertionPointAA1 height))
 	(setq ObjAA1 (entget(entlast)))
+  	(setq vlaAñoDig (vlax-ename->vla-object (entlast)))
 
 
 	(setq  date (rtos (getvar "CDATE") 2 6)
@@ -165,22 +175,26 @@
   
 	(setq textObjHH2 (vla-AddText modelSpace textStringHH2 insertionPointDD2 200))
 	(setq ObjHH2 (entget(entlast)))
+   (setq vlaHoraDig (vlax-ename->vla-object (entlast)))
 	(setq textObjMM2 (vla-AddText modelSpace textStringMM2 insertionPointMM2 200))
 	(setq ObjMM2 (entget(entlast)))
+   (setq vlaMinDig (vlax-ename->vla-object (entlast)))
 	(setq textObjSS2 (vla-AddText modelSpace textStringSS2 insertionPointAA2 80))
 	(setq ObjSS2 (entget(entlast)))
+   (setq vlaSegDig (vlax-ename->vla-object (entlast)))
   		
   (setq ht (substr date 10 2))  ;sustraigo el valor del hora
   (setq mt (substr date 12 2))  ;sustraigo el valor del min
  	(setq st (substr date 14 2))  ;sustraigo el valor del seg
+
   
-  (setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
+  	(setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
  	(entmod H22)
-  (setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
+  	(setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
  	(entmod M22)
 	(setq ObjSS2 (setq S22 (subst (cons 1   st) (assoc 1 ObjSS2) ObjSS2)))
  	(entmod S22)
-  
+
 )
 
 ;Correr el reloj
@@ -204,6 +218,7 @@
  	(entmod M22)
 	(setq ObjSS2 (setq S22 (subst (cons 1  st) (assoc 1 ObjSS2) ObjSS2)))
  	(entmod S22)
+
 )
 
 
@@ -214,8 +229,10 @@
 	(setq recordatoriosList (list "No hay eventos"))
 	(setq objRecordatorio (vla-AddText modelSpace "test" (vlax-3d-point 1850 1990 0) 120)
 			objR1 (entget(entlast))
+			vlaM1Rec (vlax-ename->vla-object (entlast))
 			objRecordatorio2 (vla-AddText modelSpace "test" (vlax-3d-point 1850 1820 0) 120)
 			objR2 (entget(entlast))
+ 			vlaM2Rec (vlax-ename->vla-object (entlast))
 			)
 )
 (defun c:drawNextR ()
@@ -264,6 +281,14 @@
 		  (setq objR1 (setq objR12 (subst (cons 1 (strcat (itoa (nth 1 textRecordatorio)) " de " (nth 3 textRecordatorio) ":" )) (assoc 1 objR1) objR1)))
 		  (entmod objR12)
 		  (setq objR2 (setq objR22 (subst (cons 1 (nth 0 textRecordatorio)) (assoc 1 objR2) objR2)))
+		  (entmod objR22)
+
+		  (setq ObjMM1 (setq M12 (subst (cons 62 colorR) (assoc 62 ObjMM1) ObjMM1))) ;Cambia el color de el texto al color 7:Blanco
+ 	     (entmod M12)
+		 
+		  (setq objR1 (setq objR12 (subst (cons 62 colorR) (assoc 62 objR1) objR1)))
+		  (entmod objR12)
+		  (setq objR2 (setq objR22 (subst (cons 62 colorR) (assoc 62 objR2) objR2)))
 		  (entmod objR22)
 	  )
    )
@@ -346,7 +371,7 @@
 		)
 	)
   
-	(setq recordatoriosList (append recordatoriosList (list (list record_r dia_r (1+ mes_r) nm year_r))))
+	(setq recordatoriosList (append recordatoriosList (list (list record_r (1+ dia_r) (1+ mes_r) nm year_r))))
 	(c:drawNextR)
 	(if (= cerrada2 1) 
 		(alert (strcat "Recordatorio" " " "*" record_r "*" " " "establecido para el" " " (itoa (+ dia_r 1)) " " "de" " " nm " " "de" " " (itoa year_r)))
@@ -364,15 +389,15 @@
 )
 
 ;Funciï¿½n de selecciï¿½n/menu (doble click)
-(defun option (Caller CmdSet)
+(defun menuOption (Caller CmdSet)
 	(new_dialog "Menu_reactor" archivo)
   		(action_tile "b1" "(setq op 1)")
   		(action_tile "b2" "(setq op 2)")
-  		(action_tile "b3" "(setq op 3)")
   	(start_dialog)
 )
 
 ;Verificar opciï¿½n de menu
+
 
 (defun check()
 	(if (= op 1)
@@ -382,12 +407,7 @@
   	)
 	(if (= op 2)
 	   (progn
-		   (changeHour)
-		)
-	)
-	(if (= op 3)
-	   (progn
-			(vertemporizador)
+			(changeFunction)
 		)
 	)
 )
@@ -398,11 +418,11 @@
 
 		(setq flag 1)
   
-		(while (not (= flag 0))
+		(while (not (= flag 0)) ;Mientras no se de a aceptar
   
   		(new_dialog "Color_reactor" archivo)
   		(setq color 255)
-			(action_tile "colorR" "(updateR $value)")
+			(action_tile "colorR" "(updateR $value)");Obtener valor de color y asignarlo a los otros elementos del menu
 				(defun updateR (val)
 						(set_tile "EstablecerR" val)
 					  	(setq color (atoi (get_tile "colorR")))
@@ -423,7 +443,9 @@
 					  	(end_image)
 					)
   
-  		(setq itemsList (list "HorTempo" "MinTempo" "SecTempo"))
+  		(setq itemsList (list "Todo" "Reloj Digital" "Alarma"
+									 "Temporizador" "Recordatorio" "Calendario"
+									 "Zona Horaria" "Cronometro"))
 
 		(start_list "shapes")
 		(mapcar 'add_list itemsList)
@@ -438,67 +460,156 @@
 			  	(setq alertString (strcat "Color cambiado a " (itoa color) ". Presione Aceptar"))
 				(alert alertString)
 				(setq cursor (vl-remove 0.0 (nth 0 (cdr (grread T 1 15)))))
-		  
-		  ;(setq ent1 (entlast))
-		  ;(setq vla1 (vlax-ename->vla-object ent1))
 
-		  		(setq itemsList2 (list vlaHorTemp vlaMinTemp vlaSecTemp))
-		  		(vla-put-color (nth shape itemsList2) color)
+				(setq objList (list))
+			  	
+			  	(cond
+				  		;Colorear todo
+				  		((= shape 0) (progn
+											(vla-put-color vlaDiaDig color)
+											(vla-put-color vlaMesDig color)
+											(vla-put-color vlaAñoDig color)
+											(vla-put-color vlaHoraDig color)
+											(vla-put-color vlaMinDig color)
+											(vla-put-color vlaSegDig color)
+				
+											(vla-put-color obj_onoff color)
+										   (vla-put-color obj_minalarm color)
+										   (vla-put-color obj_horalarm color)
+
+											(vla-put-color vlaHorTemp color)
+										   (vla-put-color vlaMinTemp color)
+										   (vla-put-color vlaSecTemp color)
+
+											(vla-put-color vlaM1Rec color)
+											(vla-put-color	vlaM2Rec color)
+											
+											(vla-put-color vlaM1Cal color)
+											(vla-put-color	vlaM2Cal color)
+
+											(vla-put-color vlaAbrZh color)
+										   (vla-put-color vlaHorZh color)
+										   (vla-put-color vlaMinZh color)
+											(vla-put-color vlaM1Zh color)
+											(vla-put-color vlaM2Zh color)
+
+											(vla-put-color ObjTh color)
+										   (vla-put-color ObjTm color)
+										   (vla-put-color ObjTs color)
+											(setq colorD color
+													colorR color)
+										 ))
+						;Colorear elementos del digital
+						((= shape 1) (progn
+											(setq colorD color)
+											(vla-put-color vlaDiaDig color)
+											(vla-put-color vlaMesDig color)
+											(vla-put-color vlaAñoDig color)
+											(vla-put-color vlaHoraDig color)
+											(vla-put-color vlaMinDig color)
+											(vla-put-color vlaSegDig color)
+										 ))
+						;Colorear elementos de la alarma
+						((= shape 2) (progn
+											(vla-put-color obj_onoff color)
+										   (vla-put-color obj_minalarm color)
+										   (vla-put-color obj_horalarm color)
+										 ))
+						;Colorear elementos del temporizador
+						((= shape 3) (progn
+											(vla-put-color vlaHorTemp color)
+										   (vla-put-color vlaMinTemp color)
+										   (vla-put-color vlaSecTemp color)
+										 ))
+						;Colorear elementos del recordatorio
+						((= shape 4) (progn
+											(vla-put-color vlaM1Rec color)
+											(vla-put-color	vlaM2Rec color)
+											(setq colorR color)
+										 ))
+						;Colorear elementos del calendario
+						((= shape 5) (progn
+											(vla-put-color vlaM1Cal color)
+											(vla-put-color	vlaM2Cal color)  
+										 ))
+						;Colorear elementos de la zona horaria
+						((= shape 6) (progn
+											(vla-put-color vlaAbrZh color)
+										   (vla-put-color vlaHorZh color)
+										   (vla-put-color vlaMinZh color)
+											(vla-put-color vlaM1Zh color)
+											(vla-put-color vlaM2Zh color)
+										 ))
+						;Colorear elementos del cronometro
+						((= shape 7) (progn
+											(vla-put-color ObjTh color)
+										   (vla-put-color ObjTm color)
+										   (vla-put-color ObjTs color)
+										 ))
+				)
 			)
 		)
 	)
   
 )
 
-;Funciï¿½n cambiar hora
+;Cambiar función a ejecutar por comando
 
-(defun changeHour()
-
-  (new_dialog "Texto_reactor" archivo)
-		(action_tile "hs" "(setq hs (get_tile \"hs\"))")
-		(action_tile "ms" "(setq ms (get_tile \"ms\"))")
-		(action_tile "ss" "(setq ss (get_tile \"ss\"))")
-  (start_dialog)
-
-  (print hs)
+(defun changeFunction()
   
-  ;(setq ent2 (entlast))
-  (setq vla2 (vlax-ename->vla-object ent2)
-		  vla3 (vlax-ename->vla-object ent3)
-		  vla4 (vlax-ename->vla-object ent4))
-  (progn
-	 (setq flag nil)
-	 
-	 (if (= (or (> 0 (atoi hs)) (< 23 (atoi hs))
-				(> 0 (atoi ms)) (< 59 (atoi ms))
-				(> 0 (atoi ss)) (< 59 (atoi ss)) 
-		  ) T)
-		  (progn
-			  (alert "Formato de hora erroneo. Revise la hora.")
-			  (setq flag T)
-		  )
-	 )
+		(setq flag 1)
+  
+		(while (not (= flag 0))
+  
+  		(new_dialog "Funciones_reactor" archivo)		   
+  
+  		(setq itemsList (list "Reloj"
+									 "Alarma" "Temporizador" "Recordatorio"
+									 "Calendario" "Zona Horaria" "Cronometro"
+									 "Cronografo"))
 
-    (if (not (= flag T))
-		(progn
-		 (if (< (atoi hs) 10) (setq hs (strcat "0" hs)))
-		 (if (< (atoi ms) 10) (setq ms (strcat "0" ms)))
-		 (if (< (atoi ss) 10) (setq ss (strcat "0" ss)))
-		 
-		 (vla-put-textstring vla2 hs)
-		 (vla-put-textstring vla3 ms)
-		 (vla-put-textstring vla4 ss)
+		(start_list "functions")
+		(mapcar 'add_list itemsList)
+		(end_list)
+
+		(action_tile "chf" "(setq func (get_tile \"functions\")) (done_dialog 1)")
+		(action_tile "accept" "(done_dialog 0)")
+		(setq flag (start_dialog))
+
+		(if (= flag 1)
+		  	(progn
+			  	(setq alertString (strcat "Función a ejecutar: " (nth (atoi func) itemsList) ". Presione Aceptar"))
+				(alert alertString)
+		  
+		  		(setq func (atoi func))
+			)
 		)
-	 ) 
-  )
+	)
+)
+
+
+;runFunction es una alternativa a los botones, lo cual permite ejecutar el reloj de dos
+;formas diferentes, teniendo en cuenta la elección en la caja de dialogo
+(defun c:runFunction()
+	(cond ((= func 0) (c:IniciarReloj))
+			((= func 1) (c:veralarma))
+			((= func 2) (c:vertemporizador))
+			((= func 3) (c:verrecordatorio))
+			((= func 4) (c:vercalendario))
+			((= func 5) (c:verzonahoraria))
+			((= func 6) (c:vercronometro))
+			((= func 7) (c:vercronografo))
+			)
 )
 
 ;Definiciï¿½n de reactores
 
-(defun c:init()
-  (setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginDoubleClick  . option))))
+(defun c:initReactors()
+  (setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginDoubleClick  . menuOption))))
 	(setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginRightClick  . change))))
 )
+
+(c:initReactors)
 
 ;(vlax-dump-object vla1)obtener info
 
@@ -712,7 +823,9 @@
 	   (if (= a (itoa (atoi mest)))
 		  (progn
 			  (vl-cmdf "_text" "3500, 405" 60 "0" (strcat (substr c 1 28) "-") "")
+			  (setq vlaM1Cal (vlax-ename->vla-object (entlast)))
 			  (vl-cmdf "_text" "3500, 237" 60 "0" (strcat (substr c 29 25)"...") "")
+			  (setq vlaM2Cal (vlax-ename->vla-object (entlast)))
 		  )
 		)
 	 )
@@ -1020,12 +1133,15 @@
 				listaobj (cons alarma listaobj)
   )
 	(vl-cmdf "_rectang" '(1850 200) '(3150 550))
-  (vl-cmdf "_text" "J" "MC" "2945,375" 100 0 "OFF")
-  (setq entonoff (entlast))
-  (vl-cmdf "_text" "J" "MC" "2500,375" 200 0 "--")
-  (setq minalarm (entlast))
-  (vl-cmdf "_text" "J" "MC" "2050,375" 200 0 "--")
-  (setq horalarm (entlast))
+  (vl-cmdf "_text" "_J" "_MC" "2945,375" 100 0 "OFF")
+  (setq entonoff (entlast)
+		  obj_onoff (vlax-ename->vla-object (entlast)))
+  (vl-cmdf "_text" "_J" "_MC" "2500,375" 200 0 "--")
+  (setq minalarm (entlast)
+		  obj_minalarm (vlax-ename->vla-object (entlast)))
+  (vl-cmdf "_text" "_J" "_MC" "2050,375" 200 0 "--")
+  (setq horalarm (entlast)
+		  obj_horalarm (vlax-ename->vla-object (entlast)))
 	(vl-cmdf "_color" 30)
 	(vl-cmdf "_text" basealm3 100 0 "3. Alarma")
   (vl-cmdf "_color" 1)
@@ -1087,7 +1203,9 @@
   
 	(vl-cmdf "_rectang" '(3500 1000) '(4700 1350))
   (vl-cmdf "_text" "_J" "_MC" "4225,1250" 50 0 "HORAS")
+  (setq vlaM2Zh (vlax-ename->vla-object (entlast)))
   (vl-cmdf "_text" "_J" "_MC" "4525,1250" 50 0 "MINUT")
+  (setq vlaM1Zh (vlax-ename->vla-object (entlast)))
   (drawzh)
 	(vl-cmdf "_color" 30)
 	(vl-cmdf "_text" basezhor3 100 0 "7. Zona Horaria")
@@ -1258,19 +1376,19 @@
   ;Abreviatura
   (vl-cmdf "_text" "_J" "_MC" "3775,1175" 140 0 "BOG")
   (setq ENT (entlast)
-        ObjAbrZh (vlax-ename->vla-object ENT)
+        vlaAbrZh (vlax-ename->vla-object ENT)
   )
   
   ;Cuantas horas aumenta
   (vl-cmdf "_text" "_J" "_MC" "4225,1112.5" 75 0 "+00")
   (setq ENT (entlast)
-        ObjHorZh (vlax-ename->vla-object ENT)
+        vlaHorZh (vlax-ename->vla-object ENT)
   )
   
   ;Cuantos minutos aumenta
   (vl-cmdf "_text" "_J" "_MC" "4525,1112.5" 75 0 "+00")
   (setq ENT (entlast)
-        ObjMinZh (vlax-ename->vla-object ENT)
+        vlaMinZh (vlax-ename->vla-object ENT)
   )
   
   ;Inicializa las variables
@@ -1341,9 +1459,9 @@
         NewMinmas (nth c lista_minmas)
   )
   
-  (vlax-put-property ObjAbrZh "TextString" NewAbr)
-  (vlax-put-property ObjHorZh "TextString" NewHormas)
-  (vlax-put-property ObjMinZh "TextString" NewMinmas)
+  (vlax-put-property vlaAbrZh "TextString" NewAbr)
+  (vlax-put-property vlaHorZh "TextString" NewHormas)
+  (vlax-put-property vlaMinZh "TextString" NewMinmas)
   
 )
 
