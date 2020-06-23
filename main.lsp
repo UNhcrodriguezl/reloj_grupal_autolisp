@@ -1319,7 +1319,7 @@
   
 )
 
-;FUNCIï¿½N PARA ABRIR EL CRONOMETRO
+;FUNCIÓN PARA ABRIR EL CRONOMETRO
 (defun open_crono ()
   (vl-cmdf "CRONO" "")
   (vl-cmdf "_delay" 10000 "")
