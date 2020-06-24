@@ -3,135 +3,214 @@
 (vl-load-reactors)
 (vlr-remove-all)
 
-
 ;Carga de archivos de las cajas de dialogo
-
 (setq archivo (load_dialog (findfile "dialogBoxes.dcl")))
 
-;-----------------------Reloj analogico--------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;----------------------DIBUJO DEL RELOJ E INCIALIZACION DE VARIABLES-------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
 
-;Dibujar el reloj análogo
+;Dibujar la base del reloj
 
-(defun analog (x y c_ref h_ref m_ref s_ref)
-  (setq
-    insertion_point (vlax-3D-point x y)
-    acad_object (vlax-get-acad-object)
-    active_document (vla-get-ActiveDocument acad_object)
-    modelspace (vla-get-modelspace active_document)
-    date (rtos (getvar "CDATE") 2 6)
-    h (atoi (substr date 10 2))
-    m (atoi (substr date 12 2))
-    s (atoi (substr date 14 2))
-    h_delta -0.000145444
-    m_delta -0.00174533
-    s_delta -0.10472
-    h_rot (*  h_delta (+ (* 3600 h) (* 60 m) s))
-    m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2))
-    s_rot (+ (* s_delta s) (/ pi 2))
-    c_block (vla-InsertBlock modelspace insertion_point c_ref 1 1 1 0)
-    h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 h_rot)
-    m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 m_rot)
-    s_block (vla-InsertBlock modelspace insertion_point s_ref 1 1 1 s_rot)
-	)
+(defun c:drawAll()
+  (c:borrar)
+	;variables
+	(setq	basedig1 '(0 0)
+				basedig2 '(1600 750)
+				basedig3 '(50 600)
+				baseanl1 '(0 750)
+				baseanl2 '(1600 2350)
+				baseanl3 '(50 2200)
+				basealm1 '(1650 0)
+				basealm2 '(3250 750)
+				basealm3 '(1700 600)
+				basetemp1 '(1650 800)
+				basetemp2 '(3250 1550)
+				basetemp3 '(1700 1400)
+				baserecor1 '(1650 1600)
+				baserecor2 '(3250 2350)
+				baserecor3 '(1700 2200)
+				basecal1 '(3300 0)
+				basecal2 '(4900 750)
+				basecal3 '(3350 600)
+				basezhor1 '(3300 800)
+				basezhor2 '(4900 1550)
+				basezhor3 '(3350 1400)
+				basecrono1 '(3300 1600)
+				basecrono2 '(4900 2350)
+				basecrono3 '(3350 2200)
+				listaobj '("0"))
+  
+	;parte reloj digital (1)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" basedig1 basedig2)
+	(setq dig (ssget "_W" basedig1 basedig2)
+				listaobj (cons dig listaobj))
+	(vl-cmdf "_rectang" '(200 200) '(1400 550))
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" basedig3 100 0 "1. Digital")
+	(vl-cmdf "_color" 1)
+	(vl-cmdf "_rectang" '(250 250) '(550 500))
+	(vl-cmdf "_rectang" '(700 250) '(1000 500))
+	(vl-cmdf "_rectang" '(1050 250) '(1300 350))
+	(vl-cmdf "_rectang" '(1050 400) '(1350 500))
+	(vl-cmdf "_circle" '(625 325) 25)
+	(vl-cmdf "_circle" '(625 425) 25)
+  (digital)
 
-  (vla-scaleEntity c_block (vla-get-Insertionpoint c_block)  22)
-	(vla-scaleEntity h_block (vla-get-Insertionpoint h_block)  22)
-	(vla-scaleEntity m_block (vla-get-Insertionpoint m_block)  22)
-	(vla-scaleEntity s_block (vla-get-Insertionpoint s_block)  22)
+	;parte reloj analogico (2)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" baseanl1 baseanl2)
+	(setq analogo (ssget "_W" baseanl1 baseanl2)
+				listaobj (cons analogo listaobj))
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" baseanl3 100 0 "2. Analogo")
+	(vl-cmdf "_color" 7)
+	(analog 800 1550 "case" "hor" "min" "sec")
+  (setq colorD 255)
+  
+	;parte alarma (3)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" basealm1 basealm2)
+  (setq alarma (ssget "_W" basealm1 basealm2)
+				listaobj (cons alarma listaobj))
+	(vl-cmdf "_rectang" '(1850 200) '(3150 550))
+  (vl-cmdf "_text" "_J" "_MC" "2945,375" 100 0 "OFF")
+  (setq entonoff (entlast)
+		    obj_onoff (vlax-ename->vla-object (entlast)))
+  (vl-cmdf "_text" "_J" "_MC" "2500,375" 200 0 "--")
+  (setq minalarm (entlast)
+		    obj_minalarm (vlax-ename->vla-object (entlast)))
+  (vl-cmdf "_text" "_J" "_MC" "2050,375" 200 0 "--")
+  (setq horalarm (entlast)
+		    obj_horalarm (vlax-ename->vla-object (entlast)))
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" basealm3 100 0 "3. Alarma")
+  (vl-cmdf "_color" 1)
+	(vl-cmdf "_rectang" '(1900 250) '(2200 500))
+	(vl-cmdf "_rectang" '(2350 250) '(2650 500))
+	(vl-cmdf "_rectang" '(2800 250) '(3100 500))
+	(vl-cmdf "_circle" '(2275 305) 25)
+	(vl-cmdf "_circle" '(2275 405) 25)
+
+	;parte temporizador (4)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" basetemp1 basetemp2)
+	(setq temp (ssget "_W" basetemp1 basetemp2)
+				listaobj (cons temp listaobj))
+	(vl-cmdf "_rectang" '(1850 1000) '(3050 1350))
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" basetemp3 100 0 "4. Temporizador")
+	(vl-cmdf "_color" 1)
+	(vl-cmdf "_rectang" '(1900 1050) '(2200 1300))
+	(vl-cmdf "_rectang" '(2350 1050) '(2650 1300))
+	(vl-cmdf "_rectang" '(2700 1050) '(2950 1150))
+	(vl-cmdf "_rectang" '(2700 1200) '(3000 1300))
+	(vl-cmdf "_circle" '(2275 1125) 25)
+	(vl-cmdf "_circle" '(2275 1225) 25)
+  (drawTemp 1900 1050)
+
+	;parte recordatorio (5)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" baserecor1 baserecor2)
+	(setq recor (ssget "_W" baserecor1 baserecor2)
+				listaobj (cons recor listaobj))
+	(vl-cmdf "_rectang" '(1850 1800) '(3050 2150))
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" baserecor3 100 0 "5. Recordatorio")
+	(c:initR)
+  (c:drawNextR) 
+  (setq colorR 255)
+  
+	;parte calendario (6)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" basecal1 basecal2)
+	(setq cal (ssget "_W" basecal1 basecal2)
+				listaobj (cons cal listaobj))
+	(vl-cmdf "_rectang" '(3500 200) '(4700 550))
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" basecal3 100 0 "6. Calendario")
+	(c:calendario nil)
+  
+	;parte zona horaria (7)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" basezhor1 basezhor2)
+  (setq zhor (ssget "_W" basezhor1 basezhor2)
+				listaobj (cons zhor listaobj))
+	(vl-cmdf "_rectang" '(3500 1000) '(4700 1350))
+  (vl-cmdf "_text" "_J" "_MC" "4225,1250" 50 0 "HORAS")
+  (setq vlaM2Zh (vlax-ename->vla-object (entlast)))
+  (vl-cmdf "_text" "_J" "_MC" "4525,1250" 50 0 "MINUT")
+  (setq vlaM1Zh (vlax-ename->vla-object (entlast)))
+  (drawzh)
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" basezhor3 100 0 "7. Zona Horaria")
+	(vl-cmdf "_color" 1)
+	(vl-cmdf "_rectangle" '(3550 1050) '(4000 1300))
+  (vl-cmdf "_rectangle" '(4100 1050) '(4350 1175))
+  (vl-cmdf "_rectangle" '(4100 1200) '(4350 1300))
+  (vl-cmdf "_rectangle" '(4400 1050) '(4650 1175))
+  (vl-cmdf "_rectangle" '(4400 1200) '(4650 1300))
+
+	;parte cronometro (8)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" basecrono1 basecrono2)
+	(setq crono (ssget "_W" basecrono1 basecrono2)
+				listaobj (cons crono listaobj))
+	(vl-cmdf "_rectang" '(3500 1800) '(4800 2150))
+  (draw_crono)
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" basecrono3 100 0 "8. Cronometro")
+	(vl-cmdf "_color" 1)
+	(vl-cmdf "_rectang" '(3550 1850) '(3850 2100))
+	(vl-cmdf "_rectang" '(4000 1850) '(4300 2100))
+	(vl-cmdf "_rectang" '(4450 1850) '(4750 2100))
+	(vl-cmdf "_circle" '(3925 1925) 25)
+	(vl-cmdf "_circle" '(3925 2025) 25)
+  (vl-cmdf "_circle" '(4375 1925) 25)
+	(vl-cmdf "_circle" '(4375 2025) 25)
+
+	;parte cronografo (9)
+	(vl-cmdf "_color" 7)
+	(vl-cmdf "_rectang" '(4950 0) '(5700 750))
+	(vl-cmdf "_rectang" '(5100 150) '(5550 600))
+	(vl-cmdf "_rectang" '(4950 800) '(5700 1550))
+	(vl-cmdf "_rectang" '(5100 950) '(5550 1400))
+	(vl-cmdf "_rectang" '(4950 1600) '(5700 2350))
+	(vl-cmdf "_rectang" '(5100 1750) '(5550 2200))
+	(setq cronog (ssget "_W" '(4950 0) '(5700 2350))
+				listaobj (cons cronog listaobj))
+	(vl-cmdf "_color" 30)
+	(vl-cmdf "_text" '(5850 750) 100 90 "9. Cronografo")
+	(vl-cmdf "_color" 1)
+	(vl-cmdf "_circle" '(5325 375) 200)
+	(vl-cmdf "_circle" '(5325 1175) 200)
+	(vl-cmdf "_circle" '(5325 1975) 200)
+	(c:cronografo)
+	(setq listaobj (reverse listaobj))
+	(vla-zoomextents (vlax-get-acad-object))
+
 )
 
-(defun c:runAnalog(c_ref h_ref m_ref s_ref)
-  (vla-delete h_block)
-  (vla-delete m_block)
-  (vla-delete s_block)
-  (setq
-      date (rtos (getvar "CDATE") 2 6)
-      h (atoi (substr date 10 2))
-      m (atoi (substr date 12 2))
-      s (atoi (substr date 14 2))
-      h_delta -0.000145444
-      m_delta -0.00174533
-      s_delta -0.10472
-      h_rot (*  h_delta (+ (* 3600 h) (* 60 m) s))
-      m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2))
-      s_rot (+ (* s_delta s) (/ pi 2))
-      h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 h_rot)
-      m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 m_rot)
-      s_block (vla-InsertBlock modelspace insertion_point s_ref 1 1 1 s_rot)
-  )
-  
- 	(vla-scaleEntity h_block (vla-get-Insertionpoint h_block)  22)
-	(vla-scaleEntity m_block (vla-get-Insertionpoint m_block)  22)
-	(vla-scaleEntity s_block (vla-get-Insertionpoint s_block)  22)
-  
-  (defun silent(com val)
-    (setq old (getvar "cmdecho"))
-    (setvar "cmdecho" 0)
-    (vl-cmdf com val)
-    (setvar "cmdecho" old)
-  )
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;-------------------------------FUNCIONES DEL RELOJ------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
 
-   (silent "_vscurrent" "_r")
+;------------------------------- Reloj Digital (1) ------------------------------------------
 
-	(setq ObjHH2 (setq H22 (subst (cons 62 colorD) (assoc 62 ObjHH2) ObjHH2)));Cambia el color de el texto al color 7:Blanco
- 	(entmod H22)
-  	(setq ObjMM2 (setq M22 (subst (cons 62 colorD) (assoc 62 ObjMM2) ObjMM2)))
- 	(entmod M22)
-  	(setq ObjSS2 (setq S22 (subst (cons 62 colorD) (assoc 62 ObjSS2) ObjSS2)))
- 	(entmod S22)
-
-   (setq anot (substr date 1 4)
-		   mest (substr date 5 2)
-		   diat (substr date 7 2)
-         ht   (substr date 10 2)
-         mt   (substr date 12 2)
-         st   (substr date 14 2)
-			)
-
-  (setq error 0)
-  
-  (ErrorReloj1)
-
-  (modzonahor minmas hormas diamas mt ht diat mest anot)
-
-  (setq ht ht2)
-  (setq mt mt2)
-
-  (repeat hormas
-	 (vla-rotate h_block insertion_point (- 0 (/ pi 6)))
-  )
-  (repeat minmas
-	 (vla-rotate m_block insertion_point (- 0 (/ pi 30)))
-    (vla-rotate h_block insertion_point (- 0 (/ pi 360)))
-  )
-  
-  (while
-
-	 (setq date (rtos (getvar "CDATE") 2 6))
-    (setq s (rem (1+ s) 60))
-    (if (= s 0) (progn
-      (setq m (rem (1+ m) 60))
-      (if (= m 0)
-        (setq h (rem (1+ h) 24))
-      ))
-    )
-    
-    (vla-rotate h_block insertion_point h_delta)
-    (vla-rotate m_block insertion_point m_delta)
-    (vla-rotate s_block insertion_point s_delta)
-
-	 (runDigital)
-	 (ErrorReloj2)
-	 
-    (silent "_.delay" 1000)
-  )
-  
-)
-
-;------------------------------Reloj digital-------------------------------
-
-;Dibujar el reloj
-
+;Dibujar el reloj digital
 (defun digital ()
   
 	(setq acadObj (vlax-get-acad-object))
@@ -213,7 +292,6 @@
   (setq mt (substr date 12 2))  ;sustraigo el valor del min
  	(setq st (substr date 14 2))  ;sustraigo el valor del seg
 
-  
   (setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
  	(entmod H22)
   (setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
@@ -223,16 +301,9 @@
 
 )
 
-;Correr el reloj
+;Correr el reloj digital
 
 (defun runDigital()
-  ;(setq anot (substr date 1 4)
-		   ;mest (substr date 5 2)
-		   ;diat (substr date 7 2)
-         ;ht   (substr date 10 2)
-         ;mt   (substr date 12 2)
-         ;st   (substr date 14 2)
-  ;)
 
   (setq st (atoi st)
 		  mt (atoi mt)
@@ -269,8 +340,6 @@
 	 )	
   )
   
-  (checkalarm ht2 mt2 st minalarm horalarm)
-
   (if (< st 10)
 		(setq st (strcat "0" (itoa st)))
 	   (setq st (itoa st))
@@ -283,409 +352,187 @@
 	   (setq ht (strcat "0" (itoa ht)))
 	   (setq ht (itoa ht))
   )
-  
   (setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
  	(entmod H22)
   (setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
  	(entmod M22)
 	(setq ObjSS2 (setq S22 (subst (cons 1  st) (assoc 1 ObjSS2) ObjSS2)))
  	(entmod S22)
-  
   (vlax-put-property vlaDiaDig "TextString" diat2)
   (vlax-put-property vlaMesDig "TextString" mest2)
   (vlax-put-property vlaA�oDig "TextString" anot2)
-
-)
-
-;------------------------------------Recordatorio--------------------------
-
-(defun c:initR()
-   (vl-cmdf "_color" 255)
-	(setq recordatoriosList (list "No hay eventos"))
-	(setq objRecordatorio (vla-AddText modelSpace "test" (vlax-3d-point 1850 1990 0) 120)
-			objR1 (entget(entlast))
-			vlaM1Rec (vlax-ename->vla-object (entlast))
-			objRecordatorio2 (vla-AddText modelSpace "test" (vlax-3d-point 1850 1820 0) 120)
-			objR2 (entget(entlast))
- 			vlaM2Rec (vlax-ename->vla-object (entlast))
-			)
-)
-(defun c:drawNextR ()
-	(setq recLength (- (vl-list-length recordatoriosList) 1)
-			recMes 11
-			recDia 31
-			counter 1)
-	
-  	(if (= 0 recLength)
-	  (progn
-	  		(setq textRecordatorio (nth 0 recordatoriosList)
-			  		elementoLista nil)
-			  (setq objR1 (setq objR12 (subst (cons 1 "") (assoc 1 objR1) objR1)))
-			  (entmod objR12)
-			  (setq objR2 (setq objR22 (subst (cons 1 textRecordatorio) (assoc 1 objR2) objR2)))
-			  (entmod objR22)
-	  )
-	  (progn
-			(repeat recLength
-			  (setq elementoLista (nth counter recordatoriosList))
-			  (if (= (nth 4 elementoLista) (atoi anot))
-				 (if (and (= (nth 2 elementoLista) (atoi mest))
-					(<= (nth 2 elementoLista) recMes))
-					(progn
-					  	(setq recMes (nth 2 elementoLista))
-					  
-						(if (and (>= (nth 1 elementoLista) (atoi diat))
-							(<= (nth 1 elementoLista) recDia))
-						  	(progn 
-								(setq recDia (nth 1 elementoLista)
-										textRecordatorio elementoLista)
-							)
-					 	)
-					 )
-					 (if (and (> (nth 2 elementoLista) (atoi mest))
-							(<= (nth 2 elementoLista) recMes))
-						 (progn
-							(setq recMes (nth 2 elementoLista)
-									textRecordatorio elementoLista)
-						 )
-					 )
-				 )
-			  )
-			  (setq counter (1+ counter))
-			)
-		  (setq objR1 (setq objR12 (subst (cons 1 (strcat (itoa (nth 1 textRecordatorio)) " de " (nth 3 textRecordatorio) ":" )) (assoc 1 objR1) objR1)))
-		  (entmod objR12)
-		  (setq objR2 (setq objR22 (subst (cons 1 (nth 0 textRecordatorio)) (assoc 1 objR2) objR2)))
-		  (entmod objR22)
-		 
-		  (setq objR1 (setq objR12 (subst (cons 62 colorR) (assoc 62 objR1) objR1)))
-		  (entmod objR12)
-		  (setq objR2 (setq objR22 (subst (cons 62 colorR) (assoc 62 objR2) objR2)))
-		  (entmod objR22)
-	  )
-   )
-)
-
-(defun c:recordatorio()
   
-	(setq lst '("Enero" "Febrero" "Marzo" "Abril" "Mayo" "Junio" "Julio" "Agosto" "Septiembre" "Octubre" "Noviembre" "Diciembre"));Nombres de los meses
-	(setq d28 '("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28"));Días del mes de febrero
-	(setq d29 '("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29"));Días del mes de febrero (si el año es bisiesto
-	(setq d30 '("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30"));Días de los meses con 30 días
-	(setq d31 '("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30" "31"));Días de los meses con 31 días
-	(setq years '("2020" "2021" "2022" "2023" "2024" "2025" "2026" "2027" "2028" "2029" "2030")) 
-	(setq mes_r 0);Establece por defecto el mes de Enero sí no se selecciona algún mes en la caja de diálogo
-	(setq dia_r 0);Establece por defecto el día 1 sí no se selecciona algún día en la caja de diálogo (Caja de diálogo #2)
-	(setq year_r 0);Establece por defecto el año 2020 sí no se selecciona algún año en la caja de diálogo
-	(setq record_r "");Establece por defecto vacío el recordatorio sí no se coloca alguno 
-	(setq cerrada 0);Verifica por cuál botón se cierra la caja (se mantendrá en 0 si la caja se cierra por el botón cancel y se le asignará el valor de 1 sí la caja se cierra por el botón "Guardar y establecer día"
-
-	(new_dialog "record" archivo);Abre la primera caja de dialogo donde se selecciona el mes, el año y se añade el recordatorio
-
-	(start_list "mes")
-	(mapcar 'add_list lst) ;Llena el popup_list de los meses
-	(end_list)
-
-	(start_list "year")
-	(mapcar 'add_list years) ;Llena el popup_list de los años
-	(end_list)
-
-	(action_tile "save" "(setq cerrada 1) (done_dialog)");Cierra la caja cuando se presione el botón "Guardar y establecer día"
-	(action_tile "mes" "(setq mes_r (atoi $value))");Guarda la posición seleccionada de la lista de meses en la variable mes_r
-	(action_tile "year" "(setq year_r (atoi $value))");Guarda la posición seleccionada de la lista de years en la variable year_r
-	(action_tile "rec" "(setq record_r (get_tile \"rec\"))");Guarda el valor introducido en la edit_box de etiqueta en la variable recordatorio
-
-	(start_dialog)
-
-	(cond ((= mes_r 0) (progn (setq nm "Enero") (setq dias d31)))
-			((= mes_r 1) (progn (setq nm "Febrero") (setq dias d28)))
-	      ((= mes_r 2) (progn (setq nm "Marzo") (setq dias d31)))
-	      ((= mes_r 3) (progn (setq nm "Abril") (setq dias d30)))
-	      ((= mes_r 4) (progn (setq nm "Mayo") (setq dias d31)))
-	      ((= mes_r 5) (progn (setq nm "Junio") (setq dias d30)))
-	      ((= mes_r 6) (progn (setq nm "Julio") (setq dias d31)))
-	      ((= mes_r 7) (progn (setq nm "Agosto") (setq dias d31)))
-	      ((= mes_r 8) (progn (setq nm "Septiembre") (setq dias d30)))
-	      ((= mes_r 9) (progn (setq nm "Octubre") (setq dias d31)))
-	      ((= mes_r 10) (progn (setq nm "Noviembre") (setq dias d30)))
-	      ((= mes_r 11) (progn (setq nm "Diciembre") (setq dias d31)))
-	      );Establece la cantidad de días que tiene el mes dependiendo del mes seleccionado
-
-	(cond ((= year_r 0) (setq year_r 2020))
-			((= year_r 1) (setq year_r 2021))
-			((= year_r 2) (setq year_r 2022))
-			((= year_r 3) (setq year_r 2023))
-			((= year_r 4) (setq year_r 2024))
-			((= year_r 5) (setq year_r 2025))
-			((= year_r 6) (setq year_r 2026))
-			((= year_r 7) (setq year_r 2027))
-			((= year_r 8) (setq year_r 2028))
-			((= year_r 9) (setq year_r 2029))
-			((= year_r 10) (setq year_r 2030))
-			);Establece el año dependiendo de la posición de la lista que haya retornado la caja de diálogo 1
-
-	(if (and (= mes_r 1) (or (= year_r 2020) (= year_r 2024) (= year_r 2028))) (progn (setq nm "Febrero") (setq dias d29))
-	  );Establece la lista de d29 a la list_box de días si el año es bisiesto (2020,2024 o 2028) y el mes seleccionado fue Febrero
-
-	(setq cerrada2 0);Verifica por cuál botón se cierra la caja (se mantendrá en 0 si la caja se cierra por el botón cancel y se le asignará el valor de 1 sí la caja se cierra por el botón "Guardar"
-	(if (= cerrada 1);Solo sí la caja 1 fue cerrada con el botón "Guardar y establecer día" se cargará la caja 2
-		(progn
-
-		(new_dialog "dias" archivo);Abre la caja de diálogo 2, aquí solo se establece el día (se creo otra caja de diálogo para establecer el día debido a que no encontré la manera de cambiar la cantidad de días (cambiar la lista) una vez la caja es abierta, por ejemplo si selecciono el mes de febrero, quería que los días pasarán de 31 a 29, pero no encontré la manera
-
-		(start_list "dia")
-		(mapcar 'add_list dias);Llena el list_box de los días
-		(end_list)
-
-		(action_tile "save" "(setq cerrada2 1) (done_dialog)");Cierra la caja cuando se presione el botón "Guardar"
-		(action_tile "dia" "(setq dia_r (atoi $value))");Guarda la posición seleccionada de la lista de días en la variable dia_r
-		(start_dialog)
-		)
-	)
+  (checkalarm ht mt st minalarm horalarm)
   
-	(setq recordatoriosList (append recordatoriosList (list (list record_r (1+ dia_r) (1+ mes_r) nm year_r))))
-	(c:drawNextR)
-	(if (= cerrada2 1) 
-		(alert (strcat "Recordatorio" " " "*" record_r "*" " " "establecido para el" " " (itoa (+ dia_r 1)) " " "de" " " nm " " "de" " " (itoa year_r)))
+)
+
+;------------------------------- Reloj Analogico (2) ----------------------------------------
+
+;Dibujar el reloj analogo
+
+(defun analog (x y c_ref h_ref m_ref s_ref)
+  (setq
+    insertion_point (vlax-3D-point x y)
+    acad_object (vlax-get-acad-object)
+    active_document (vla-get-ActiveDocument acad_object)
+    modelspace (vla-get-modelspace active_document)
+    date (rtos (getvar "CDATE") 2 6)
+    h (atoi (substr date 10 2))
+    m (atoi (substr date 12 2))
+    s (atoi (substr date 14 2))
+    h_delta -0.000145444
+    m_delta -0.00174533
+    s_delta -0.10472
+    h_rot (*  h_delta (+ (* 3600 h) (* 60 m) s))
+    m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2))
+    s_rot (+ (* s_delta s) (/ pi 2))
+    c_block (vla-InsertBlock modelspace insertion_point c_ref 1 1 1 0)
+    h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 h_rot)
+    m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 m_rot)
+    s_block (vla-InsertBlock modelspace insertion_point s_ref 1 1 1 s_rot)
 	)
 
+  (vla-scaleEntity c_block (vla-get-Insertionpoint c_block)  22)
+	(vla-scaleEntity h_block (vla-get-Insertionpoint h_block)  22)
+	(vla-scaleEntity m_block (vla-get-Insertionpoint m_block)  22)
+	(vla-scaleEntity s_block (vla-get-Insertionpoint s_block)  22)
 )
 
+;Correr el reloj Analogo
 
-;------------------------------------Reactores-----------------------------
-
-
-;Función de cambio (click derecho)
-(defun change (Caller CmdSet)
-	(check)
-)
-
-;Funci�n de selecci�n/menu (doble click)
-(defun menuOption (Caller CmdSet)
-	(new_dialog "Menu_reactor" archivo)
-  		(action_tile "b1" "(setq op 1)")
-  		(action_tile "b2" "(setq op 2)")
-  	(start_dialog)
-)
-
-;Verificar opci�n de menu
-
-
-(defun check()
-	(if (= op 1)
-	 	(progn
-			(changeColor)
-	 	)
-  	)
-	(if (= op 2)
-	   (progn
-			(changeFunction)
-		)
-	)
-)
-
-;Funci�n cambiar color de figura
-
-(defun changeColor()
-
-		(setq flag 1)
+(defun c:runAnalog(c_ref h_ref m_ref s_ref)
+  (vla-delete h_block)
+  (vla-delete m_block)
+  (vla-delete s_block)
+  (setq
+      date (rtos (getvar "CDATE") 2 6)
+      h (atoi (substr date 10 2))
+      m (atoi (substr date 12 2))
+      s (atoi (substr date 14 2))
+      h_delta -0.000145444
+      m_delta -0.00174533
+      s_delta -0.10472
+      h_rot (*  h_delta (+ (* 3600 h) (* 60 m) s))
+      m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2))
+      s_rot (+ (* s_delta s) (/ pi 2))
+      h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 h_rot)
+      m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 m_rot)
+      s_block (vla-InsertBlock modelspace insertion_point s_ref 1 1 1 s_rot)
+  )
   
-		(while (not (= flag 0)) ;Mientras no se de a aceptar
+ 	(vla-scaleEntity h_block (vla-get-Insertionpoint h_block)  22)
+	(vla-scaleEntity m_block (vla-get-Insertionpoint m_block)  22)
+	(vla-scaleEntity s_block (vla-get-Insertionpoint s_block)  22)
   
-  		(new_dialog "Color_reactor" archivo)
-  		(setq color 255)
-			(action_tile "colorR" "(updateR $value)");Obtener valor de color y asignarlo a los otros elementos del menu
-				(defun updateR (val)
-						(set_tile "EstablecerR" val)
-					  	(setq color (atoi (get_tile "colorR")))
-					  	(boxColorR)
-					)
-				   (action_tile "EstablecerR" "(update2R $value)")
-				  	(defun update2R (val)
-						(set_tile "colorR" val)
-					  	(setq color (atoi (get_tile "colorR")))
-					  	(boxColorR)
-					)
-				   (defun boxColorR()
-						(setq w (dimx_tile "imgColorR")
-								h (dimy_tile "imgColorR"))
-					   (start_image "imgColorR")
-					  	(fill_image 0 0 w h color)
-					   (print w)
-					  	(end_image)
-					)
-  
-  		(setq itemsList (list "Todo" "Reloj Digital" "Alarma"
-									 "Temporizador" "Recordatorio" "Calendario"
-									 "Zona Horaria" "Cronometro"))
+  (defun silent(com val)
+    (setq old (getvar "cmdecho"))
+    (setvar "cmdecho" 0)
+    (vl-cmdf com val)
+    (setvar "cmdecho" old)
+  )
 
-		(start_list "shapes")
-		(mapcar 'add_list itemsList)
-		(end_list)
+   (silent "_vscurrent" "_r")
 
-		(action_tile "ch" "(setq shape (atoi (get_tile \"shapes\"))) (done_dialog 1)")
-		(action_tile "accept" "(done_dialog 0)")
-		(setq flag (start_dialog))
+	(setq ObjHH2 (setq H22 (subst (cons 62 colorD) (assoc 62 ObjHH2) ObjHH2)));Cambia el color de el texto al color 7:Blanco
+ 	(entmod H22)
+  	(setq ObjMM2 (setq M22 (subst (cons 62 colorD) (assoc 62 ObjMM2) ObjMM2)))
+ 	(entmod M22)
+  	(setq ObjSS2 (setq S22 (subst (cons 62 colorD) (assoc 62 ObjSS2) ObjSS2)))
+ 	(entmod S22)
 
-		(if (= flag 1)
-		  	(progn
-			  	(setq alertString (strcat "Color cambiado a " (itoa color) ". Presione Aceptar"))
-				(alert alertString)
-				(setq cursor (vl-remove 0.0 (nth 0 (cdr (grread T 1 15)))))
-
-				(setq objList (list))
-			  	
-			  	(cond
-				  		;Colorear todo
-				  		((= shape 0) (progn
-											(vla-put-color vlaDiaDig color)
-											(vla-put-color vlaMesDig color)
-											(vla-put-color vlaA�oDig color)
-											(vla-put-color vlaHoraDig color)
-											(vla-put-color vlaMinDig color)
-											(vla-put-color vlaSegDig color)
-				
-											(vla-put-color obj_onoff color)
-										   (vla-put-color obj_minalarm color)
-										   (vla-put-color obj_horalarm color)
-
-											(vla-put-color vlaHorTemp color)
-										   (vla-put-color vlaMinTemp color)
-										   (vla-put-color vlaSecTemp color)
-
-											(vla-put-color vlaM1Rec color)
-											(vla-put-color	vlaM2Rec color)
-											
-											(vla-put-color vlaM1Cal color)
-											(vla-put-color	vlaM2Cal color)
-
-											(vla-put-color vlaAbrZh color)
-										   (vla-put-color vlaHorZh color)
-										   (vla-put-color vlaMinZh color)
-											(vla-put-color vlaM1Zh color)
-											(vla-put-color vlaM2Zh color)
-
-											(vla-put-color ObjTh color)
-										   (vla-put-color ObjTm color)
-										   (vla-put-color ObjTs color)
-											(setq colorD color
-													colorR color)
-										 ))
-						;Colorear elementos del digital
-						((= shape 1) (progn
-											(setq colorD color)
-											(vla-put-color vlaDiaDig color)
-											(vla-put-color vlaMesDig color)
-											(vla-put-color vlaA�oDig color)
-											(vla-put-color vlaHoraDig color)
-											(vla-put-color vlaMinDig color)
-											(vla-put-color vlaSegDig color)
-										 ))
-						;Colorear elementos de la alarma
-						((= shape 2) (progn
-											(vla-put-color obj_onoff color)
-										   (vla-put-color obj_minalarm color)
-										   (vla-put-color obj_horalarm color)
-										 ))
-						;Colorear elementos del temporizador
-						((= shape 3) (progn
-											(vla-put-color vlaHorTemp color)
-										   (vla-put-color vlaMinTemp color)
-										   (vla-put-color vlaSecTemp color)
-										 ))
-						;Colorear elementos del recordatorio
-						((= shape 4) (progn
-											(vla-put-color vlaM1Rec color)
-											(vla-put-color	vlaM2Rec color)
-											(setq colorR color)
-										 ))
-						;Colorear elementos del calendario
-						((= shape 5) (progn
-											(vla-put-color vlaM1Cal color)
-											(vla-put-color	vlaM2Cal color)  
-										 ))
-						;Colorear elementos de la zona horaria
-						((= shape 6) (progn
-											(vla-put-color vlaAbrZh color)
-										   (vla-put-color vlaHorZh color)
-										   (vla-put-color vlaMinZh color)
-											(vla-put-color vlaM1Zh color)
-											(vla-put-color vlaM2Zh color)
-										 ))
-						;Colorear elementos del cronometro
-						((= shape 7) (progn
-											(vla-put-color ObjTh color)
-										   (vla-put-color ObjTm color)
-										   (vla-put-color ObjTs color)
-										 ))
-				)
+   (setq anot (substr date 1 4)
+		   mest (substr date 5 2)
+		   diat (substr date 7 2)
+         ht   (substr date 10 2)
+         mt   (substr date 12 2)
+         st   (substr date 14 2)
 			)
-		)
-	)
+
+  (setq error 0)
+  
+  (ErrorReloj1)
+  (modzonahor minmas hormas diamas mt ht diat mest anot)
+
+  (setq ht ht2)
+  (setq mt mt2)
+
+  (repeat hormas
+	 (vla-rotate h_block insertion_point (- 0 (/ pi 6)))
+  )
+  (repeat minmas
+	 (vla-rotate m_block insertion_point (- 0 (/ pi 30)))
+    (vla-rotate h_block insertion_point (- 0 (/ pi 360)))
+  )
+  
+  (while
+
+	 (setq date (rtos (getvar "CDATE") 2 6))
+    (setq s (rem (1+ s) 60))
+    (if (= s 0) (progn
+      (setq m (rem (1+ m) 60))
+      (if (= m 0)
+        (setq h (rem (1+ h) 24))
+      ))
+    )
+    
+    (vla-rotate h_block insertion_point h_delta)
+    (vla-rotate m_block insertion_point m_delta)
+    (vla-rotate s_block insertion_point s_delta)
+
+	 (runDigital)
+	 (ErrorReloj2)
+	 
+    (silent "_.delay" 1000)
+  )
   
 )
 
-;Cambiar funci�n a ejecutar por comando
+;------------------------------- Alarma (3) -------------------------------------------------
 
-(defun changeFunction()
+(defun setalarm (ent1 ent2 ent3)
   
-		(setq flag 1)
+  ;Crea los objetos
+  (setq obj_onoff    (vlax-ename->vla-object ent1)
+        obj_minalarm (vlax-ename->vla-object ent2)
+        obj_horalarm (vlax-ename->vla-object ent3)
+  )
   
-		(while (not (= flag 0))
-  
-  		(new_dialog "Funciones_reactor" archivo)		   
-  
-  		(setq itemsList (list "Reloj"
-									 "Alarma" "Temporizador" "Recordatorio"
-									 "Calendario" "Zona Horaria" "Cronometro"
-									 "Cronografo"))
+  (new_dialog "CDSetalarm" archivo)  ;mismo nombre del DIALOG
 
-		(start_list "functions")
-		(mapcar 'add_list itemsList)
-		(end_list)
-
-		(action_tile "chf" "(setq func (get_tile \"functions\")) (done_dialog 1)")
-		(action_tile "accept" "(done_dialog 0)")
-		(setq flag (start_dialog))
-
-		(if (= flag 1)
-		  	(progn
-			  	(setq alertString (strcat "Funci�n a ejecutar: " (nth (atoi func) itemsList) ". Presione Aceptar"))
-				(alert alertString)
-		  
-		  		(setq func (atoi func))
-			)
-		)
-	)
+  (action_tile "horset" "(setq horset (get_tile \"horset\"))")
+  (action_tile "minset" "(setq minset (get_tile \"minset\"))")
+  
+  (start_dialog)
+  
+  (vlax-put-property obj_onoff    "TextString"  "ON")
+  (vlax-put-property obj_minalarm "TextString"  minset)
+  (vlax-put-property obj_horalarm "TextString"  horset)
+  
 )
 
-
-;runFunction es una alternativa a los botones, lo cual permite ejecutar el reloj de dos
-;formas diferentes, teniendo en cuenta la elecci�n en la caja de dialogo
-(defun c:runFunction()
-	(cond ((= func 0) (c:IniciarReloj))
-			((= func 1) (c:veralarma))
-			((= func 2) (c:vertemporizador))
-			((= func 3) (c:verrecordatorio))
-			((= func 4) (c:vercalendario))
-			((= func 5) (c:verzonahoraria))
-			((= func 6) (c:vercronometro))
-			((= func 7) (c:vercronografo))
-			)
+(defun c:alarma ()
+  (setq sonido "1.mp3")
+  (setq mp (vlax-create-object "wmplayer.OCX"))
+  (vlax-invoke mp 'openPlayer (findfile sonido))
+  (vlax-release-object mp)  
 )
 
-;Definici�n de reactores
-
-(defun c:initReactors()
-  (setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginDoubleClick  . menuOption))))
-	(setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginRightClick  . change))))
+(defun checkalarm (hortrue mintrue segtrue ent2 ent3)
+  
+  ;Crea los objetos
+  (setq obj_minalarm2 (vlax-ename->vla-object ent2)
+        obj_horalarm2 (vlax-ename->vla-object ent3)
+  )
+  
+  (setq min1 (vlax-get-property obj_minalarm2 "TextString")
+        hor1 (vlax-get-property obj_horalarm2 "TextString")
+        condicionalarma (and (= min1 mintrue) (= hor1 hortrue) (= "00" segtrue) )
+  )
+  
+  (if (= condicionalarma T) (c:alarma))
 )
 
-(c:initReactors)
-
-;(vlax-dump-object vla1)obtener info
-
-;-----------------------------Temporizador------------------------------
+;------------------------------- Temporizador (4) -------------------------------------------
 
 (defun Tempo(hor minu secu x y)
 	(drawTemp x y)
@@ -864,8 +711,161 @@
   	(updTemp hora minuto segundo)
 )
 
+;------------------------------- Recordatorio (5) -------------------------------------------
 
-;---------------------------------Calendario (Un día como hoy)---------------------------------
+(defun c:initR()
+   (vl-cmdf "_color" 255)
+	(setq recordatoriosList (list "No hay eventos"))
+	(setq objRecordatorio (vla-AddText modelSpace "test" (vlax-3d-point 1850 1990 0) 120)
+			objR1 (entget(entlast))
+			vlaM1Rec (vlax-ename->vla-object (entlast))
+			objRecordatorio2 (vla-AddText modelSpace "test" (vlax-3d-point 1850 1820 0) 120)
+			objR2 (entget(entlast))
+ 			vlaM2Rec (vlax-ename->vla-object (entlast))
+			)
+)
+(defun c:drawNextR ()
+	(setq recLength (- (vl-list-length recordatoriosList) 1)
+			recMes 11
+			recDia 31
+			counter 1)
+	
+  	(if (= 0 recLength)
+	  (progn
+	  		(setq textRecordatorio (nth 0 recordatoriosList)
+			  		elementoLista nil)
+			  (setq objR1 (setq objR12 (subst (cons 1 "") (assoc 1 objR1) objR1)))
+			  (entmod objR12)
+			  (setq objR2 (setq objR22 (subst (cons 1 textRecordatorio) (assoc 1 objR2) objR2)))
+			  (entmod objR22)
+	  )
+	  (progn
+			(repeat recLength
+			  (setq elementoLista (nth counter recordatoriosList))
+			  (if (= (nth 4 elementoLista) (atoi anot))
+				 (if (and (= (nth 2 elementoLista) (atoi mest))
+					(<= (nth 2 elementoLista) recMes))
+					(progn
+					  	(setq recMes (nth 2 elementoLista))
+					  
+						(if (and (>= (nth 1 elementoLista) (atoi diat))
+							(<= (nth 1 elementoLista) recDia))
+						  	(progn 
+								(setq recDia (nth 1 elementoLista)
+										textRecordatorio elementoLista)
+							)
+					 	)
+					 )
+					 (if (and (> (nth 2 elementoLista) (atoi mest))
+							(<= (nth 2 elementoLista) recMes))
+						 (progn
+							(setq recMes (nth 2 elementoLista)
+									textRecordatorio elementoLista)
+						 )
+					 )
+				 )
+			  )
+			  (setq counter (1+ counter))
+			)
+		  (setq objR1 (setq objR12 (subst (cons 1 (strcat (itoa (nth 1 textRecordatorio)) " de " (nth 3 textRecordatorio) ":" )) (assoc 1 objR1) objR1)))
+		  (entmod objR12)
+		  (setq objR2 (setq objR22 (subst (cons 1 (nth 0 textRecordatorio)) (assoc 1 objR2) objR2)))
+		  (entmod objR22)
+		 
+		  (setq objR1 (setq objR12 (subst (cons 62 colorR) (assoc 62 objR1) objR1)))
+		  (entmod objR12)
+		  (setq objR2 (setq objR22 (subst (cons 62 colorR) (assoc 62 objR2) objR2)))
+		  (entmod objR22)
+	  )
+   )
+)
+
+(defun c:recordatorio()
+  
+	(setq lst '("Enero" "Febrero" "Marzo" "Abril" "Mayo" "Junio" "Julio" "Agosto" "Septiembre" "Octubre" "Noviembre" "Diciembre"));Nombres de los meses
+	(setq d28 '("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28"));Días del mes de febrero
+	(setq d29 '("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29"));Días del mes de febrero (si el año es bisiesto
+	(setq d30 '("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30"));Días de los meses con 30 días
+	(setq d31 '("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30" "31"));Días de los meses con 31 días
+	(setq years '("2020" "2021" "2022" "2023" "2024" "2025" "2026" "2027" "2028" "2029" "2030")) 
+	(setq mes_r 0);Establece por defecto el mes de Enero sí no se selecciona algún mes en la caja de diálogo
+	(setq dia_r 0);Establece por defecto el día 1 sí no se selecciona algún día en la caja de diálogo (Caja de diálogo #2)
+	(setq year_r 0);Establece por defecto el año 2020 sí no se selecciona algún año en la caja de diálogo
+	(setq record_r "");Establece por defecto vacío el recordatorio sí no se coloca alguno 
+	(setq cerrada 0);Verifica por cuál botón se cierra la caja (se mantendrá en 0 si la caja se cierra por el botón cancel y se le asignará el valor de 1 sí la caja se cierra por el botón "Guardar y establecer día"
+
+	(new_dialog "record" archivo);Abre la primera caja de dialogo donde se selecciona el mes, el año y se añade el recordatorio
+
+	(start_list "mes")
+	(mapcar 'add_list lst) ;Llena el popup_list de los meses
+	(end_list)
+
+	(start_list "year")
+	(mapcar 'add_list years) ;Llena el popup_list de los años
+	(end_list)
+
+	(action_tile "save" "(setq cerrada 1) (done_dialog)");Cierra la caja cuando se presione el botón "Guardar y establecer día"
+	(action_tile "mes" "(setq mes_r (atoi $value))");Guarda la posición seleccionada de la lista de meses en la variable mes_r
+	(action_tile "year" "(setq year_r (atoi $value))");Guarda la posición seleccionada de la lista de years en la variable year_r
+	(action_tile "rec" "(setq record_r (get_tile \"rec\"))");Guarda el valor introducido en la edit_box de etiqueta en la variable recordatorio
+
+	(start_dialog)
+
+	(cond ((= mes_r 0) (progn (setq nm "Enero") (setq dias d31)))
+			((= mes_r 1) (progn (setq nm "Febrero") (setq dias d28)))
+	      ((= mes_r 2) (progn (setq nm "Marzo") (setq dias d31)))
+	      ((= mes_r 3) (progn (setq nm "Abril") (setq dias d30)))
+	      ((= mes_r 4) (progn (setq nm "Mayo") (setq dias d31)))
+	      ((= mes_r 5) (progn (setq nm "Junio") (setq dias d30)))
+	      ((= mes_r 6) (progn (setq nm "Julio") (setq dias d31)))
+	      ((= mes_r 7) (progn (setq nm "Agosto") (setq dias d31)))
+	      ((= mes_r 8) (progn (setq nm "Septiembre") (setq dias d30)))
+	      ((= mes_r 9) (progn (setq nm "Octubre") (setq dias d31)))
+	      ((= mes_r 10) (progn (setq nm "Noviembre") (setq dias d30)))
+	      ((= mes_r 11) (progn (setq nm "Diciembre") (setq dias d31)))
+	      );Establece la cantidad de días que tiene el mes dependiendo del mes seleccionado
+
+	(cond ((= year_r 0) (setq year_r 2020))
+			((= year_r 1) (setq year_r 2021))
+			((= year_r 2) (setq year_r 2022))
+			((= year_r 3) (setq year_r 2023))
+			((= year_r 4) (setq year_r 2024))
+			((= year_r 5) (setq year_r 2025))
+			((= year_r 6) (setq year_r 2026))
+			((= year_r 7) (setq year_r 2027))
+			((= year_r 8) (setq year_r 2028))
+			((= year_r 9) (setq year_r 2029))
+			((= year_r 10) (setq year_r 2030))
+			);Establece el año dependiendo de la posición de la lista que haya retornado la caja de diálogo 1
+
+	(if (and (= mes_r 1) (or (= year_r 2020) (= year_r 2024) (= year_r 2028))) (progn (setq nm "Febrero") (setq dias d29))
+	  );Establece la lista de d29 a la list_box de días si el año es bisiesto (2020,2024 o 2028) y el mes seleccionado fue Febrero
+
+	(setq cerrada2 0);Verifica por cuál botón se cierra la caja (se mantendrá en 0 si la caja se cierra por el botón cancel y se le asignará el valor de 1 sí la caja se cierra por el botón "Guardar"
+	(if (= cerrada 1);Solo sí la caja 1 fue cerrada con el botón "Guardar y establecer día" se cargará la caja 2
+		(progn
+
+		(new_dialog "dias" archivo);Abre la caja de diálogo 2, aquí solo se establece el día (se creo otra caja de diálogo para establecer el día debido a que no encontré la manera de cambiar la cantidad de días (cambiar la lista) una vez la caja es abierta, por ejemplo si selecciono el mes de febrero, quería que los días pasarán de 31 a 29, pero no encontré la manera
+
+		(start_list "dia")
+		(mapcar 'add_list dias);Llena el list_box de los días
+		(end_list)
+
+		(action_tile "save" "(setq cerrada2 1) (done_dialog)");Cierra la caja cuando se presione el botón "Guardar"
+		(action_tile "dia" "(setq dia_r (atoi $value))");Guarda la posición seleccionada de la lista de días en la variable dia_r
+		(start_dialog)
+		)
+	)
+  
+	(setq recordatoriosList (append recordatoriosList (list (list record_r (1+ dia_r) (1+ mes_r) nm year_r))))
+	(c:drawNextR)
+	(if (= cerrada2 1) 
+		(alert (strcat "Recordatorio" " " "*" record_r "*" " " "establecido para el" " " (itoa (+ dia_r 1)) " " "de" " " nm " " "de" " " (itoa year_r)))
+	)
+
+)
+
+;------------------------------- Calendario (6) ---------------------------------------------
 
 (defun c:calendario(alertDate)
 
@@ -918,7 +918,257 @@
   (vlax-release-object tts) ; libera el objeto tts
 )
 
-;---------------------------------Cronografo---------------------------------
+;------------------------------- Zona Horaria (7) -------------------------------------------
+
+;FUNCI�N PARA DIBUJAR LAS ZONAS HORARIAS
+
+(defun drawzh ()
+  
+  ;Abreviatura
+  (vl-cmdf "_text" "_J" "_MC" "3775,1175" 140 0 "BOG")
+  (setq ENT (entlast)
+        vlaAbrZh (vlax-ename->vla-object ENT)
+  )
+  
+  ;Cuantas horas aumenta
+  (vl-cmdf "_text" "_J" "_MC" "4225,1112.5" 75 0 "+00")
+  (setq ENT (entlast)
+        vlaHorZh (vlax-ename->vla-object ENT)
+  )
+  
+  ;Cuantos minutos aumenta
+  (vl-cmdf "_text" "_J" "_MC" "4525,1112.5" 75 0 "+00")
+  (setq ENT (entlast)
+        vlaMinZh (vlax-ename->vla-object ENT)
+  )
+  
+  ;Inicializa las variables
+  (setq minmas 0
+        hormas 0
+        diamas 0
+  )
+  
+)
+
+;FUNCI�N PARA CAMBIAR ZONAS HORARIAS 
+
+(defun c:ChangeTimeZone ()
+  
+  ;Caja de di�logo 
+
+	(setq lista '("Hora de Australia oriental (Sidney)" "Hora oriental (Nueva York)" "Hora de Argentina (Buenos Aires)" "Afganistan"
+					  "Hora estandar Europa Central (Amsterdam)" "Hora media de Greenwich (Londres)" "Hora estandar de Japon (Tokio)"
+					  "Los Angeles" "Moscu" "Rio de Janeiro" "Estambul" "Nairobi" "Hora de China (Pekin)" "Hora de Corea (Seul)"
+					  "Hong Kong" "Tijuana" "Hora estandar de India (Calcuta)" "Hora Amazonas (Manaos)" "Hora de Uruguay (Montevideo)"
+					  "Hora estandar de Europa del Este (Atenas)" "Hora de Arabia (Kuwait)" "Hora de Colombia (Bogota DC)"))
+
+	(new_dialog "UTCs" archivo)
+  
+	(start_list "ciudad")
+	(mapcar 'add_list lista)
+	(end_list)
+  
+	(action_tile "ciudad" "(setq city (atoi $value))")
+  
+	(setq select (start_dialog))
+	(cond ((= city 00)(progn (setq diamas 1) (setq hormas 03) (setq minmas 00))) ;Sidney
+        ((= city 01)(progn (setq diamas 0) (setq hormas 01) (setq minmas 00))) ;NY
+        ((= city 02)(progn (setq diamas 0) (setq hormas 02) (setq minmas 00))) ;BA
+        ((= city 03)(progn (setq diamas 0) (setq hormas 09) (setq minmas 30))) ;Afg
+        ((= city 04)(progn (setq diamas 0) (setq hormas 07) (setq minmas 00))) ;�ms
+        ((= city 05)(progn (setq diamas 0) (setq hormas 06) (setq minmas 00))) ;Lon
+        ((= city 06)(progn (setq diamas 0) (setq hormas 14) (setq minmas 00))) ;Tokio
+        ((= city 07)(progn (setq diamas 0) (setq hormas -2) (setq minmas 00))) ;LA
+        ((= city 08)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Mosc�
+        ((= city 09)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Estam
+        ((= city 10)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Nair
+        ((= city 11)(progn (setq diamas 0) (setq hormas 13) (setq minmas 00))) ;Pek�n
+        ((= city 12)(progn (setq diamas 0) (setq hormas 14) (setq minmas 00))) ;Se�l
+        ((= city 13)(progn (setq diamas 0) (setq hormas 13) (setq minmas 00))) ;HK
+        ((= city 14)(progn (setq diamas 0) (setq hormas 10) (setq minmas 00))) ;Tij
+        ((= city 15)(progn (setq diamas 0) (setq hormas 10) (setq minmas 30))) ;India
+        ((= city 17)(progn (setq diamas 0) (setq hormas 01) (setq minmas 00))) ;Manaos
+        ((= city 18)(progn (setq diamas 0) (setq hormas 00) (setq minmas 00))) ;Montev
+        ((= city 19)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Atenas
+        ((= city 20)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Kuwait
+        ((= city 21)(progn (setq diamas 0) (setq hormas 00) (setq minmas 00))) ;Bgt DC
+	);cond	
+
+  (CambiObjetos city)
+  
+);defun
+
+(defun CambiObjetos (c)
+  
+  (setq lista_abr     (list "SID" "NY" "ARG" "AFG" "AMS" "LDN" "JPN" "LA" "MOS" "RIO" "EST" "NAI" "CN" "KR" "HKN" "MX" "IN" "AMZ" "URG" "ATN" "ARB" "COL")
+        lista_hormas  (list "+03" "+01" "+02" "+09" "+07" "+06" "+14" "-02" "+08" "+02" "+08" "+08" "+13" "+14" "+13" "+10" "+10" "+01" "+00" "+08" "+08" "+00")
+        lista_minmas  (list "+00" "+00" "+00" "+30" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+30" "+00" "+00" "+00" "+00" "+00")
+  )
+  
+  (setq NewAbr    (nth c lista_abr)
+        NewHormas (nth c lista_hormas)
+        NewMinmas (nth c lista_minmas)
+  )
+  
+  (vlax-put-property vlaAbrZh "TextString" NewAbr)
+  (vlax-put-property vlaHorZh "TextString" NewHormas)
+  (vlax-put-property vlaMinZh "TextString" NewMinmas)
+  
+)
+
+(defun modzonahor (minmas1 hormas1 diamas1 mintrue1 hortrue1 diatrue1 mestrue1 anotrue1)
+  
+  ;Aumentos por zona horaria
+  (setq newmin (+ (atoi mintrue1) minmas1)
+        newhor (+ (atoi hortrue1) hormas1)
+        newdia (+ (atoi diatrue1) diamas1)
+        newmes (atoi mestrue1)
+        newano (atoi anotrue1)
+  )
+  
+  ;Ajustes de la nueva hora
+  (if (> newmin 59); Condici�n que determina la hora 
+    (progn
+      (setq newhor (1+ newhor)
+            newmin (+ newmin -60)
+      )
+    )
+  )
+  
+  (if (> newhor 23); Condici�n que determina el d�a
+    (progn
+      (setq newdia (1+ newdia)
+            newhor (+ newhor -24)
+      )
+    )
+  )
+
+  (setq dias_mes '(0 31 (if (= (rem newano 4) 0)(29)(28)) 31 30 31 30 31 31 30 31 30 31)); Determina si un a�o es bisiesto
+
+  (if (= newdia (1+ (nth newmes dias_mes))); Condici�n que determina el mes
+    (progn
+      (setq newmes (1+ newmes)
+	          newdia 1)
+    )
+  )
+
+  (if (= newmes 13); Condici�n que determina el a�o
+    (progn
+      (setq newano (1+ newano)
+	          newmes 1)
+    )
+  )
+  
+  ;Guardar todo en las variables que necesito
+  (setq mt2   (itoa newmin)
+        ht2   (itoa newhor)
+        diat2 (itoa newdia)
+        mest2 (itoa newmes)
+        anot2 (itoa newano)
+  )
+  
+)
+
+;------------------------------- Cronometro (8) ---------------------------------------------
+
+
+;FUNCIONES PARA EL FUNCIONAMIENTO DEL CRONOMETRO
+
+;SEPARAR STRINGS
+(defun splitStr (src delim)
+  (setq wordlist (list))
+  (setq cnt 1)
+  (while (<= cnt (strlen src))
+
+    (setq word "")
+
+    (setq letter (substr src cnt 1))
+    (while (and (/= letter delim) (<= cnt (strlen src)) )
+      (setq word (strcat word letter))
+      (setq cnt (+ cnt 1))      
+      (setq letter (substr src cnt 1))
+    )
+    (setq cnt (+ cnt 1))
+    (setq wordlist (append wordlist (list word)))
+  )
+)
+
+
+;FUNCI�N PARA DIBUJO DEL CRONOMETRO
+
+(defun draw_crono ()
+  
+  (setq textoh "00"
+        textom "00"
+        textos "00"
+  )
+
+  (vl-cmdf "_text" "_J" "_MC" "3700,1975" 200 0 textoh)
+  (setq ENT (entlast)
+        ObjTh (vlax-ename->vla-object ENT)
+  )
+  
+  (vl-cmdf "_text" "_J" "_MC" "4150,1975" 200 0 textom)
+  (setq ENT (entlast)
+        ObjTm (vlax-ename->vla-object ENT)
+  )
+  
+  (vl-cmdf "_text" "_J" "_MC" "4600,1975" 200 0 textos)
+  (setq ENT (entlast)
+        ObjTs (vlax-ename->vla-object ENT)
+  )
+  
+)
+
+;FUNCI�N PARA ABRIR EL CRONOMETRO
+(defun open_crono ()
+  (vl-cmdf "CRONO" "")
+  (vl-cmdf "_delay" 10000 "")
+  (C:crono3)
+)
+
+;CAJA DE DIALOGO PARA ABRIR EL CRONOMETRO
+(defun c:crono2 ()
+    
+  (new_dialog "CDCronometro2" archivo)  ;mismo nombre del DIALOG
+  
+  (action_tile "Open" "(setq active2 T) (done_dialog)")
+  
+  (start_dialog)
+  
+  (if (= active2 T) (open_crono))
+)
+
+;FUNCI�N PARA ACTUALIZAR EL DIBUJO
+
+(defun actu_crono ()
+  ;Abrir el archivo y guardar los valores
+  (setq ruta  (findfile "tiempo.txt")
+        arch  (open ruta "r")
+        hms   (read-line arch)
+  )
+
+  ;Modifica el objeto texto
+  (splitStr hms ":")
+  (vlax-put-property ObjTh "TextString" (nth 0 wordlist))
+  (vlax-put-property ObjTm "TextString" (nth 1 wordlist))
+  (vlax-put-property ObjTs "TextString" (nth 2 wordlist))
+)
+
+;CAJA DE DIALOGO ACTUALIZAR EL DIBUJO
+
+(defun c:crono3 ()
+  
+  (new_dialog "CDCronometro3" archivo)  ;mismo nombre del DIALOG
+  
+  (action_tile "Fresh" "(setq active3 T) (done_dialog)")
+  
+  (start_dialog)
+  
+  (if (= active3 T) (actu_crono))
+)
+
+;------------------------------- Cronografo (9) ---------------------------------------------
 
 (setq option 0)
 (setq secss 0)
@@ -1074,582 +1324,7 @@
 	(setq option 0)
 )
 
-
-;------------------------Funciones visualización-------------------
-
-(defun c:borrar ()
-	(vl-cmdf "_erase" "_all" "")
-)
-
-(defun c:IniciarReloj ()
-  (c:runAnalog "case" "hor" "min" "sec")
-)
-(defun c:verdigital ()
-	(setq xd (nth 1 listaobj))
-	(vl-cmdf "_zoom" "_o" xd "")
-)
-
-(defun c:veranalogo ()
-	(setq xd (nth 2 listaobj))
-	(vl-cmdf "_zoom" "_o" xd "")
-)
-
-(defun c:veralarma ()
-	(setq xd (nth 3 listaobj))
-	(vl-cmdf "_zoom" "_o" xd "")
-  (setalarm entonoff minalarm horalarm)
-)
-
-(defun c:vertemporizador ()
-	(setq xd (nth 4 listaobj))
-	(vl-cmdf "_zoom" "_o" xd "")
-  (c:temporizador)
-)
-
-(defun c:verrecordatorio ()
-			(setq xd (nth 5 listaobj))
-			(vl-cmdf "_zoom" "_o" xd "")
-     		(c:recordatorio)
-)
-
-(defun c:vercalendario ()
-	(setq xd (nth 6 listaobj))
-	(vl-cmdf "_zoom" "_o" xd "")
-  (c:calendario T)
-)
-
-(defun c:verzonahoraria ()
-	(setq xd (nth 7 listaobj))
-	(vl-cmdf "_zoom" "_o" xd "")
-  (c:changeTimeZone)
-)
-(defun c:vercronometro ()
-	(setq xd (nth 8 listaobj))
-	(vl-cmdf "_zoom" "_o" xd "")
-  (c:crono2)
-)
-(defun c:vercronografo ()
-	(setq xd (nth 9 listaobj))
-	(vl-cmdf "_zoom" "_o" xd "")
-  (c:inicronografo)
-)
-
-(defun c:vertodo ()
-	(vla-zoomextents (vlax-get-acad-object))
-)
-
-;Dibujar la base del reloj
-
-(defun c:drawAll()
-  (c:borrar)
-	;variables
-	(setq	basedig1 '(0 0)
-				basedig2 '(1600 750)
-				basedig3 '(50 600)
-				baseanl1 '(0 750)
-				baseanl2 '(1600 2350)
-				baseanl3 '(50 2200)
-				basealm1 '(1650 0)
-				basealm2 '(3250 750)
-				basealm3 '(1700 600)
-				basetemp1 '(1650 800)
-				basetemp2 '(3250 1550)
-				basetemp3 '(1700 1400)
-				baserecor1 '(1650 1600)
-				baserecor2 '(3250 2350)
-				baserecor3 '(1700 2200)
-				basecal1 '(3300 0)
-				basecal2 '(4900 750)
-				basecal3 '(3350 600)
-				basezhor1 '(3300 800)
-				basezhor2 '(4900 1550)
-				basezhor3 '(3350 1400)
-				basecrono1 '(3300 1600)
-				basecrono2 '(4900 2350)
-				basecrono3 '(3350 2200)
-				listaobj '("0"))
-  
-	;parte reloj digital (1)
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" basedig1 basedig2)
-	(setq dig (ssget "_W" basedig1 basedig2)
-				listaobj (cons dig listaobj))
-
-	(vl-cmdf "_rectang" '(200 200) '(1400 550))
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" basedig3 100 0 "1. Digital")
-	(vl-cmdf "_color" 1)
-	(vl-cmdf "_rectang" '(250 250) '(550 500))
-	(vl-cmdf "_rectang" '(700 250) '(1000 500))
-	(vl-cmdf "_rectang" '(1050 250) '(1300 350))
-	(vl-cmdf "_rectang" '(1050 400) '(1350 500))
-	(vl-cmdf "_circle" '(625 325) 25)
-	(vl-cmdf "_circle" '(625 425) 25)
-  (digital)
-
-	;parte reloj analogico (2)
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" baseanl1 baseanl2)
-	(setq analogo (ssget "_W" baseanl1 baseanl2)
-				listaobj (cons analogo listaobj))
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" baseanl3 100 0 "2. Analogo")
-	(vl-cmdf "_color" 7)
-	(analog 800 1550 "case" "hor" "min" "sec")
-   (setq colorD 255)
-	;parte alarma (3)
-  
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" basealm1 basealm2)
-  (setq alarma (ssget "_W" basealm1 basealm2)
-				listaobj (cons alarma listaobj)
-  )
-	(vl-cmdf "_rectang" '(1850 200) '(3150 550))
-  (vl-cmdf "_text" "_J" "_MC" "2945,375" 100 0 "OFF")
-  (setq entonoff (entlast)
-		  obj_onoff (vlax-ename->vla-object (entlast)))
-  (vl-cmdf "_text" "_J" "_MC" "2500,375" 200 0 "--")
-  (setq minalarm (entlast)
-		  obj_minalarm (vlax-ename->vla-object (entlast)))
-  (vl-cmdf "_text" "_J" "_MC" "2050,375" 200 0 "--")
-  (setq horalarm (entlast)
-		  obj_horalarm (vlax-ename->vla-object (entlast)))
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" basealm3 100 0 "3. Alarma")
-  (vl-cmdf "_color" 1)
-	(vl-cmdf "_rectang" '(1900 250) '(2200 500))
-	(vl-cmdf "_rectang" '(2350 250) '(2650 500))
-	(vl-cmdf "_rectang" '(2800 250) '(3100 500))
-	(vl-cmdf "_circle" '(2275 305) 25)
-	(vl-cmdf "_circle" '(2275 405) 25)
-
-	;parte temporizador (4)
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" basetemp1 basetemp2)
-	(setq temp (ssget "_W" basetemp1 basetemp2)
-				listaobj (cons temp listaobj))
-	(vl-cmdf "_rectang" '(1850 1000) '(3050 1350))
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" basetemp3 100 0 "4. Temporizador")
-	(vl-cmdf "_color" 1)
-	(vl-cmdf "_rectang" '(1900 1050) '(2200 1300))
-	(vl-cmdf "_rectang" '(2350 1050) '(2650 1300))
-	(vl-cmdf "_rectang" '(2700 1050) '(2950 1150))
-	(vl-cmdf "_rectang" '(2700 1200) '(3000 1300))
-	(vl-cmdf "_circle" '(2275 1125) 25)
-	(vl-cmdf "_circle" '(2275 1225) 25)
-  
-  (drawTemp 1900 1050)
-
-	;parte recordatorio (5)
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" baserecor1 baserecor2)
-	(setq recor (ssget "_W" baserecor1 baserecor2)
-				listaobj (cons recor listaobj))
-
-	(vl-cmdf "_rectang" '(1850 1800) '(3050 2150))
-
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" baserecor3 100 0 "5. Recordatorio")
-	(c:initR)
-  (c:drawNextR) 
-
-  (setq colorR 255)
-  
-	;parte calendario (6)
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" basecal1 basecal2)
-	(setq cal (ssget "_W" basecal1 basecal2)
-				listaobj (cons cal listaobj))
-  
-	(vl-cmdf "_rectang" '(3500 200) '(4700 550))
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" basecal3 100 0 "6. Calendario")
-	(c:calendario nil)
-  
-	;parte zona horaria (7)
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" basezhor1 basezhor2)
-  (setq zhor (ssget "_W" basezhor1 basezhor2)
-				listaobj (cons zhor listaobj))
-  
-	(vl-cmdf "_rectang" '(3500 1000) '(4700 1350))
-  (vl-cmdf "_text" "_J" "_MC" "4225,1250" 50 0 "HORAS")
-  (setq vlaM2Zh (vlax-ename->vla-object (entlast)))
-  (vl-cmdf "_text" "_J" "_MC" "4525,1250" 50 0 "MINUT")
-  (setq vlaM1Zh (vlax-ename->vla-object (entlast)))
-  (drawzh)
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" basezhor3 100 0 "7. Zona Horaria")
-	(vl-cmdf "_color" 1)
-	(vl-cmdf "_rectangle" '(3550 1050) '(4000 1300))
-  (vl-cmdf "_rectangle" '(4100 1050) '(4350 1175))
-  (vl-cmdf "_rectangle" '(4100 1200) '(4350 1300))
-  (vl-cmdf "_rectangle" '(4400 1050) '(4650 1175))
-  (vl-cmdf "_rectangle" '(4400 1200) '(4650 1300))
-
-	;parte cronometro (8)
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" basecrono1 basecrono2)
-	(setq crono (ssget "_W" basecrono1 basecrono2)
-				listaobj (cons crono listaobj))
-	(vl-cmdf "_rectang" '(3500 1800) '(4800 2150))
-  (draw_crono)
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" basecrono3 100 0 "8. Cronometro")
-	(vl-cmdf "_color" 1)
-	(vl-cmdf "_rectang" '(3550 1850) '(3850 2100))
-	(vl-cmdf "_rectang" '(4000 1850) '(4300 2100))
-	(vl-cmdf "_rectang" '(4450 1850) '(4750 2100))
-	(vl-cmdf "_circle" '(3925 1925) 25)
-	(vl-cmdf "_circle" '(3925 2025) 25)
-  (vl-cmdf "_circle" '(4375 1925) 25)
-	(vl-cmdf "_circle" '(4375 2025) 25)
-
-
-	;parte cronografo (9)
-	(vl-cmdf "_color" 7)
-	(vl-cmdf "_rectang" '(4950 0) '(5700 750))
-
-	(vl-cmdf "_rectang" '(5100 150) '(5550 600))
-
-	(vl-cmdf "_rectang" '(4950 800) '(5700 1550))
-
-	(vl-cmdf "_rectang" '(5100 950) '(5550 1400))
-
-	(vl-cmdf "_rectang" '(4950 1600) '(5700 2350))
-
-	(vl-cmdf "_rectang" '(5100 1750) '(5550 2200))
-	(setq cronog (ssget "_W" '(4950 0) '(5700 2350))
-				listaobj (cons cronog listaobj))
-
-	(vl-cmdf "_color" 30)
-	(vl-cmdf "_text" '(5850 750) 100 90 "9. Cronografo")
-
-	(vl-cmdf "_color" 1)
-	(vl-cmdf "_circle" '(5325 375) 200)
-
-	(vl-cmdf "_circle" '(5325 1175) 200)
-
-	(vl-cmdf "_circle" '(5325 1975) 200)
-
-	(c:cronografo)
-  
-	(setq listaobj (reverse listaobj))
-
-	(vla-zoomextents (vlax-get-acad-object))
-
-)
-
-;-------------------------------Cronometro--------------------------------
-
-;FUNCIONES PARA EL FUNCIONAMIENTO DEL CRONOMETRO
-
-;SEPARAR STRINGS
-(defun splitStr (src delim)
-  (setq wordlist (list))
-  (setq cnt 1)
-  (while (<= cnt (strlen src))
-
-    (setq word "")
-
-    (setq letter (substr src cnt 1))
-    (while (and (/= letter delim) (<= cnt (strlen src)) )
-      (setq word (strcat word letter))
-      (setq cnt (+ cnt 1))      
-      (setq letter (substr src cnt 1))
-    )
-    (setq cnt (+ cnt 1))
-    (setq wordlist (append wordlist (list word)))
-  )
-)
-
-
-;FUNCI�N PARA DIBUJO DEL CRONOMETRO
-
-(defun draw_crono ()
-  
-  (setq textoh "00"
-        textom "00"
-        textos "00"
-  )
-
-  (vl-cmdf "_text" "_J" "_MC" "3700,1975" 200 0 textoh)
-  (setq ENT (entlast)
-        ObjTh (vlax-ename->vla-object ENT)
-  )
-  
-  (vl-cmdf "_text" "_J" "_MC" "4150,1975" 200 0 textom)
-  (setq ENT (entlast)
-        ObjTm (vlax-ename->vla-object ENT)
-  )
-  
-  (vl-cmdf "_text" "_J" "_MC" "4600,1975" 200 0 textos)
-  (setq ENT (entlast)
-        ObjTs (vlax-ename->vla-object ENT)
-  )
-  
-)
-
-;FUNCI�N PARA ABRIR EL CRONOMETRO
-(defun open_crono ()
-  (vl-cmdf "CRONO" "")
-  (vl-cmdf "_delay" 10000 "")
-  (C:crono3)
-)
-
-;CAJA DE DIALOGO PARA ABRIR EL CRONOMETRO
-(defun c:crono2 ()
-    
-  (new_dialog "CDCronometro2" archivo)  ;mismo nombre del DIALOG
-  
-  (action_tile "Open" "(setq active2 T) (done_dialog)")
-  
-  (start_dialog)
-  
-  (if (= active2 T) (open_crono))
-)
-
-;FUNCI�N PARA ACTUALIZAR EL DIBUJO
-
-(defun actu_crono ()
-  ;Abrir el archivo y guardar los valores
-  (setq ruta  (findfile "tiempo.txt")
-        arch  (open ruta "r")
-        hms   (read-line arch)
-  )
-
-  ;Modifica el objeto texto
-  (splitStr hms ":")
-  (vlax-put-property ObjTh "TextString" (nth 0 wordlist))
-  (vlax-put-property ObjTm "TextString" (nth 1 wordlist))
-  (vlax-put-property ObjTs "TextString" (nth 2 wordlist))
-)
-
-;CAJA DE DIALOGO ACTUALIZAR EL DIBUJO
-
-(defun c:crono3 ()
-  
-  (new_dialog "CDCronometro3" archivo)  ;mismo nombre del DIALOG
-  
-  (action_tile "Fresh" "(setq active3 T) (done_dialog)")
-  
-  (start_dialog)
-  
-  (if (= active3 T) (actu_crono))
-)
-
-;-------------------------------Zonas Horarias--------------------------------
-
-;FUNCI�N PARA DIBUJAR LAS ZONAS HORARIAS
-
-(defun drawzh ()
-  
-  ;Abreviatura
-  (vl-cmdf "_text" "_J" "_MC" "3775,1175" 140 0 "BOG")
-  (setq ENT (entlast)
-        vlaAbrZh (vlax-ename->vla-object ENT)
-  )
-  
-  ;Cuantas horas aumenta
-  (vl-cmdf "_text" "_J" "_MC" "4225,1112.5" 75 0 "+00")
-  (setq ENT (entlast)
-        vlaHorZh (vlax-ename->vla-object ENT)
-  )
-  
-  ;Cuantos minutos aumenta
-  (vl-cmdf "_text" "_J" "_MC" "4525,1112.5" 75 0 "+00")
-  (setq ENT (entlast)
-        vlaMinZh (vlax-ename->vla-object ENT)
-  )
-  
-  ;Inicializa las variables
-  (setq minmas 0
-        hormas 0
-        diamas 0
-  )
-  
-)
-
-;FUNCI�N PARA CAMBIAR ZONAS HORARIAS 
-
-(defun c:ChangeTimeZone ()
-  
-  ;Caja de di�logo 
-
-	(setq lista '("Hora de Australia oriental (Sidney)" "Hora oriental (Nueva York)" "Hora de Argentina (Buenos Aires)" "Afganistan"
-					  "Hora estandar Europa Central (Amsterdam)" "Hora media de Greenwich (Londres)" "Hora estandar de Japon (Tokio)"
-					  "Los Angeles" "Moscu" "Rio de Janeiro" "Estambul" "Nairobi" "Hora de China (Pekin)" "Hora de Corea (Seul)"
-					  "Hong Kong" "Tijuana" "Hora estandar de India (Calcuta)" "Hora Amazonas (Manaos)" "Hora de Uruguay (Montevideo)"
-					  "Hora estandar de Europa del Este (Atenas)" "Hora de Arabia (Kuwait)" "Hora de Colombia (Bogota DC)"))
-
-	(new_dialog "UTCs" archivo)
-  
-	(start_list "ciudad")
-	(mapcar 'add_list lista)
-	(end_list)
-  
-	(action_tile "ciudad" "(setq city (atoi $value))")
-  
-	(setq select (start_dialog))
-	(cond ((= city 00)(progn (setq diamas 1) (setq hormas 03) (setq minmas 00))) ;Sidney
-        ((= city 01)(progn (setq diamas 0) (setq hormas 01) (setq minmas 00))) ;NY
-        ((= city 02)(progn (setq diamas 0) (setq hormas 02) (setq minmas 00))) ;BA
-        ((= city 03)(progn (setq diamas 0) (setq hormas 09) (setq minmas 30))) ;Afg
-        ((= city 04)(progn (setq diamas 0) (setq hormas 07) (setq minmas 00))) ;�ms
-        ((= city 05)(progn (setq diamas 0) (setq hormas 06) (setq minmas 00))) ;Lon
-        ((= city 06)(progn (setq diamas 0) (setq hormas 14) (setq minmas 00))) ;Tokio
-        ((= city 07)(progn (setq diamas 0) (setq hormas -2) (setq minmas 00))) ;LA
-        ((= city 08)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Mosc�
-        ((= city 09)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Estam
-        ((= city 10)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Nair
-        ((= city 11)(progn (setq diamas 0) (setq hormas 13) (setq minmas 00))) ;Pek�n
-        ((= city 12)(progn (setq diamas 0) (setq hormas 14) (setq minmas 00))) ;Se�l
-        ((= city 13)(progn (setq diamas 0) (setq hormas 13) (setq minmas 00))) ;HK
-        ((= city 14)(progn (setq diamas 0) (setq hormas 10) (setq minmas 00))) ;Tij
-        ((= city 15)(progn (setq diamas 0) (setq hormas 10) (setq minmas 30))) ;India
-        ((= city 17)(progn (setq diamas 0) (setq hormas 01) (setq minmas 00))) ;Manaos
-        ((= city 18)(progn (setq diamas 0) (setq hormas 00) (setq minmas 00))) ;Montev
-        ((= city 19)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Atenas
-        ((= city 20)(progn (setq diamas 0) (setq hormas 08) (setq minmas 00))) ;Kuwait
-        ((= city 21)(progn (setq diamas 0) (setq hormas 00) (setq minmas 00))) ;Bgt DC
-	);cond	
-
-  (CambiObjetos city)
-  
-);defun
-
-(defun CambiObjetos (c)
-  
-  (setq lista_abr     (list "SID" "NY" "ARG" "AFG" "AMS" "LDN" "JPN" "LA" "MOS" "RIO" "EST" "NAI" "CN" "KR" "HKN" "MX" "IN" "AMZ" "URG" "ATN" "ARB" "COL")
-        lista_hormas  (list "+03" "+01" "+02" "+09" "+07" "+06" "+14" "-02" "+08" "+02" "+08" "+08" "+13" "+14" "+13" "+10" "+10" "+01" "+00" "+08" "+08" "+00")
-        lista_minmas  (list "+00" "+00" "+00" "+30" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+00" "+30" "+00" "+00" "+00" "+00" "+00")
-  )
-  
-  (setq NewAbr    (nth c lista_abr)
-        NewHormas (nth c lista_hormas)
-        NewMinmas (nth c lista_minmas)
-  )
-  
-  (vlax-put-property vlaAbrZh "TextString" NewAbr)
-  (vlax-put-property vlaHorZh "TextString" NewHormas)
-  (vlax-put-property vlaMinZh "TextString" NewMinmas)
-  
-)
-
-(defun modzonahor (minmas1 hormas1 diamas1 mintrue1 hortrue1 diatrue1 mestrue1 anotrue1)
-  
-  ;Aumentos por zona horaria
-  (setq newmin (+ (atoi mintrue1) minmas1)
-        newhor (+ (atoi hortrue1) hormas1)
-        newdia (+ (atoi diatrue1) diamas1)
-        newmes (atoi mestrue1)
-        newano (atoi anotrue1)
-  )
-  
-  ;Ajustes de la nueva hora
-  (if (> newmin 59); Condici�n que determina la hora 
-    (progn
-      (setq newhor (1+ newhor)
-            newmin (+ newmin -60)
-      )
-    )
-  )
-  
-  (if (> newhor 23); Condici�n que determina el d�a
-    (progn
-      (setq newdia (1+ newdia)
-            newhor (+ newhor -24)
-      )
-    )
-  )
-
-  (setq dias_mes '(0 31 (if (= (rem newano 4) 0)(29)(28)) 31 30 31 30 31 31 30 31 30 31)); Determina si un a�o es bisiesto
-
-  (if (= newdia (1+ (nth newmes dias_mes))); Condici�n que determina el mes
-    (progn
-      (setq newmes (1+ newmes)
-	          newdia 1)
-    )
-  )
-
-  (if (= newmes 13); Condici�n que determina el a�o
-    (progn
-      (setq newano (1+ newano)
-	          newmes 1)
-    )
-  )
-  
-  ;Guardar todo en las variables que necesito
-  (setq mt2   (itoa newmin)
-        ht2   (itoa newhor)
-        diat2 (itoa newdia)
-        mest2 (itoa newmes)
-        anot2 (itoa newano)
-  )
-  
-)
-
-
-
-;-----------------------------------------Alarma--------------------------------------------------
-
-(defun setalarm (ent1 ent2 ent3)
-  
-  ;Crea los objetos
-  (setq obj_onoff    (vlax-ename->vla-object ent1)
-        obj_minalarm (vlax-ename->vla-object ent2)
-        obj_horalarm (vlax-ename->vla-object ent3)
-  )
-  
-  (new_dialog "CDSetalarm" archivo)  ;mismo nombre del DIALOG
-
-  (action_tile "horset" "(setq horset (get_tile \"horset\"))")
-  (action_tile "minset" "(setq minset (get_tile \"minset\"))")
-  
-  (start_dialog)
-  
-  (vlax-put-property obj_onoff    "TextString"  "ON")
-  (vlax-put-property obj_minalarm "TextString"  minset)
-  (vlax-put-property obj_horalarm "TextString"  horset)
-  
-)
-
-(defun c:alarma ()
-  (setq sonido "1.mp3")
-  (setq mp (vlax-create-object "wmplayer.OCX"))
-  (vlax-invoke mp 'openPlayer (findfile sonido))
-  (vlax-release-object mp)  
-)
-
-(defun checkalarm (hortrue mintrue segtrue ent2 ent3)
-  
-  ;Crea los objetos
-  (setq obj_minalarm2 (vlax-ename->vla-object ent2)
-        obj_horalarm2 (vlax-ename->vla-object ent3)
-  )
-  
-  (setq min1 (vlax-get-property obj_minalarm2 "TextString")
-        hor1 (vlax-get-property obj_horalarm2 "TextString")
-        condicionalarma (and (= min1 mintrue) (= hor1 hortrue) (= "00" segtrue) )
-  )
-  
-  (if (= condicionalarma T) (c:alarma))
-)
-
-;--------------------------------------Macros---------------------------------------
-
-(defun InicioExcel ()
-
-(setq excel (vlax-get-or-create-object "Excel.Application"));abre la aplicación de excel
-(repeat 60
-(vla-put-visible excel :vlax-true);Hace visible a excel
-(setq archivoexcel (vl-catch-all-apply 'vla-open (list (vlax-get-property excel "WorkBooks") (findfile "Grup.xlsm"))));abrir archivo con la información
-(command "_delay" 2000)
-(vl-catch-all-apply 'vlax-invoke-method (list excel "Quit"));Cierra excel
-)
-
-)
+;------------------------------- EXCEL Y C�LCULO DE ERROR -----------------------------------
 
 ;Es necesario tener el archivo Grup.xlsm (excel habilitado para macros) en la misma carpeta
 ;El repeat hace que se abra y cierre excel durante 2 minutos, actualizando la hora (por el delay de 2 segundos)
@@ -1660,6 +1335,18 @@
 
 ;con las siguientes funciones se abre la hoja de excel en la que se va a trabajar
 ;esta seccion del codigo debe insertarse fuera del repeat
+
+(defun InicioExcel ()
+
+  (setq excel (vlax-get-or-create-object "Excel.Application"));abre la aplicación de excel
+  (repeat 60
+  (vla-put-visible excel :vlax-true);Hace visible a excel
+  (setq archivoexcel (vl-catch-all-apply 'vla-open (list (vlax-get-property excel "WorkBooks") (findfile "Grup.xlsm"))));abrir archivo con la información
+  (command "_delay" 2000)
+  (vl-catch-all-apply 'vlax-invoke-method (list excel "Quit"));Cierra excel
+  )
+  
+)
 
 (defun ErrorReloj1 ()
 
@@ -1681,7 +1368,8 @@
 
 )
 ;La siguiente parte del codigo debe colocarse dentro del repeat
-(defun ErrorReloj2 ( )
+(defun ErrorReloj2 ()
+  
   (setq fecha_hora_e (rtos (getvar "cdate") 2 6)
         minuto_t_e(substr fecha_hora_e  12 2)
         minuto_e(atoi minuto_t_e)
@@ -1693,4 +1381,325 @@
   (setq error (- tiempo_reloj tiempo_real))
   (vlax-put-property celdas "Item" contador_e 1 (vl-princ-to-string error))
   (setq contador_e (1+ contador_e))
+  
 )
+
+;------------------------------- Cambio de color --------------------------------------------
+
+;Funcion cambiar color de figura
+
+(defun changeColor()
+
+		(setq flag 1)
+  
+		(while (not (= flag 0)) ;Mientras no se de a aceptar
+  
+  		(new_dialog "Color_reactor" archivo)
+  		(setq color 255)
+			(action_tile "colorR" "(updateR $value)");Obtener valor de color y asignarlo a los otros elementos del menu
+				(defun updateR (val)
+						(set_tile "EstablecerR" val)
+					  	(setq color (atoi (get_tile "colorR")))
+					  	(boxColorR)
+					)
+				   (action_tile "EstablecerR" "(update2R $value)")
+				  	(defun update2R (val)
+						(set_tile "colorR" val)
+					  	(setq color (atoi (get_tile "colorR")))
+					  	(boxColorR)
+					)
+				   (defun boxColorR()
+						(setq w (dimx_tile "imgColorR")
+								h (dimy_tile "imgColorR"))
+					   (start_image "imgColorR")
+					  	(fill_image 0 0 w h color)
+					   (print w)
+					  	(end_image)
+					)
+  
+  		(setq itemsList (list "Todo" "Reloj Digital" "Alarma"
+									 "Temporizador" "Recordatorio" "Calendario"
+									 "Zona Horaria" "Cronometro"))
+
+		(start_list "shapes")
+		(mapcar 'add_list itemsList)
+		(end_list)
+
+		(action_tile "ch" "(setq shape (atoi (get_tile \"shapes\"))) (done_dialog 1)")
+		(action_tile "accept" "(done_dialog 0)")
+		(setq flag (start_dialog))
+
+		(if (= flag 1)
+		  	(progn
+			  	(setq alertString (strcat "Color cambiado a " (itoa color) ". Presione Aceptar"))
+				(alert alertString)
+				(setq cursor (vl-remove 0.0 (nth 0 (cdr (grread T 1 15)))))
+
+				(setq objList (list))
+			  	
+			  	(cond
+				  		;Colorear todo
+				  		((= shape 0) (progn
+											(vla-put-color vlaDiaDig color)
+											(vla-put-color vlaMesDig color)
+											(vla-put-color vlaA�oDig color)
+											(vla-put-color vlaHoraDig color)
+											(vla-put-color vlaMinDig color)
+											(vla-put-color vlaSegDig color)
+				
+											(vla-put-color obj_onoff color)
+										   (vla-put-color obj_minalarm color)
+										   (vla-put-color obj_horalarm color)
+
+											(vla-put-color vlaHorTemp color)
+										   (vla-put-color vlaMinTemp color)
+										   (vla-put-color vlaSecTemp color)
+
+											(vla-put-color vlaM1Rec color)
+											(vla-put-color	vlaM2Rec color)
+											
+											(vla-put-color vlaM1Cal color)
+											(vla-put-color	vlaM2Cal color)
+
+											(vla-put-color vlaAbrZh color)
+										   (vla-put-color vlaHorZh color)
+										   (vla-put-color vlaMinZh color)
+											(vla-put-color vlaM1Zh color)
+											(vla-put-color vlaM2Zh color)
+
+											(vla-put-color ObjTh color)
+										   (vla-put-color ObjTm color)
+										   (vla-put-color ObjTs color)
+											(setq colorD color
+													colorR color)
+										 ))
+						;Colorear elementos del digital
+						((= shape 1) (progn
+											(setq colorD color)
+											(vla-put-color vlaDiaDig color)
+											(vla-put-color vlaMesDig color)
+											(vla-put-color vlaA�oDig color)
+											(vla-put-color vlaHoraDig color)
+											(vla-put-color vlaMinDig color)
+											(vla-put-color vlaSegDig color)
+										 ))
+						;Colorear elementos de la alarma
+						((= shape 2) (progn
+											(vla-put-color obj_onoff color)
+										   (vla-put-color obj_minalarm color)
+										   (vla-put-color obj_horalarm color)
+										 ))
+						;Colorear elementos del temporizador
+						((= shape 3) (progn
+											(vla-put-color vlaHorTemp color)
+										   (vla-put-color vlaMinTemp color)
+										   (vla-put-color vlaSecTemp color)
+										 ))
+						;Colorear elementos del recordatorio
+						((= shape 4) (progn
+											(vla-put-color vlaM1Rec color)
+											(vla-put-color	vlaM2Rec color)
+											(setq colorR color)
+										 ))
+						;Colorear elementos del calendario
+						((= shape 5) (progn
+											(vla-put-color vlaM1Cal color)
+											(vla-put-color	vlaM2Cal color)  
+										 ))
+						;Colorear elementos de la zona horaria
+						((= shape 6) (progn
+											(vla-put-color vlaAbrZh color)
+										   (vla-put-color vlaHorZh color)
+										   (vla-put-color vlaMinZh color)
+											(vla-put-color vlaM1Zh color)
+											(vla-put-color vlaM2Zh color)
+										 ))
+						;Colorear elementos del cronometro
+						((= shape 7) (progn
+											(vla-put-color ObjTh color)
+										   (vla-put-color ObjTm color)
+										   (vla-put-color ObjTs color)
+										 ))
+				)
+			)
+		)
+	)
+)
+
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;------------------------------COMANDOS PARA MANEJAR EL RELOJ--------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+;--------------------------------------------------------------------------------------------
+
+;--------------------------------Comandos de Autocad o Botones-------------------------------
+
+;BORRAR TODO EL DIBUJO
+(defun c:borrar ()
+	(vl-cmdf "_erase" "_all" "")
+)
+
+;COMENZAR A CORRER LOS RELOJES AN�LOGICO Y DIGITAL
+(defun c:IniciarReloj ()
+  (c:runAnalog "case" "hor" "min" "sec")
+)
+
+;HACER ZOOM SOBRE EL RELOJ DIGITAL
+(defun c:verdigital ()
+	(setq xd (nth 1 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+)
+
+;HACER ZOOM SOBRE EL RELOJ ANALOGICO
+(defun c:veranalogo ()
+	(setq xd (nth 2 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+)
+
+;HACER ZOOM SOBRE LA ALARMA Y CONFIGURARLA
+(defun c:veralarma ()
+	(setq xd (nth 3 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+  (setalarm entonoff minalarm horalarm)
+)
+
+;HACER ZOOM SOBRE EL TEMPORIZADOR E INICIARLO
+(defun c:vertemporizador ()
+	(setq xd (nth 4 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+  (c:temporizador)
+)
+
+;HACER ZOOM SOBRE EL RECORDATORIO Y CONFIGURARLO
+(defun c:verrecordatorio ()
+	(setq xd (nth 5 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+  (c:recordatorio)
+)
+
+;HACER ZOOM SOBRE EL CALENDARIO Y LEER EL TEXTO DE UN D�A COMO HOY
+(defun c:vercalendario ()
+	(setq xd (nth 6 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+  (c:calendario T)
+)
+
+;HACER ZOOM SOBRE LA ZONA HORARIA Y CONFIGURARLA
+(defun c:verzonahoraria ()
+	(setq xd (nth 7 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+  (c:changeTimeZone)
+)
+
+;HACER ZOOM SOBRE EL CRONOMETRO E INICIARLO
+(defun c:vercronometro ()
+	(setq xd (nth 8 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+  (c:crono2)
+)
+
+;HACER ZOOM SOBRE EL CRONOGRAFO E INICIARLO
+(defun c:vercronografo ()
+	(setq xd (nth 9 listaobj))
+	(vl-cmdf "_zoom" "_o" xd "")
+  (c:inicronografo)
+)
+
+;HACER UN ZOOM SOBRE TODO EL RELOJ
+(defun c:vertodo ()
+	(vla-zoomextents (vlax-get-acad-object))
+)
+
+;-----------------------------------------REACTORES------------------------------------------
+
+;Funcion de cambio (click derecho)
+
+(defun change (Caller CmdSet)
+	(check)
+)
+
+;Funcion de seleccion/menu (doble click)
+
+(defun menuOption (Caller CmdSet)
+	(new_dialog "Menu_reactor" archivo)
+  		(action_tile "b1" "(setq op 1)")
+  		(action_tile "b2" "(setq op 2)")
+  	(start_dialog)
+)
+
+;Verificar opcion de menu
+
+(defun check()
+	(if (= op 1)
+	 	(progn
+			(changeColor)
+	 	)
+  	)
+	(if (= op 2)
+	   (progn
+			(changeFunction)
+		)
+	)
+)
+
+;Cambiar funci�n a ejecutar por comando
+
+(defun changeFunction()
+  
+		(setq flag 1)
+  
+		(while (not (= flag 0))
+  
+  		(new_dialog "Funciones_reactor" archivo)		   
+  
+  		(setq itemsList (list "Reloj"
+									 "Alarma" "Temporizador" "Recordatorio"
+									 "Calendario" "Zona Horaria" "Cronometro"
+									 "Cronografo"))
+
+		(start_list "functions")
+		(mapcar 'add_list itemsList)
+		(end_list)
+
+		(action_tile "chf" "(setq func (get_tile \"functions\")) (done_dialog 1)")
+		(action_tile "accept" "(done_dialog 0)")
+		(setq flag (start_dialog))
+
+		(if (= flag 1)
+		  	(progn
+			  	(setq alertString (strcat "Funci�n a ejecutar: " (nth (atoi func) itemsList) ". Presione Aceptar"))
+				(alert alertString)
+		  
+		  		(setq func (atoi func))
+			)
+		)
+	)
+)
+
+
+;runFunction es una alternativa a los botones, lo cual permite ejecutar el reloj de dos
+;formas diferentes, teniendo en cuenta la elecci�n en la caja de dialogo
+(defun c:runFunction()
+	(cond ((= func 0) (c:IniciarReloj))
+			((= func 1) (c:veralarma))
+			((= func 2) (c:vertemporizador))
+			((= func 3) (c:verrecordatorio))
+			((= func 4) (c:vercalendario))
+			((= func 5) (c:verzonahoraria))
+			((= func 6) (c:vercronometro))
+			((= func 7) (c:vercronografo))
+			)
+)
+
+;Definicion de reactores
+
+(defun c:initReactors()
+  (setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginDoubleClick  . menuOption))))
+	(setq Reactor-Put (vlr-mouse-reactor nil '((:vlr-beginRightClick  . change))))
+)
+
+(c:initReactors)
