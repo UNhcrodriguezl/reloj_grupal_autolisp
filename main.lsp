@@ -55,9 +55,9 @@
       h_rot (*  h_delta (+ (* 3600 h) (* 60 m) s))
       m_rot (+ (* m_delta (+ (* 60 m) s)) (/ pi 2))
       s_rot (+ (* s_delta s) (/ pi 2))
-      h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 (- h_rot h_delta))
-      m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 (- m_rot m_delta))
-      s_block (vla-InsertBlock modelspace insertion_point s_ref 1 1 1 (- s_rot s_delta))
+      h_block (vla-InsertBlock modelspace insertion_point h_ref 1 1 1 h_rot)
+      m_block (vla-InsertBlock modelspace insertion_point m_ref 1 1 1 m_rot)
+      s_block (vla-InsertBlock modelspace insertion_point s_ref 1 1 1 s_rot)
   )
   
  	(vla-scaleEntity h_block (vla-get-Insertionpoint h_block)  22)
@@ -71,7 +71,7 @@
     (setvar "cmdecho" old)
   )
 
-  (silent "_vscurrent" "_r")
+   (silent "_vscurrent" "_r")
 
 	(setq ObjHH2 (setq H22 (subst (cons 62 colorD) (assoc 62 ObjHH2) ObjHH2)));Cambia el color de el texto al color 7:Blanco
  	(entmod H22)
@@ -79,6 +79,31 @@
  	(entmod M22)
   	(setq ObjSS2 (setq S22 (subst (cons 62 colorD) (assoc 62 ObjSS2) ObjSS2)))
  	(entmod S22)
+
+   (setq anot (substr date 1 4)
+		   mest (substr date 5 2)
+		   diat (substr date 7 2)
+         ht   (substr date 10 2)
+         mt   (substr date 12 2)
+         st   (substr date 14 2)
+			)
+
+  (setq error 0)
+  
+  (ErrorReloj1)
+
+  (modzonahor minmas hormas diamas mt ht diat mest anot)
+
+  (setq ht ht2)
+  (setq mt mt2)
+
+  (repeat hormas
+	 (vla-rotate h_block insertion_point (- 0 (/ pi 6)))
+  )
+  (repeat minmas
+	 (vla-rotate m_block insertion_point (- 0 (/ pi 30)))
+    (vla-rotate h_block insertion_point (- 0 (/ pi 360)))
+  )
   
   (while
 
@@ -95,7 +120,8 @@
     (vla-rotate m_block insertion_point m_delta)
     (vla-rotate s_block insertion_point s_delta)
 
-	  (runDigital)
+	 (runDigital)
+	 (ErrorReloj2)
 	 
     (silent "_.delay" 1000)
   )
@@ -200,21 +226,67 @@
 ;Correr el reloj
 
 (defun runDigital()
-  (setq anot (substr date 1 4)
-		    mest (substr date 5 2)
-		    diat (substr date 7 2)
-        ht   (substr date 10 2)
-        mt   (substr date 12 2)
-        st   (substr date 14 2)
+  ;(setq anot (substr date 1 4)
+		   ;mest (substr date 5 2)
+		   ;diat (substr date 7 2)
+         ;ht   (substr date 10 2)
+         ;mt   (substr date 12 2)
+         ;st   (substr date 14 2)
+  ;)
+
+  (setq st (atoi st)
+		  mt (atoi mt)
+		  ht (atoi ht))
+
+  (if (<= error -5)
+	 (progn
+		(setq st (+ st 5))
+	 	(repeat (- 0 error)
+		   (vla-rotate h_block insertion_point h_delta)
+    		(vla-rotate m_block insertion_point m_delta)
+    		(vla-rotate s_block insertion_point s_delta)
+		)
+	 )	
   )
   
-  (modzonahor minmas hormas diamas mt ht diat mest anot)
+  (setq st (1+ st))
+
+  (if (>= st 60)
+	 (progn
+		(setq st 0)
+		(setq mt (1+ mt))
+	 )	
+  )
+  (if (>= mt 60)
+	 (progn
+	 	(setq mt 0)
+		(setq ht (1+ ht))
+	 )
+  )
+  (if (>= ht 24)
+	 (progn
+		(setq ht 0)
+	 )	
+  )
   
   (checkalarm ht2 mt2 st minalarm horalarm)
+
+  (if (< st 10)
+		(setq st (strcat "0" (itoa st)))
+	   (setq st (itoa st))
+  )
+  (if (< mt 10)
+	   (setq mt (strcat "0" (itoa mt)))
+	   (setq mt (itoa mt))
+  )
+  (if (< ht 10)
+	   (setq ht (strcat "0" (itoa ht)))
+	   (setq ht (itoa ht))
+  )
   
-  (setq ObjHH2 (setq H22 (subst (cons 1  ht2) (assoc 1 ObjHH2) ObjHH2)))
+  (setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
  	(entmod H22)
-  (setq ObjMM2 (setq M22 (subst (cons 1  mt2) (assoc 1 ObjMM2) ObjMM2)))
+  (setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
  	(entmod M22)
 	(setq ObjSS2 (setq S22 (subst (cons 1  st) (assoc 1 ObjSS2) ObjSS2)))
  	(entmod S22)
@@ -1565,3 +1637,60 @@
   (if (= condicionalarma T) (c:alarma))
 )
 
+;--------------------------------------Macros---------------------------------------
+
+(defun InicioExcel ()
+
+(setq excel (vlax-get-or-create-object "Excel.Application"));abre la aplicación de excel
+(repeat 60
+(vla-put-visible excel :vlax-true);Hace visible a excel
+(setq archivoexcel (vl-catch-all-apply 'vla-open (list (vlax-get-property excel "WorkBooks") (findfile "Grup.xlsm"))));abrir archivo con la información
+(command "_delay" 2000)
+(vl-catch-all-apply 'vlax-invoke-method (list excel "Quit"));Cierra excel
+)
+
+)
+
+;Es necesario tener el archivo Grup.xlsm (excel habilitado para macros) en la misma carpeta
+;El repeat hace que se abra y cierre excel durante 2 minutos, actualizando la hora (por el delay de 2 segundos)
+
+;Felipe Rojas y Mario Lopez
+;Este programa busca determinar la cantidad de segundos que esta descuadrado el reloj y graficar este dato en excel
+;En los comentarios se menciona donde debe ir cada seccion y que variables deben relacionarse con el codigo principal 
+
+;con las siguientes funciones se abre la hoja de excel en la que se va a trabajar
+;esta seccion del codigo debe insertarse fuera del repeat
+
+(defun ErrorReloj1 ()
+
+  (setq Excel (vlax-get-or-create-object "excel.application"))
+  (setq Coleccionlibros(vlax-get-property Excel "Workbooks"))
+  (setq Libro (vlax-invoke-method Coleccionlibros "add"))
+  (setq Coleccionhojas (vlax-get-property Libro "Sheets"))
+  (setq hoja (vlax-get-property Coleccionhojas "Item" 1))
+  (setq celdas (vlax-get-property hoja "Cells"))
+  (setq Rango (vlax-get-property celdas "Range" "A1:A60")) ;para determinar el valor de A60 debe tomarse la cantidad de veces que se repite el programa y sumarle una unidad (si el repeat corre 10 veces el valor A60 debe cambiarse por A11)
+  (setq Rango_select (vlax-invoke-method Rango "Select"))
+  (vla-put-visible Excel :vlax-true)
+  (vlax-put-property celdas "Item" 1 1 (vl-princ-to-string "Cantidad de segundo que esta descuadrado el reloj"))
+  (setq contador_e 2)
+  (setq grafico (vlax-get-property hoja "Shapes")
+        grafico (vlax-invoke-method grafico "AddChart2" "240, xlXYScatterLines")
+        grafico (vlax-invoke-method grafico "Select")
+  )
+
+)
+;La siguiente parte del codigo debe colocarse dentro del repeat
+(defun ErrorReloj2 ( )
+  (setq fecha_hora_e (rtos (getvar "cdate") 2 6)
+        minuto_t_e(substr fecha_hora_e  12 2)
+        minuto_e(atoi minuto_t_e)
+        segundo_t_e(substr fecha_hora_e 14 2)
+        segundo_e(atoi segundo_t_e)
+  )
+  (setq tiempo_reloj (+ (* (atoi mt) 60) (atoi st)));las variables minuto y segundo deben reemplazarse por la variable que guarde la informacion del minuto y del segundo que marca el reloj en cada instante 
+  (setq tiempo_real (+ (* (+ minuto_e minmas) 60) segundo_e))
+  (setq error (- tiempo_reloj tiempo_real))
+  (vlax-put-property celdas "Item" contador_e 1 (vl-princ-to-string error))
+  (setq contador_e (1+ contador_e))
+)
