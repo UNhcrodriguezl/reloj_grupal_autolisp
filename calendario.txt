@@ -1,366 +1,367 @@
-1**1**1 de enero: Entran en circulación las monedas y billetes de euro (año 2002). 
-1**2**2 de enero: Nace en 1920 Isaac Asimov, escritor y bioquímico estadounidense (de origen ruso) popularmente recordado por las "tres leyes de la robótica" que la mayoría de los robots de sus novelas estaban diseñados para cumplir; nace en 1822 el físico y matemático alemán Rudolf Julius Emmanuel Clausius, padre de la termodinámica e introductor del término entropía.
-1**3**3 de enero: Nace en 1892 J. R. R. Tolkien, escritor de "El hobbit" y "El señor de los anillos"; Alaska se convierte en el estado número 49 de los Estados Unidos en 1959. 
-1**4**4 de enero: Nace en 1643 Isaac Newton [Las tres leyes de Newton]; Nace en 1809 Louis Braille, pedagogo francés con discapacidad visual conocido por diseñar el sistema de lecto-escritura para personas ciegas que lleva su nombre; se inaugura en 2010 el edificio más alto del mundo: el Burj Khalifa (828 m). 
-1**5**5 de enero: Nace en el año 1592 Sha Jahan, emperador del imperio Mongol de la India responsable de la construcción del Taj Mahal.
-1**6**6 de enero: Nace en 1944 Rolf M. Zinkernagel, inmunólogo y premio nobel suizo conocido por descubrir el proceso mediante el cual las células del sistema inmunitario distinguen los microorganismos invasores de las propias células del organismo [VÍDEO: Así responde nuestro sistema inmunitario a un gusano parasitario]; Nuevo México se convierte en el estado número 47 de los Estados Unidos en 1912. 
-1**7**7 de enero: Galileo descubre en 1610 varias estrellas pequeñas en la periferia de Júpiter que resultarían ser sus cuatro lunas principales, denominadas "lunas galileanas" en su honor.; nace en 1941 el químico inglés John Ernest Walker, Premio Nobel de Química en el año 1997 por el descubrimiento de la síntesis del Adenosín Trifosfato (ATP).
-1**8**8 de enero: Nace en 1942 el físico teórico y divulgador científico Stephen Hawking; Mónaco se independiza de la República de Génova en el año 1297.
-1**9**9 de enero: Nace en 1868 Søren Sørensen, químico danés conocido por introducir el concepto de pH; nace en el año 1869 Richard Abegg, químico alemán descubridor de la regla de Abegg.
-1**10**10 de enero: Comienza a funcionar el metro en Londres en el año 1863.
-1**11**11 de enero: William Herschel descubre las dos lunas más grandes de Urano: Titania y Oberón; nace en 1905 Carl David Anderson, físico estadounidense conocido por el descubrimiento del positrón (antielectrón) y el muon.
-1**12**12 de enero: Nace en 1628 Charles Perrault, escritor francés de cuentos clásicos infantiles como "Caperucita Roja", "Cenicienta" o "El Gato con Botas"; nace en 1899 el químico suizo Paul Hermann Müller, Premio Nobel de Fisiología o Medicina en el año 1948 por el descubrimiento del DDT como insecticida.
-1**13**13 de enero: Nace en el año 1927 el biólogo sudafricano Sydney Brenner, Premio Nobel de Fisiología o Medicina en el año 2002 "por sus investigaciones sobre la regulación del desarrollo de los órganos y la muerte celular programada".
-1**14**14 de enero: Matthias Zurbriggen alcanza en 1897, por primera vez en la historia, la cumbre del Aconcagua (la montaña más alta de América).
-1**15**15 de enero: Nace en 1929 Martin Luther King.
-1**16**16 de enero: Nace en 1932 Dian Fossey, primatóloga estadounidense conocida por haber dedicado su vida al estudio y protección de los gorilas de montaña (sería presuntamente asesinada a los 53 años por denunciar y combatir la actividad de los cazadores furtivos).
-1**17**17 de enero: Nace en 1600 el escritor español Calderón de la Barca; nace en 1706 Benjamin Franklin, político y científico estadounidense conocido por la invención del pararrayos.
-1**18**18 de enero: Nace en 1921 el físico estadounidense Yoichiro Nambu, Premio Nobel de Física en 2008 "por el descubrimiento del origen del problema de simetría rota, que predice la existencia de, al menos, tres familias de quarks en la naturaleza".
-1**19**19 de enero: Nace en 1736 James Watt, matemático e ingeniero escocés inventor de la medida “caballo de potencia"; nace en 1809 el escritor y poeta estadounidense Edgard Allan Poe.
-1**20**20 de enero: Nace en 1930 Buzz Aldrin, astronauta estadounidense conocido por ser la segunda persona de la historia que puso un pie en la Luna. .
-1**21**21 de enero: Se bota en 1954 el "Nautilus" (SSN-571), el primer submarino de propulsión nuclear; nace en 1912 el químico alemán Konrad Bloch, Premio Nobel de Fisiología o Medicina en 1964 por sus estudios sobre el metabolismo del colesterol.
-1**22**22 de enero: Cristóbal Colón desembarca en 1498 en lo que es hoy San Vicente y las Granadinas (país americano). A la isla principal la bautizó "San Vicente" en honor al santo de aquel día (San Vicente Mártir - 22 de enero); nace en 1855 Albert Neisser, médico alemán conocido por descubrir el agente patógeno de la gonorrea.
-1**23**23 de enero: En 1960 Jacques Piccard y Don Walsh descienden, por primera vez en la historia, al fondo del lugar más profundo del océano: el abismo de Challenger (11 km bajo el nivel del mar); nace en 1907 el físico japonés Hideki Yukawa, Premio Nobel de Física en 1949 por el descubrimiento teórico de los mesones.
-1**24**24 de enero: nace en el año 76 en Itálica, Hispania (hoy Sevilla, España), Adriano; célebre filósofo y emperador romano del año 117 al 138. Durante su reinado el Imperio romano alcanzaría la mayor extensión territorial de su historia; nace en 1941 el científico israelí Dan Shechtman, premio nobel de química en 2011 por el descubrimiento de los cuasicristales.
-1**25**25 de enero: Nace en 1627 Robert Boyle, físico y químico británico conocido por describir la relación entre la presión y el volumen de los gases a temperatura constante (ley de Boyle).
-1**26**26 de enero: El físico escocés John Logie Baird, inventor del televisor, hizo la primera demostración pública de su invento; se descubre en 1905 el diamante más grande del mundo; se celebra el Día de Australia en conmemoración de la llegada al país de Arthur Phillip en 1788 (gobernador de la primera colonia europea de Australia y fundador de la ciudad de Sídney).
-1**27**27 de enero: Nace en 1756 el músico austríaco Wolfgang Amadeus Mozart; nace en Nace en 1832 Charles Lutwidge Dodgson (más conocido por su seudónimo: Lewis Carroll), escritor de «Las aventuras de Alicia en el país de las maravillas».
-1**28**28 de enero: Se inicia en el año 1887 la construcción de la Torre Eiffel.
-1**29**29 de enero: Nace en 1773 Friedrich Mohs, geólogo alemán creador de la escala de Mohs (utilizada para medir la dureza de los minerales).
-1**30**30 de enero: Se celebra, desde el año 1964, el Día Escolar de la No Violencia y la Paz (en conmemoración al día de fallecimiento de Mahatma Gandhi). .
-1**31**31 de enero: El explorador español Álvar Núñez Cabeza de Vaca descubre en el año 1542 las "cataratas del Iguazú" (una de las siete maravillas naturales del mundo); la República de Nauru se independiza de Australia en el año 1968. [Países de Oceanía].
-2**1**1 de febrero: Nace en 1905 el físico italo-americano Emilio Gino Segré, premio nobel de física en el año 1959 por el descubrimiento del antiprotón.
-2**2**2 de febrero: El marinero escocés Alexander Selkirk es rescatado tras haber pasado más de cuatro años viviendo en una isla desierta (1709). Se cree que la historia de su supervivencia inspiró al escritor británico Daniel Defoe a escribir la novela «Robinson Crusoe».
-2**3**3 de febrero: Grecia se independiza del Imperio otomano en 1830.
-2**4**4 de febrero: Nace en 1906 Clyde Tombaugh, astrónomo estadounidense conocido por el descubrimiento de Plutón [Imagen de Plutón en alta resolución tomada por la sonda espacial New Horizons (14-7-15)]; se celebra el Día Mundial contra el Cáncer.
-2**5**5 de febrero: En 1782 tropas españolas, con la ayuda de 4000 aliados franceses, recuperan la isla de Menorca después de más de 70 años de dominio británico. [Islas de Islas Baleares].
-2**6**6 de febrero: Nace en 1945 el músico jamaicano Bob Marley [10 frases célebres de Bob Marley]; se celebra el Día de Bob Marley; se celebra el Día Internacional de Tolerancia Cero con la Mutilación Genital Femenina.
-2**7**7 de febrero: Granada (país americano) se independiza del Reino Unido en 1974 [Países de América (listado y mapa)]; nace en 1812 Charles Dickens, escritor inglés conocido por obras como «Oliver Twist» o «Cuento de Navidad».
-2**8**8 de febrero: Nace en 1834 Dmitri Mendeléyev, químico ruso creador de la tabla periódica de los elementos; nace en 1828 el escritor francés Julio Verne, principalmente conocido por novelas como: «La vuelta al mundo en ochenta días», «Viaje al centro de la Tierra» y/o «Veinte mil leguas de viaje submarino».
-2**9**9 de febrero: Nace en 1954 Chris Gardner, filántropo y multimillonario estadounidense sobre el que está basado la película «En busca de la felicidad».
-2**10**10 de febrero: Nace en 1846 Ira Remsen, químico estadounidense coinventor de la sacarina.
-2**11**11 de febrero: Nace en 1847 Thomas Edison, uno de los inventores más prolíficos de la historia (registró más de 1000 patentes).
-2**12**12 de febrero: Nace en 1809 Charles Darwin.
-2**13**13 de febrero: Se celebra el Día Mundial de la Radio.
-2**14**14 de febrero: Nace en 1859 el inventor de la primera noria de feria: George Ferris Jr; nace en 1819 Christopher Sholes, inventor del teclado QWERTY.
-2**15**15 de febrero: Nace en 1642 Galileo Galilei, el padre de la ciencia y el precursor del método científico; se celebra el Día Internacional del Cáncer Infantil.
-2**16**16 de febrero: Entró en vigor en 2005 el Protocolo de Kioto para reducir las emisiones de los principales gases que causan el calentamiento global.
-2**17**17 de febrero: Nace en 1836 el poeta español Gustavo Adolfo Bécquer [10 frases célebres de Bécquer]; nació en 1963 Michael Jordan, considerado el «mejor jugador de baloncesto de la historia» y uno de los mayores saltadores de la NBA [¿Cómo mejorar nuestro salto vertical?].
-2**18**18 de febrero: Clyde Tombaugh descubre Plutón en 1930 (fue el noveno y más pequeño planeta del Sistema Solar hasta el año 2006, en el que pasó a considerarse un planeta enano); nace en 1745 Alessandro Volta, físico italiano conocido por la invención de la pila eléctrica (en su honor se nombró "voltio" a la unidad del SI para el potencial eléctrico y la tensión eléctrica).
-2**19**19 de febrero: Nace en 1473 Nicolás Copérnico, astrónomo polaco conocido, entre otros hallazgos, por la «teoría heliocéntrica» (descubrió que la Tierra giraba alrededor del sol y no al revés, como se pensaba en aquella época).
-2**20**20 de febrero: Se celebra el Día Mundial de la Justicia Social [10 frases célebres sobre la justicia]; se celebra, de forma no oficial, el «Día Internacional del Gato».
-2**21**21 de febrero: Nace en 1895 Henrik Dam, bioquímico y premio nobel danés conocido por el descubrimiento de la vitamina K (y su función en la coagulación de la sangre) [Principales enfermedades por deficiencia de vitaminas]; nace en 1933 Nina Simone (cantante, compositora y pianista estadounidense).
-2**22**22 de febrero: Nace en 1857 Heinrich Rudolf Hertz, físico alemán descubridor del efecto fotoeléctrico y la propagación de las ondas electromagnéticas; nace en 1914 Renato Dulbecco, médico y Premio Nobel italiano conocido por descubrir el efecto de algunos virus en el desarrollo del cáncer.
-2**23**23 de febrero: Se anuncia, en el año 1997, el nacimiento del primer mamífero clonado (la oveja Dolly).
-2**24**24 de febrero: nace en 1955 Steve Jobs (fundador de Apple) [10 de sus frases más famosas]; se celebra el Día de la Bandera de México; nace en 1866 Piotr Nikoláyevich Lébedev, físico ruso pionero en medir la presión de la luz sobre un sólido.
-2**25**25 de febrero: Nace en 1917 el escritor británico Anthony Burgess (autor de «La naranja mecánica»); el inventor y empresario estadounidense Samuel Colt patenta el revólver en 1836.
-2**26**26 de febrero: En 1919, con objetivo de proteger la belleza natural del Gran Cañón del Colorado, se creó el «Parque Nacional del Gran Cañón».
-2**27**27 de febrero: La República Dominicana se independiza de Haití en 1844; los físicos Martin Kamen y Sam Ruben descubren en 1940 el carbono-14 [¿Para qué sirve y cómo funciona la datación por carbono-14?].
-2**28**28 de febrero: Nace en 1901 el químico y doble premio nobel estadounidense Linus Pauling (recibió el Nobel de Química en 1954 por su descripción de la naturaleza de los enlaces químicos y el Nobel de la Paz en 1962 por sus esfuerzos por controlar la proliferación de armas nucleares). 
-2**29**29 de febrero: ¿Por qué hay años bisiestos?; se celebra el Día Mundial de las Enfermedades Raras.
-3**1**1 de marzo: Yellowstone se convierte en 1872 en el primer parque nacional de Estados Unidos y del mundo; nace en 1810 Chopin (uno de los pianistas y compositores más importantes de la historia de la música).
-3**2**2 de marzo: Se lanza al espacio la "Pioneer 10" (1972). Esta sonda especial estadounidense, además de por su misión científica (estudio de Júpiter), será famosa por contener una placa para extraterrestres indicando la naturaleza y procedencia del ser humano. [El mensaje para extraterrestres de la Pioneer 10].
-3**3**3 de marzo: James Fossett se convierte, tras 67 horas de vuelo ininterrumpido, en la primera persona en dar la vuelta al mundo en avión en solitario y sin escalas (año 2005)‬; nace en 1847 Alexander Graham Bell, inventor escocés conocido, entre otros hallazgos, por conseguir la patente del teléfono. (*) Se creía hasta hace no mucho que fue el inventor del dispositivo, si bien este hallazgo pertenece realmente al inventor italiano Antonio Meucci, que desarrolló el primer teléfono algunos años antes.
-3**4**4 de marzo: Nace en 1678 el músico italiano Antonio Lucio Vivaldi.
-3**5**5 de marzo: Winston Churchill, durante una conferencia en 1946 (EE. UU.), populariza el término "cortina de hierro" (también traducido como "telón de acero").
-3**6**6 de marzo: Nace en 1456 el escultor, pintor y arquitecto italiano Miguel Ángel Buonarotti (famoso por la escultura de "El David" y la obra pictórica que recubre la bóveda de la Capilla Sixtina); Nace en 1927 el escritor y premio nobel colombiano Gabriel García Márquez.
-3**7**7 de marzo: Nace en 1938 el físico francés Albert Fert, Premio Nobel de Física en el año 2007 por el co-descubrimiento de la magnetorresistencia gigante; nace en 1765 Joseph Nicéphore Niépce, litógrafo francés conocido por la invención de la cámara de fotos y por ser el autor de la primera fotografía de la historia.
-3**8**8 de marzo: Se celebra el Día Internacional de la Mujer [10 frases célebres sobre la mujer]; nace en 1879 el químico alemán Otto Hahn, premio nobel de química en 1944 por el descubrimiento de la fisión de núcleos pesados (es considerado el padre de la energía nuclear).
-3**9**9 de marzo: Nace en 1934 Yuri Gagarin, astronauta soviético famoso por ser la primera persona que viajó al espacio exterior; nace en 1454 el navegante italiano Americo Vespucio, famoso por descubrir que las tierras a las que llegó Colón se trataban en realidad de un nuevo continente y no parte de Asia, como se creía por aquel entonces. En su honor, el cartógrafo Waldseemüller bautizaría aquel continente con el nombre de "América". [¿De dónde proviene la palabra América?].
-3**10**10 de marzo: Nace en 1833 el poeta español Pedro Antonio de Alarcón; nace en 1844 el compositor y violinista español Pablo Sarasate.
-3**11**11 de marzo: Se celebra, en recuerdo a las víctimas del mayor atentado terrorista de la historia de España y Europa, el "Día Europeo en Memoria de las Víctimas del Terrorismo".
-3**12**12 de marzo: Se funda en 1913 la ciudad de Canberra (capital de Australia) [Países y capitales de Oceanía (listado y mapa)]; Mauricio (país africano) se independiza de Reino Unido en 1968; se celebra el Día Mundial del Glaucoma, enfermedad ocular que produce una pérdida progresiva de la visión (es la segunda causa principal de ceguera en el mundo).
-3**13**13 de marzo: El astrónomo alemán William Herschel anuncia el descubrimiento del planeta Urano en 1781.
-3**14**14 de marzo: Nace en 1879 el físico Albert Einstein, considerado el mejor científico del siglo XX; se celebra el "Día de Pi" en honor a la expresión matemática Π. Se escogió esta fecha porque en el calendario americano (3/14) se representan los tres primeros dígitos con los que popularmente se simplifica este número irracional: 3,14..
-3**15**15 de marzo: Muere asesinado en el 44 a.C. el emperador romano Julio César; Nace en 1813 John Snow, médico británico conocido por descubrir y demostrar que la devastadora epidemia de cólera londinense de 1854 se debía al consumo de aguas contaminadas con materias fecales. Este descubrimiento salvó muchas vidas y estableció las bases de la epidemiología moderna.
-3**16**16 de marzo: Nace en 1478 Francisco Pizarro, explorador español famoso por la conquista del Imperio incaico (actual Perú); nació en 1789 el físico y matemático alemán Georg Simon Ohm, descubridor de la Ley de Ohm; nace en 1925 Luis Ernesto Miramontes, químico mexicano conocido por la coinvención del primer anticonceptivo oral.
-3**17**17 de marzo: Se celebra el Día de San Patricio; nace en 1881 Walter Rudolf Hess, médico y Premio Nobel suizo conocido por mapear las áreas del cerebro encargadas del control de los órganos internos.
-3**18**18 de marzo: el astronauta ruso Aleskséi Leónov realiza la primera caminata espacial de la historia en el año 1965 (estuvo fuera de la nave 12 minutos y 9 segundos).
-3**19**19 de marzo: Nace en 1943 el ingeniero químico mexicano Mario Molina, premio nobel de química en el año 1995 por descubrir las causas de la desintegración de la capa de ozono.
-3**20**20 de marzo: Se celebra el Día Internacional de la Felicidad [10 frases célebres sobre la felicidad]; Túnez se independiza de Francia en el año 1956.
-3**21**21 de marzo: Se cierra la famosa prisión de Alcatraz [¿Por qué se cerró la prisión de Alcatraz?]; se celebra el Día Internacional de los Bosques; se celebra el Día Mundial del Síndrome de Down.
-3**22**22 de marzo: Se celebra el Día Mundial del Agua con motivo de concienciar sobre su uso responsable.
-3**23**23 de marzo: Nace en 1912 Wernher von Braun, ingeniero aeroespacial germano-estadounidense conocido por diseñar el cohete que llevó al hombre a la Luna; nace en el año 1881 el químico alemán Hermann Staudinger, Premio Nobel de Química en el año 1953 <<por sus descubrimientos en el campo de la química macromolecular.
-3**24**24 de marzo: El médico y Premio Nobel alemán Robert Koch anunció el descubrimiento de la bacteria responsable de la tuberculosis el 24 de marzo del año 1882. Rememorando la importancia de su hallazgo para el entendimiento y tratamiento de la enfermedad, cada 24 de marzo se celebra el "Día Mundial de la Tuberculosis".
-3**25**25 de marzo: Nace en 1808 el escritor y poeta español José de Espronceda (seguro que conoces este famoso poema suyo: Canción del pirata); se celebra el "Día Internacional del Gofre"; nace en 1914 el genetista estadounidense Norman Borlaug, premio nobel de la paz en 1970 <<por aumentar la productividad agrícola en los países más necesitados>>.
-3**26**26 de marzo: Nace en 1973 el cofundador de Google Larry Page [¿Quién fundó Google?]; Nace en 1911 Bernard Katz, neurocientífico germano-británico galardonado con el Premio Nobel de Medicina de 1970 por sus descubrimientos en el campo de la neuroquímica.
-3**27**27 de marzo: Nace en 1845 Wilhelm Röntgen, físico alemán descubridor de los rayos X (fue el primer premio nobel de física de la historia); se celebra el Día Mundial del Teatro.
-3**28**28 de marzo: La ciudad de Bizancio (siglo VII a. C.), rebautizada como Constantinopla en el siglo IV, pasa a llamarse Estambul definitiva y oficialmente en 1930; nace en 1930 Jerome Isaac Friedman, premio nobel de física en 1990 por el descubrimiento experimental de los quarks.
-3**29**29 de marzo: Nace en 1869 Aleš Hrdlička, antropólogo checo conocido por haber formulado la teoría que sostiene que todas las razas humanas tienen un origen común.
-3**30**30 de marzo: Nace en 1853 el famoso pintor neerlandés Vincent van Gogh.
-3**31**31 de marzo: Nace en 1596 el filósofo y matemático francés René Descartes, famoso por su planteamiento filosófico: «pienso, luego existo» (en latín: «cogito ergo sum»). [10 frases célebres de Descartes]; se inaugura la Torre Eiffel en 1889; nace en 1685 el músico alemán Johann Sebastian Bach.
-4**1**1 de abril: Nace en 1908 Abraham Maslow, psicólogo estadounidense conocido por jerarquizar las necesidades humanas en la que se conoce hoy como la "pirámide de Maslow".
-4**2**2 de abril: Nace en 1805 el escritor de "La Sirenita" y "El patito feo": Hans Christian Andersen; se celebra, desde el año 2008, el Día Mundial de Concienciación sobre el Autismo.
-4**3**3 de abril: Estados Unidos firma en 1948 el Plan Marshall para ayudar a reconstruir los países europeos afectados por la Segunda Guerra Mundial.
-4**4**4 de abril: Se crea la OTAN (1949); Bill Gates y Paul Allen fundan en 1975 la empresa Microsoft.
-4**5**5 de abril: El explorador neerlandés Jakob Roggeveen descubre la isla de Pascua en 1722 (la nombró así porque aquel 5 de abril fue domingo de Pascua).
-4**6**6 de abril: Se inauguran en 1896 los primeros Juegos Olímpicos de la Era Moderna (Atenas, Grecia); nace en 1928 James Watson, biólogo estadounidense co-descubridor de la estructura del ADN; se celebra el Día Internacional del Deporte para el Desarrollo y la Paz.
-4**7**7 de abril: Nace en 1889 la poetisa chilena Gabriela Mistral, primera latinoamericana galardonada con el Premio Nobel de Literatura; se celebra, desde el año 1950, el Día Mundial de la Salud.
-4**8**8 de abril: Nace en 1460 Juan Ponce de León, explorador español conocido por el "descubrimiento" de la actual Florida (la nombró así porque la descubrió en la Pascua de Resurrección, también conocida como Pascua Florida); nace en 1911 el químico estadounidense Martin Calvin, Premio Nobel de Química en 1961 por esclarecer el proceso de asimilación fotoquímica del CO2 por parte de las plantas, actualmente conocido como “ciclo de Calvin".
-4**9**9 de abril: Nace en 1770 Thomas Johann Seebeck, médico y físico estonio descubridor del efecto termoeléctrico; Georgia se independiza de la Unión Soviética en 1991.
-4**10**10 de abril: El Titanic inició su viaje inaugural desde Southampton (Inglaterra) con destino a Nueva York [se hundió 5 días después, en la noche del 14 al 15 de abril]; se celebra el Día del Investigador en honor al natalicio del primer Premio Nobel latinoamericano: Bernardo Alberto Houssay (Argentina, 10 de abril de 1887).
-4**11**11 de abril: Se celebra el Día Mundial del Parkinson en honor al natalicio del descubridor de la enfermedad: James Parkinson (Inglaterra, 11 de abril de 1755).
-4**12**12 de abril: El astronauta soviético Yuri Gagarin realizó el primer viaje al espacio exterior de la historia.
-4**13**13 de abril: Nace en 1808 Antonio Meucci, el (verdadero) inventor del teléfono; nace en en 1771 Richard Trevithick, ingeniero inglés inventor de la primera locomotora a vapor; nace en 1963 Garri Kímovich Kaspárov, uno de los mejores jugadores de ajedrez de la historia (campeón del mundo de 1985 al año 2000); nace en 1906 el escritor irlandés Samuel Beckett (premio nobel de literatura en 1969); se celebra el Día Internacional del Beso.
-4**14**14 de abril: Se celebra el Día de las Américas.
-4**15**15 de abril: Nace en 1452 el genio italiano Leonardo da Vinci. [10 de las mejores frases/reflexiones/enseñanzas de Leonardo Da Vinci]; tras haber chocado contra un iceberg, el «Titanic» se hunde en aguas del océano Atlántico (1912).
-4**16**16 de abril: Nace en 1889 el actor y humorista británico Charles Chaplin [10 frases célebres de Charles Chaplin].
-4**17**17 de abril: Jerrie Mock se convierte en la primera mujer en dar la vuelta al mundo en avión (1964); ‪Siria se independiza del imperio francés en el año 1946.
-4**18**18 de abril: Zimbabue nace como país en 1980 tras independizarse oficialmente del Reino Unido (desde que declaró su independencia —no oficial— en 1965 hasta este día, fue conocido con el nombre de "Rodesia"); se celebra desde 1983 el Día Internacional de los Monumentos y Sitios con el objetivo de promover la diversidad del patrimonio cultural de la humanidad, su vulnerabilidad y los esfuerzos que se requieren para su protección y conservación.
-4**19**19 de abril: Nace en 1832 el primer premio nobel español, el matemático y escritor José Echegaray [¿Cuántos premios nobel españoles ha habido?]; se celebra el Día Mundial de la Bicicleta; finaliza en 1937 la construcción del famoso Golden Gate (San Francisco, EE. UU.).
-4**20**20 de abril: Se lanza en 2004 el satélite Gravity Probe B para probar algunas predicciones de la Teoría de la Relatividad de Einstein.
-4**21**21 de abril: Se funda Roma en el año 753 a.C.
-4**22**22 de abril: Se celebra, desde el año 1970, el Día de la Tierra.
-4**23**23 de abril: Se celebra el Día Internacional del Libro; nace en 1858 el "padre de la física cuántica": Max Planck.
-4**24**24 de abril: En 1990 es puesto en órbita el telescopio espacial Hubble [Imágenes del telescopio espacial Hubble]; nació en 2005 Snoppy, el primer perro clonado; Chile se independiza oficialmente de España en 1844.
-4**25**25 de abril: Se celebra el «Día del ADN»; se celebra, desde el año 2008, el Día Mundial del Paludismo, una enfermedad que causa 1,3 millones de muertes anuales.
-4**26**26 de abril: Se produce en 1986 en Chernóbil (actual Ucrania) el mayor accidente nuclear y desastre medioambiental de la historia (junto al de Fukushima de 2011) [Imágenes]; nace en 1933 el físico alemán Arno Allan Penzias, Premio Nobel de Física en 1978 por el descubrimiento accidental de la radiación cósmica de fondo de microondas.
-4**27**27 de abril: Nace en 1791 el inventor estadounidense Samuel Morse, co-creador del telégrafo y el código Morse.
-4**28**28 de abril: El explorador noruego Thor Heyerdahl y su tripulación zarparon de Perú a la Polinesia en una balsa que ellos mismos construyeron con materias primas de la zona para demostrar que los indios americanos podrían haber colonizado las islas del Pacífico antes que los exploradores asiáticos (llegarían 101 días después demostrando así su teoría); se celebra, desde el año 2005, el Día Mundial de la Seguridad y la Salud en el trabajo.
-4**29**29 de abril: Se celebra desde 1982 el Día Internacional de la Danza en honor al nacimiento del coreógrafo Jean Georges Noverre.
-4**30**30 de abril: John Thomson anuncia el descubrimiento del electrón en 1897; se celebra el Día Internacional del Jazz con objetivo de sensibilizar sobre sus virtudes como herramienta educativa y social.
-5**1**1 de mayo: Nace en 1852 el médico e investigador español Santiago Ramón y Cajal, premio nobel de fisiología o medicina en 1906 por sus descubrimientos sobre la estructura del sistema nervioso [¿Sabes cuántos premios nobel tiene España?]; se inaugura en 1931 el que fue el edificio más alto del mundo hasta el 1972: el Empire State Building (Nueva York, Estados Unidos).
-5**2**2 de mayo: Nace en 1955 la diseñadora italiana Donatella Versace (actual jefa de diseño de la firma Versace).
-5**3**3 de mayo: Se celebra el Día Mundial de la Libertad de Prensa.
-5**4**4 de mayo: Nace en 1655 el inventor del piano: Bartolomeo Cristofori di Francesco; nace en 1825 Thomas Huxley, pieza clave en la difusión científica británica, defensor de Darwin y su teoría de la evolución y creador del término “agnóstico".
-5**5**5 de mayo: Nace en 1818 Karl Marx, filósofo alemán padre del comunismo moderno y el marxismo. [Frases célebres de Karl Marx].
-5**6**6 de mayo: Nace en 1856 Sigmund Freud, el padre del psicoanálisis; nace en 1856 Robert Peary, explorador estadounidense conocido popularmente por haber sido el primer hombre que llegó al Polo Norte; se inaugura en 1994 el eurotúnel (el túnel submarino que une Francia con el Reino Unido); nace en 1919 el inventor del futbolín español: Alejandro Finisterre.
-5**7**7 de mayo: Se estrena en el año 1824 (Viena) la 9.º Sinfonía de Beethoven.
-5**8**8 de mayo: Nace en 1828 Henri Dunat, empresario, filántropo y premio nobel de la paz suizo conocido por su actividad humanitaria en la batalla de Solferino (Italia) y especialmente por la fundación de la Cruz Roja.
-5**9**9 de mayo: Nace en 1883 el filósofo y escritor español José Ortega y Gasset [10 frases célebres de Ortega y Gasset]; nace en 1860 James Matthew Barrie, novelista escocés conocido por haber creado el personaje de Peter Pan; se celebra desde el Día de Europa.
-5**10**10 de mayo: Nelson Mandela es proclamado en 1994 presidente de Sudáfrica por sufragio universal; en 1508 Miguel Ángel Buonarroti comienza a pintar la bóveda de la Capilla Sixtina; nace en 1843 el escritor español Benito Pérez Galdós.
-5**11**11 de mayo: Nace en 1904 el polifacético artista español Salvador Dalí; nace en 1918 el físico Richard Feynman, Premio Nobel de física en 1965 por su contribución a la electrodinámica cuántica.
-5**12**12 de mayo: Se celebra el Día Internacional de la Fibromialgia y la Enfermería en recuerdo a la natividad de Florencia Nightingale.
-5**13**13 de mayo: Nace en 1888 la sismóloga danesa Inge Lehmann (descubridora del núcleo interno de la Tierra) [Clasificación (química y física) de las capas internas de la Tierra]; nace en 1857 Ronald Ross, Premio Nobel de Fiosología o Medicina en 1902 por el descubrimiento de la vía de transmisión de la malaria; nace en 1950 el cantante Stevie Wonder.
-5**14**14 de mayo: Nace en 1863 John Charles Field, creador de la Medalla Fields (equivalente al Premio Nobel de Matemáticas): nace en 1984 el creador de Facebook: Mark Elliot Zuckerberg.
-5**15**15 de mayo: Nace en 1859 Pierre Curie (marido de Marie Curie), físico y premio nobel francés conocido por sus estudios pionero en el campo de la radioactividad y la piezoelectricidad.
-5**16**16 de mayo: Nace en 1831 David Edward Hughes, físico británico inventor del telégrafo de Hughes; se celebra en 1929 la primera entrega de los premios Óscar.
-5**17**17 de mayo: Se celebra el Día Mundial de la Hipertensión Arterial con motivo de concienciar sobre su peligrosidad y tratamiento; se celebra el Día Internacional del Reciclaje.
-5**18**18 de mayo: Entra en erupción en 1980 el Monte Santa Helena produciendo los mayores daños naturales en la historia de los EEUU.
-5**19**19 de mayo: Nace en 1914 Max Perutz, Premio Nobel de Química en 1962 por sus estudios sobre la estructura de las proteínas globulares; nace en 1955 el inventor del lenguaje de programación Java: James Gosling.
-5**20**20 de mayo: Timor Oriental (país de Asia) se convierte en 2002 en el primer país nacido en el siglo XXI.
-5**21**21 de mayo: «En mi imperio nunca se pone el sol». Nace en 1527 Felipe II de España, rey de la España que se extendía por los cinco continentes y vivía su edad de oro en las artes y las letras [Cinco de las mejores frases de Felipe II de España]; nace en 1860 el médico neerlandés Willem Einthoven, Premio Nobel de Fisiología o Medicina en 1924 por el descubrimiento del mecanismo del electrocardiograma.
-5**22**22 de mayo: Nace en 1859 Arthur Conan Doyle, escritor británico creador de Sherlock Holmes; nace en 1783 William Sturgeon, físico británico inventor del primer electroimán.
-5**23**23 de mayo: Nace en 1707 Carlos Linneo, naturalista sueco fundador de la nomenclatura binomial (sistema para nombrar y clasificar los organismos vivos. Ejemplo: gato --> Felis silvestris catus).
-5**24**24 de mayo: Nace en 1686 Daniel Gabriel Fahrenheit, físico e ingeniero alemán conocido por la invención del termómetro de mercurio y la escala de temperatura que lleva su nombre (escala Fahrenheit); se inaugura el puente de Brooklyn en 1883.
-5**25**25 de mayo: Se celebra el Día del Orgullo Friki [se escogió el 25 de mayo porque fue el día que se estrenó la primera película de "La guerra de las galaxias" (25/05/1977)]; nace en 1921 Jack Steinberger, físico alemán co-descubridor del muón neutrino.
-5**26**26 de mayo: Guyana nace como país en 1966 (tras independizarse del Reino Unido). Nace en 1957 Diomedes Díaz Maestre, reconocido mundialmente por ser el más grande cantautor y sex symbol colombiano
-5**27**27 de mayo: Nace en 1907 Rachel Carson, bióloga, ecologista y escritora estadounidense conocida por impulsar la moderna conciencia ambiental a través de su libro “Primavera silenciosa”, en el que promulgará los efectos perjudiciales de los pesticidas en el medio ambiente y gracias al cual se acabaría prohibiendo el uso del DDT en los Estados Unidos; ‬Auguste Piccard se convierte en 1931 en la primera persona en alcanzar la estratosfera ascendiendo en globo.
-5**28**28 de mayo: Nace en 1945 Patch Adams, médico estadounidense inventor de la risoterapia.
-5**29**29 de mayo: Edmund Hillary y Tenzing Norgay coronan en 1953, por primera vez en la historia, la cima del Everest. [Primer ascenso a la cima del Everest].
-5**30**30 de mayo: Nace en 1934 el cosmonauta ruso Alekséi Leónov, primera persona en realizar un paseo espacial.
-5**31**31 de mayo: Se celebra, desde el año 1987, el Día Mundial Sin Tabaco con motivo de divulgar sus efectos negativos sobre la salud y promover campañas para reducir su consumo.
-6**1**1 de junio: Nace en 1851 Isaac Peral, científico y marino cartagenero (España) inventor del submarino torpedero de autopropulsión eléctrica.
-6**2**2 de junio: Nace en 1922 Clair Cameron Patterson, geoquímico estadounidense pionero en determinar con exactitud la edad de la Tierra.
-6**3**3 de junio: Nace Torsten N. Wiesel en 1924, médico sueco ganador del Premio Nóbel de Fisiología o Medicina 1981 por sus descubrimientos sobre el procesamiento de la información en el sistema visual.
-6**4**4 de junio: Los hermanos Joseph y Jacques Montgolfier realizan el primer viaje en globo aerostático de la historia en 1783.
-6**5**5 de junio: Se celebra el Día Mundial del Medio Ambiente. [10 frases célebres sobre la importancia de cuidar nuestro planeta y el medio ambiente]. Nace en 1898 el escritor español Federico García Lorca.
-6**6**6 de junio: Se estrena el videojuego del Tetris en 1984. Nace en 1599 el pintor español Diego Velázquez.
-6**7**7 de junio: Nace en 1957 el cantautor dominicano Juan Luis Guerra.
-6**8**8 de junio: Nace en 1916 Francis Crick, físico británico co-descubridor de la estructura del ADN.Nace en 1955 Timothy John Berners-Lee, físico británico conocido por la invención y desarrollo de la web. Se celebra el Día Mundial de los Océanos. 
-6**9**9 de junio: Nace en 1812 Johann Gottfried Galle, astrónomo alemán descubridor del planeta Neptuno.
-6**10**10 de junio: Se funda en 1935 la asociación Alcohólicos Anónimos (AA).
-6**11**11 de junio: El explorador británico James Cook descubre en el año 1770 la "Gran Barrera de Coral" (el mayor arrecife de coral del mundo).
-6**12**12 de junio: Se celebra el Día Mundial Contra el Trabajo Infantil.
-6**13**13 de junio: Nace en 1831 James Clerk Maxwell, físico escocés conocido por haber desarrollado la teoría electromagnética clásica.
-6**14**14 de junio: Nace en 1868 Karl Landsteiner, médico y premio nobel austríaco descubridor de los grupos sanguíneos y su compatibilidad para llevar a cabo transfusiones de sangre (marcará un antes y un después en la historia de la medicina). Nace en 1736 Charles Coulomb, físico francés creador de la ley de atracción entre cargas eléctricas. 
-6**15**15 de junio: En 1667 el médico francés Jean-Baptiste Denys realiza la primera transfusión de sangre en un ser humano.
-6**16**16 de junio: Valentina Tereshkova se convierte en 1963 en la primera mujer cosmonauta de la historia.
-6**17**17 de junio: Islandia se independiza de Dinamarca en 1944. Se celebra el Día Mundial de Lucha contra la Desertificación y la Sequía. 
-6**18**18 de junio: Nace en 1918 el químico estadounidense Jerome Karle, premio nobel de química en 1985 por el desarrollo de métodos directos para la determinación de estructuras cristalinas. Nace en 1845 el médico francés Charles Louis Alphonse Laveran, premio nobel de medicina en 1907 «en reconocimiento a sus estudios sobre el papel jugado por los protozoos en las enfermedades». 
-6**19**19 de junio: Nace en 1623 Blaise Pascal, matemático y filósofo francés conocido por la invención de la calculadora. Kuwait se independizó del Reino Unido en 1961.
-6**20**20 de junio: Nace en 1861 el bioquímico británico Frederick Gowland Hopkins, premio nobel de medicina en 1929 por descubrir la importancia de las vitaminas en la dieta [Principales enfermedades por deficiencia de vitaminas]. Se celebra el Día Mundial de los Refugiados.
-6**21**21 de junio: Se celebra el Día de la Música. 
-6**22**22 de junio: Un 22 de junio de 1633, Galileo, por miedo a ser quemado en la hoguera por herejía, rechazó ante la Inquisición la teoría de que la Tierra giraba alrededor del Sol. Según algunos testigos, justo después de abjurar, pronunció para sí mismo su famosa frase "E pur si muove" ("Y sin embargo, se mueve"). Nace en 1939 la química israelí Ada Yonath, premio nobel de química 2009 por sus estudios sobre la estructura y función de los ribosomas. 
-6**23**23 de junio: Christopher Latham Sholes patenta la máquina de escribir en 1868.
-6**24**24 de junio: Nace en 1927 Martin Perl, premio nobel de física en 1995 por el descubrimiento de la partícula elemental “Tau”. Nace en 1987 el futbolista argentina Leo Messi.
-6**25**25 de junio: Nace en 1852 el arquitecto español Antonio Gaudí (diseñador de la «Sagrada Familia» y el «parque Güell», entre otras obras de renombre).Se celebra el Día de la Gente de Mar.
-6**26**26 de junio: Alessandro Volta presenta en 1800 el descubrimiento de la primera pila eléctrica. Madagascar se independiza de Francia en 1960. 
-6**27**27 de junio: Nace en 1931 el físico neerlandés Martinus Veltman, premio nobel de física en 1999 por el descubrimiento de la estructura cuántica de la interacción débil. Yibuti (país africano) se independiza de Francia en 1977.
-6**28**28 de junio: Se firma en 1919 el Tratado de Versalles que pone fin a la guerra entre Alemania y los Países Aliados (Primera Guerra Mundial).
-6**29**29 de junio: Nace en 1900 Antoine de Saint-Exupéry, aviador y escritor francés conocido por ser el autor de «El principito», el libro en lengua francesa más leído y traducido de la historia y uno de los más vendidos en todo el mundo. [Frases célebres de Antoine de Saint-Exupéry]. La República de las Seychelles se independiza de Reino Unido en 1976.
-6**30**30 de junio: Nace en 1985 el seguramente mejor nadador y deportista olímpico de la historia (22 medallas): Michael Phelps. Nace en 1863 Henry Ford, fundador de la compañía Ford Motor Compan
-7**1**1 de julio: Hong Kong vuelve a formar parte de China en 1997 tras más de 150 años de dominio británico (1841-1997); nace en 1646 Gottfried Leibniz, matemático y filósofo alemán considerado último genio universal.
-7**2**2 de julio: Nace en 1906 el físico germano-estadounidense Hans Albercht Bethe, premio nobel de física en 1967 por descubrir el modo de producción de energía en las estrellas.
-7**3**3 de julio: Idaho se convierte en 1890 en el estado número 43 de los Estados Unidos; nace en 1782 Pierre Berthier, químico y geólogo francés famoso por descubrir la bauxita.
-7**4**4 de julio: Los Estados Unidos de América declaran oficialmente en 1776 su independencia del imperio británico; Filipinas se independiza oficialmente de Estados Unidos en 1946; nace en 1884 Louis B. Mayer, productor de cine famoso por fundar la Metro Goldwyn Mayer.
-7**5**5 de julio: Argelia se independiza de Francia en 1962.
-7**6**6 de julio: Se funda en 1864 la Cruz Roja Española; Malaui se independiza de Reino Unido en 1964.
-7**7**7 de julio: El 07/07/07 se dieron a conocer las siete nuevas maravillas del mundo; Camillo Golgi, premio nobel de medicina o fisiología en 1906 por sus estudios sobre la estructura del sistema nervioso.
-7**8**8 de julio: Zarpa de Lisboa (Portugal) la expedición liderada por Vasco da Gama que llegó a la India bordeando África -estableciendo una importantísima ruta comercial entre Europa Occidental y la India- (1947); nace en 1857 Alfred Binet, psicólogo francés co-creador del primer test de inteligencia.
-7**9**9 de julio: Argentina se independiza oficialmente de España en 1816; Sudán del Sur se independiza de Sudán en 2011 convirtiéndose en el país oficial más joven del mundo; nace en 1894 el físico soviético Piotr Leonídovich Kapitsa, Premio Nobel de Física en 1978 por sus trabajos de física a bajas temperaturas (entre ellos el co-descubrimiento de la superfluidez).
-7**10**10 de julio: Nace en 1856 Nikola Tesla, inventor austrohúngaro-estadounidense conocido principalmente por la invención y desarrollo de la corriente alterna. [10 de las mejores frases/reflexiones de Nikola Tesla].
-7**11**11 de julio: Nace en 1561 el poeta español Luis de Góngora.‪
-7**12**12 de julio: Nace en 1904 el poeta chileno Pablo Neruda [10 de las mejores citas/frases de Pablo Neruda]; se alza en 1873 el Cantón de Cartagena como repulsa a la Primera República Española.
-7**13**13 de julio: España cede en 1713 Gibraltar y Menorca al Reino de Gran Bretaña (tratados de Utrecht); nace en 1826 Stanislao Cannizzaro, químico pionero en el cálculo de masas atómicas.
-7**14**14 de julio: Nace en 1924 James W. Black, médico y Premio Nobel escocés inventor del propranolol y la cimetidina.
-7**15**15 de julio: Se descubre en Egipto (año 1799) la Piedra de Rosetta que permitió descifrar los jeroglíficos egipcios; nace en 1606 Rembrandt, uno de los mejores y más influyentes pintores de la historia.
-7**16**16 de julio: Se detona en 1945 la primera bomba atómica de la historia en Los Álamos (EE. UU.); nace en 1872 Roald Amundsen, explorador noruego conocido por dirigir la primera expedición que llegó al Polo Sur (14/12/1911); Mahoma inicia la Hégira (Viaje de la Meca a Medina) en el año 622, hecho que marca el inicio del calendario musulmán.
-7**17**17 de julio: Nace en 1894 el astrónomo que propuso la teoría del Big Bang: Georges Lemaitre; nace en 1932 "Quino" (Joaquín Salvador Lavado Tejón), humorista gráfico hispano-argentino creador de la tira cómica de "Mafalda".
-7**18**18 de julio: Nace en 1918 Nelson Mandela; se celebra el Día Internacional de Nelson Mandela.
-7**19**19 de julio: Laos se independiza de Francia en 1949; el apolo XI se pone en órbita alrededor de la Luna (1969), dos días después Neil Armstrong se convertiría en la primera persona de la historia en poner un pie sobre la superficie de este satélite.
-7**20**20 de julio: Nace en 1822 el monje y naturalista austriaco Gregor Mendel, "padre de la genética". [Las tres leyes de Mendel].
-7**21**21 de julio: Neil Armstrong pisa la Luna en 1969 y pronuncia su famosa frase: "Es un pequeño paso para el hombre, pero un gran salto para la humanidad"; el Burj Khalifa se convierte en 2007 en el edificio más alto del mundo.
-7**22**22 de julio: Nace en 1887 el físico alemán Gustav Hertz, Premio Nobel de Física en 1925 por sus descubrimientos sobre las leyes que rigen el impacto de un electrón sobre un átomo; en 2005 se descubre en Atapuerca el fósil de hueso humano más pequeño.
-7**23**23 de julio: Se publica en Science la creación de una vacuna contra la neumonía y la meningitis.
-7**24**24 de julio: El explorador Hiram Bingham redescrubre y da a conocer al mundo el antiguo poblado de Machu Picchu (1911); entra en vigor en España (1980) la Ley Orgánica de libertad religiosa.
-7**25**25 de julio: Nació en 1920 Rosalind Elsie Franklin, química británica conocida principalmente por su contribución al descubrimiento de la estructura del ADN mediante imágenes obtenidas por difracción de rayos X.
-7**26**26 de julio: Nace en 1875 el poeta español Antonio Machado. [Frases célebres de Antonio Machado].
-7**27**27 de julio: Se celebra el "Día Internacional del Perro Callejero".
-7**28**28 de julio: Se celebra, coincidiendo con el día de nacimiento del descubridor de la Hepatitis B (Baruch Samuel Blumberg), el Día Mundial contra la Hepatitis.
-7**29**29 julio: Se anuncia en 2005 el descubrimiento de "Eris", el décimo planeta del Sistema Solar. (*) Sin embargo, poco más de un año después, el 24 de agosto de 2006, la Unión Astronómica Internacional lo clasificó, junto con Plutón, como un planeta enano (dejando de ser considerado un planeta).
-7**30**30 de julio: Se celebra el Día Internacional de la Amistad.
-7**31**31 de julio: La sonda lunar estadounidense Ranger 7 consiguió tomar en 1964 las primeras fotos en gran calidad de la Luna; nace en 1800 Friedrich Wöhler, químico alemán conocido por demostrar, en contra del pensamiento científico de su época, que un producto orgánico como la urea se podía obtener en el laboratorio a partir de materia inorgánica.
-8**1**1 de agosto: Benín (país africano) se independiza de Francia en 1960.
-8**2**2 de agosto: Nace en 1942 la escritora y premio nobel de literatura chilena Isabel Allende [10 frases célebres de Isabel Allende]; en 1820 John Tyndall, físico irlandés conocido por el fenómeno óptico que lleva su nombre (el "efecto Tyndall" se observa, por ejemplo, cuando entra luz solar en una habitación con polvo o cuando se usan los faros del coche en una noche de niebla); nace en 1776 Friedrich Stromeyer, químico alemán conocido por el descubrimiento del Cadmio (Cd).
-8**3**3 de agosto: Se funda en 2005 la empresa Mozilla Corporation.
-8**4**4 de agosto: Nace en 1901 el célebre cantante y trompetista estadounidense Louis Armstrong; nace en 1834 John Venn, matemático británico inventor del diagrama de Venn.
-8**5**5 de agosto: Burkina Faso (país africano) logra la independencia de Francia en 1960.
-8**6**6 de agosto: Detona en 1945 sobre Hiroshima la primera bomba atómica de la historia con fin bélico.
-8**7**7 de agosto: Costa de Marfil (país africano) se independiza de Francia en 1960.
-8**8**8 de agosto: Nace en 1902 el físico británico Paul Dirac, premio nobel de física en 1933 por su contribución al desarrollo de la mecánica y la electrodinámica cuántica.
-8**9**9 de agosto: Detona en 1945 sobre Nagasaki la segunda bomba atómica de la historia con fin bélico.
-8**10**10 de agosto: Nace en 1814 Henry Nestlé, químico alemán fundador del grupo Nestlé.
-8**11**11 de agosto: Nace en 1858 Christiaan Eijkman, fisiólogo y premio nobel neerlandés conocido por demostrar la relación entre una dieta deficiente en vitaminas (por aquel entonces desconocidas) y el desarrollo de enfermedades; la República del Chad (país africano) se independiza de Francia en 1960.
-8**12**12 de agosto: Nace en 1887 el físico austriaco Erwin Schrödinger, premio nobel de física en 1933 conocido popularmente por la invención del experimento imaginario del gato de Schrödinger; nace en 1911 Cantinflas [10 Frases célebres de Cantinflas].
-8**13**13 de agosto: Se celebra el Día Internacional del Zurdo; Harry Brearley inventa el acero inoxidable.
-8**14**14 de agosto: Pakistán se independiza de Reino Unido en 1947.
-8**15**15 de agosto: Nace en 1769 Napoleón Bonaparte; nace en 1892 el físico francés Louis-Victor De Broglie, premio nobel de física en 1929 por el descubrimiento de la naturaleza ondulatoria del electrón.
-8**16**16 de agosto: Usain Bolt establece en el Mundial de Atletismo de Berlín 2009 el récord de los 100 metros lisos (9,58 s). [¿Qué velocidad alcanzan los corredores de 100 metros lisos?].
-8**17**17 de agosto: Gabón (país africano) se independiza de Francia en 1960; nace en 1601 el matemático francés Pierre de Fermat.
-8**18**18 de agosto: Nace en 1932 Luc Montagnier, virólogo y premio nobel francés descubridor del virus causante del sida; el astrónomo estadounidense Asaph Hall descubre en 1877 Fobos, una de las dos lunas de Marte.
-8**19**19 de agosto: Se celebra el Día Mundial de la Fotografía.
-8**20**20 de agosto: Estonia (país europeo y báltico) se independiza de la Unión Soviética en 1991. [¿Qué países actuales constituyeron la Unión Soviética?]; nace en 1779 Jöns Jacob Berzelius, químico sueco inventor de los símbolos químicos.
-8**21**21 de agosto: Hawái se convierte en 1959 en el último estado de los Estados Unidos (n.º 50).
-8**22**22 de agosto: Nace en 1920 el cirujano estadounidense que realizó el primer implante de un corazón completamente artificial: Denton A. Cooley; nace en 1943 Masatoshi Shima, químico japonés co-creador del primer microprocesador del mundo.
-8**23**23 de agosto: El satélite Lunar Orbiter toma, en 1966, la primera fotografía de la Tierra vista desde la Luna.
-8**24**24 de agosto: La Unión Astronómica Internacional excluye a Plutón como planeta en 2006; nace en 1899 el escritor argentino Jorge Luis Borges; nace en 1947 el escritor brasileño Paulo Coelho [10 Frases célebres de Paulo Coelho].
-8**25**25 de agosto: Bielorrusia se declara oficialmente independiente de la Unión Soviética en 1991.
-8**26**26 de agosto: Nace en 1910 la monja y misionera Teresa de Calcuta [10 frases célebres de Teresa de Calcuta].
-8**27**27 de agosto: Nace en 1928 el químico japonés Osamu Shimomura, Premio Nobel de Química en 2008 por el co-descubrimiento y desarrollo de la proteína verde fluorescente (GFP).
-8**28**28 de agosto: Martin Luther King recita en 1963 su famoso discurso "I Have a Dream"; nace en 1749 el poeta alemán Johann Wolfgang von Goethe; nace en 1919 el ingeniero electrónico Godfrey Newbold Hounsfield, Premio Nobel de Fisiología o Medicina en 1979 por el desarrollo de la tomografía axial computerizada (TAC).
-8**29**29 de agosto: Se celebra el Día Internacional contra los Ensayos Nucleares.
-8**30**30 de agosto: Nace en 1871 Ernest Rutherford, químico-físico y Premio Nobel neozelandés conocido por dilucidar la estructura del átomo.
-8**31**31 de agosto: Nace en 1874 Edward Thorndike, psicólogo y pedagogo estadounidense conocido por la "ley del efecto" (os dejo un extracto de la serie "The Big Bang Theory" donde se explica de forma breve y cómica este principio conductista); Trinidad y Tobago (país americano) se independiza de Reino Unido en 1962.
-9**1**1 de septiembre: Nace en 1653 Johann Pachelbel, músico alemán conocido por su célebre "Canon en Re mayor"; Uzbekistán se independiza de la Unión Soviética en 1991.
-9**2**2 de septiembre: Finaliza en 1945, después de seis años y un día, el mayor conflicto bélico de la historia: la Segunda Guerra Mundial; nace en 1877 el químico británico Frederick Soddy, premio nobel de química en 1921 por sus estudios sobre los elementos radioactivos y los isótopos.
-9**3**3 de septiembre: Se funda en el año 301 "San Marino», la república vigente más antigua del mundo; la selección española de baloncesto se proclama Campeona del Mundo en 2006.
-9**4**4 de septiembre: Nace en 1906 Max Delbrück, biofísico codescubridor de la estructura y replicación de los virus; Larry Page y Serguéi Brin fundan Google en 1998; se celebra, en recuerdo de su estreno como deporte olímpico, el Día Internacional del Taekwondo.
-9**5**5 de septiembre: Se celebra el Día Internacional de la Beneficencia.
-9**6**6 de septiembre: Nace en 1766 John Dalton, químico británico conocido por establecer el primer modelo atómico con base científica.
-9**7**7 de septiembre: Entra en funcionamiento en 1859 el reloj del Big Ben de Londres; nace en 1829 Friedrich Kekulé, químico descubridor de la estructura del benceno.
-9**8**8 de septiembre: Se celebra, desde el año 1965, el Día Internacional de la Alfabetización.
-9**9**9 de septiembre: Nace en 1737 Luigi Galvani, médico italiano descubridor de la naturaleza eléctrica del sistema nervioso.
-9**10**10 de septiembre: Se celebra el Día Mundial para la Prevención del Suicidio.
-9**11**11 de septiembre: Suceden en 2001 los atentados contra las Torres Gemelas de Nueva York.
-9**12**12 de septiembre: Finaliza la "batalla de Maratón" en el año 490 a. C. y Fidípedes recorre la distancia de Maratón a Atenas (40 km) corriendo para anunciar la victoria griega y evitar la quema de la ciudad por parte de las familias de los mismos guerreros atenienses —ordenadas a quemar todo y suicidarse en caso de caer en batalla ante los persas— (esta estoica hazaña sería rememorada en forma de prueba atlética en los primeros Juegos Olímpicos de la Edad Moderna; de ahí el origen de la palabra maratón y la prueba atlética); nace en 1897 la física y química francesa Iréne Joliot-Curie (hija de Pierre y Marie Curie), premio nobel de química en 1935 por conseguir la síntesis de elementos radioactivos.
-9**13**13 de septiembre: Se celebra el "Día Internacional del Chocolate" en conmemoración al nacimiento del novelista británico Roald Dahl, creador de "Charlie y la fábrica de chocolate"; se estrena en 1985 en Japón el videojuego Super Mario Bros.
-9**14**14 de septiembre: Nace en 1580 el escritor y poeta español Francisco de Quevedo [10 frases célebres de Francisco de Quevedo]; nace en 1849 el fisiólogo y Premio Nobel ruso Iván Pavlov, popularmente conocido por el experimento de los "perros de Pavlov"; es lanzada en Japón (2007) la sonda SELENE con objetivo de estudiar la luna.
-9**15**15 de septiembre: Se celebra el Día Internacional de la Democracia. [10 frases de célebres personajes de la historia sobre las virtudes y perjuicios de la democracia].
-9**16**16 de septiembre: Se celebra el Día Internacional de la Preservación de la Capa de Ozono; Papúa Nueva Guinea nace como país en 1975 —tras independizarse de Australia—.
-9**17**17 de septiembre: Nace en 1944 Reinhold Messner, alpinista italiano conocido por ser la primera persona que coronó las 14 montañas de la Tierra de más de 8000 metros (los 14 ochomiles); nace en 1857 el "Padre de la Cosmonáutica": Konstantín Tsiolkovski (sus ideas hicieron posible poner en órbita el primer satélite artificial y llevar al ser humano por primera vez al espacio).
-9**18**18 de septiembre: Nace en 1819 Léon Foucault, físico francés conocido por demostrar experimental la rotación terrestre mediante el "péndulo de Foucault", medir la velocidad de la luz, hacer las primeras fotografías del sol e inventar el giróscopo; Jerzy Kukuczka se convierte en 1987 en el segundo hombre del mundo en coronar los 14 ochomiles.
-9**19**19 de septiembre: Nace en 1983, tras independizarse del Reino Unido, el país más pequeño de América: San Cristóbal y Nieves. [Países de América ordenados por superficie].
-9**20**20 de septiembre: Se celebra el Día de la Libertad de Expresión de Pensamiento. [10 frases célebres sobre la libertad de expresión].
-9**21**21 de septiembre: Nace en 1895 Juan de la Cierva, ingeniero español conocido por la invención del autogiro (precursor del helicóptero); En 1927, tras la división de las islas Canarias en dos provincias (Las Palmas y Santa Cruz de Tenerife), España adopta su actual división provincial; la República de Malta (país europeo) se independiza del Reino Unido en 1964.
-9**22**22 de septiembre: Se celebra el Día Mundial Sin Automóvil con motivo de desincentivar su uso en pro del transporte público.
-9**23**23 de septiembre: Nace en 1930 Ray Charles; se celebra el Día mundial contra el acoso sexual y la trata de personas.
-9**24**24 de septiembre: Nace en 1905 Severo Ochoa, bioquímico español Premio Nobel de Fisiología o Medicina en 1959 por el co-descubrimiento de los mecanismos subyacentes en la síntesis biológica del ADN y el ARN. [¿Cuántos premios nobel españoles ha habido?].
-9**25**25 de septiembre: Nace en 1866 nació Thomas Hunt Morgan, genetista y premio nobel estadounidense conocido por demostrar la función de los cromosomas en la herencia genética; se celebra, desde el año 2001, el Día Internacional de la Ataxia.
-9**26**26 de septiembre: Se celebra el "Día Internacional para la Eliminación Total de las Armas Nucleares"; nace en 1888 el poeta anglo-estadounidense T. S. Eliot; nace en 1754 Louis Proust, químico francés descubridor de la Ley de Proust.
-9**27**27 de septiembre: Se celebra el "Día Mundial del Turismo" [10 frases célebres sobre la importancia de viajar].
-9**28**28 de septiembre: Alexander Fleming descubre la Penicilina en 1928; nace en el año 551 a. C. el filósofo Chino Confucio [10 enseñanazas de Confucio].
-9**29**29 de septiembre: Nace en 1547 Miguel de Cervantes, máxima figura de la literatura española y autor de "Don Quijote de la Mancha", una de las obras más publicadas, leídas y traducidas de la historia [10 frases célebres de Cervantes]; nace en 1864 Miguel de Unamuno, escritor y filósofo español de la famosa generación del 98; se celebra el Día Mundial del Corazón.
-9**30**30 de septiembre: Se celebra el "Día Internacional de la Traducción" en conmemoración al día de fallecimiento del traductor de la Biblia: San Jerónimo de Estridón; la República de Botsuana se independiza de Reino Unido en 1966.
-10**1**1 de octubre: Se celebra el Día Mundial del Vegetariano; Tuvalu (país de Oceanía) se independizó del Reino Unido en 1978.
-10**2**2 de octubre: Se celebra el Día Internacional de la No Violencia (en memoria al nacimiento y obra de Mahatma Gandhi). [10 de las frases/enseñanzas más famosas de Gandhi].
-10**3**3 de octubre: Irak se independiza del Reino Unido en 1932; Alemania se reunifica en 1990.
-10**4**4 de octubre: Se celebra el Día Mundial de los Animales; es lanzado en 1957 el primer satélite artificial a la órbita terrestre, el Sputnik I;
-10**5**5 de octubre: Se celebra el Día Mundial de los Docentes; Nace en 1864 Louis Jean Lumière, coinventor, junto a su hermano Auguste, de la primera máquina capaz de filmar y proyectar imágenes en movimiento.
-10**6**6 de octubre: Nace en 1459 Martin Behaim, geógrafo alemán conocido por haber construido el globo terráqueo más antiguo que se conserva.
-10**7**7 de octubre: Nace en 1885 el físico danés Niels Bohr, Premio Nobel de Física (1922) conocido por su contribución al desarrollo de la teoría atómica y la mecánica cuántica.
-10**8**8 de octubre: Nace en 1917 Rodney Robert Porter, bioquímico y premio nobel británico conocido por el codescubrimiento de la estructura química de los anticuerpos. Nace en 1850 Henry Le Châtelier, químico francés conocido por el denominado «Principio de Le Châtelier o Principio de los Equilibrios Químicos».
-10**9**9 de octubre: Nace en 1933 Peter Mansfield, físico británico galardonado con el Premio Nobel de Medicina del año 2003 (compartido con Paul Lauterbur) por la invención y desarrollo de la resonancia magnética nuclear.
-10**10**10 de octubre: Nace en 1813 el compositor italiano Giuseppe Verdi; se celebra el Día Mundial de la Salud Mental; Fiyi (país de Oceanía) se independiza del Reino Unido en 1970.
-10**11**11 de octubre: Nace en 1844 Henry John Heinz, inventor del kétchup y fundador de la compañía "Heinz".Se celebra el Día Internacional de la Niña.
-10**12**12 de octubre: Cristóbal Colón descubre América en 1492; nace en 1935 el tenor lírico italiano Luciano Pavarotti.
-10**13**13 de octubre: Se celebra el Día Internacional para la Reducción de los Desastres Naturales; Nerón es proclamado emperador de Roma en el año 54 tras el asesinato de su padrastro Claudio.
-10**14**14 de octubre: Felix Baumgartner se convierte en 2012 en la primera persona en superar la velocidad del sonido sin apoyo mecánico al saltar en caída libre desde la estratosfera [El salto desde la estratosfera de Baumgartner (vídeo y récords)]; Chuck Yeager se convierte en 1947 en la primera persona en superar la velocidad del sonido en una aeronave.
-10**15**15 de octubre: Nace en 1844 el filósofo alemán Friedrich Nietzsche [10 frases célebres de Nietzsche]; Nace en 1829 Asaph Hall, astrónomo estadounidense conocido por el descubrimiento de las dos lunas de Marte: Fobos y Deimos. [Marte en 10 datos (y su comparativa con la Tierra)].
-10**16**16 de octubre: Nace en 1854 Oscar Wilde, escritor irlandés conocido por obras como "El retrato de Dorian Gray". [10 frases célebres de Oscar Wilde]; Reinhold Messner se convierte en 1986 en el primer alpinista en coronar los 14 ochomiles; se celebra el "Día Mundial de la Alimentación".
-10**17**17 de octubre: Se celebra el Día Internacional para la Erradicación de la Pobreza; nace el escritor español Miguel Delibes.
-10**18**18 de octubre: Se celebra el Día Mundial de la Protección de la Naturaleza; la República de Azerbaiyán (país postsoviético, caucásico y euroasiático) nace como país en 1991 tras independizarse oficialmente de la Unión Soviética.
-10**19**19 de octubre: Se celebra el Día Internacional de la lucha contra el Cáncer de Mama; Se instaura la peseta en España.
-10**20**20 de octubre: Se celebra el Día Mundial de la Osteoporosis; nace en 1891 el físico británico James Chadwick, premio nobel de física en 1935 por el descubrimiento del neutrón.
-10**21**21 de octubre: Nace en 1833 Alfred Bernhard Nobel, químico sueco creador de la dinamita y los Premios Nobel.
-10**22**22 de octubre: Nace en 1811 Franz Liszt, uno de los compositores y pianistas más importantes del siglo XIX; André Jacques Garnerin realiza en 1797 el primer salto exitoso en paracaídas de la historia; se celebra el Día Internacional del Conocimiento de la Tartamudez.
-10**23**23 de octubre: Nace en 1875 Gilbert Newton Lewis, fisicoquímico estadounidense famoso por su representación de los enlaces atómicos (estructura de Lewis o diagramas de punto); se celebra el Día del Mol.
-10**24**24 de octubre: Nace en 1817 Hippolyte Mège-Mouriés, el inventor de la margarina; se funda la ONU en 1945.
-10**25**25 de octubre: Nace en 1825 nació el "rey del vals": Johann Strauss II. [Escuchad: "Danubio Azul" ¿os suena la melodía a partir del minuto 1:28? 😉 ]
-10**26**26 de octubre: Noruega se independiza oficialmente de Suecia en 1905.
-10**27**27 de octubre: Cristóbal Colón descubre en 1492 la isla de Cuba, de la que diría: «Esta es la tierra más hermosa que ojos humanos hayan visto jamás».
-10**28**28 de octubre: Se inaugura en 1886 la Estatua de la Libertad (regalada por el pueblo francés para conmemorar el primer centenario de la independencia estadounidense); nace en 1955 el empresario y filántropo estadounidense Bill Gates.
-10**29**29 de octubre: Se envia en 1969 el primer mensaje a través de Internet. [¿Cuál fue el primer mensaje enviado a través de Internet?].
-10**30**30 de octubre: Nace en 1857 el médico francés Georges G. de la Tourette (descubridor del síndrome de Tourette).
-10**31**31 de octubre: La población mundial alcanza los 7000 millones de habitantes ; se aprueba en España la Constitución de 1978.
-11**1**1 de noviembre: Nace en 1880 Alfred Wegener, geólogo alemán conocido por desarrollar la "teoría de la deriva continental" (Wegener conjeturó que los continentes están en movimiento y que estuvieron unidos en el pasado en un supercontinente denominado "Pangea"); se celebra el Día Mundial del Veganismo (Día del respeto animal).
-11**2**2 de noviembre: Se funda en 1889 los estados estadounidenses de Dakota del Norte (estado número 39) y Dakota del Sur (estado número 40).
-11**3**3 de noviembre: La perra "Laika" se convierte en el primer ser vivo terrestre en orbitar la Tierra.
-11**4**4 de noviembre: El arqueólogo británico Howard Carter descubre en 1922 la tumba de Tutankamón.
-11**5**5 de noviembre: Nace en 1948 el físico estadounidense William Daniel Phillips, premio nobel de física en 1997 por el desarrollo de métodos para enfriar y atrapar átomos con luz láser.
-11**6**6 de noviembre: Nace en 1861 James Naismith, profesor de Educación Física canadiense conocido por inventar el baloncesto.
-11**7**7 de noviembre: Nace en 1867 en Varsovia la física, química y doble premio nobel: Marie Curie.
-11**8**8 de noviembre: Nace en 1923 el físico e ingeniero estadounidense Jack Kilby, Premio Nobel de física en el año 2000 por su contribución a la invención del microchip.
-11**9**9 de noviembre: Se derriba en 1989 el Muro de Berlín; Camboya se independiza de Francia en 1953.
-11**10**10 de noviembre: Nace en 1483 Martín Lutero, impulsor de la Reforma protestante y el luteranismo. [10 de las frases/enseñanzas más famosas de Martín Lutero].
-11**11**11 de noviembre: Nace en 1930 Hugh Everett, físico estadounidense conocido por proponer la teoría de los universos paralelos.
-11**12**12 de noviembre: Nace en 1840 Auguste Rodin, escultor francés conocido por obras como "el pensador".
-11**13**13 de noviembre: Nace en 1850 el escritor de «La isla del tesoro»: Robert Louis Stevenson.
-11**14**14 de noviembre: Nace en 1765 nació Robert Fulton, ingeniero e inventor estadounidense conocido por desarrollar el primer barco de vapor (exitoso comercialmente); se celebra el Día Mundial de la Diabetes.
-11**15**15 de noviembre: Nace en 1738 William Herschel, astrónomo germano-británico descubridor del planeta Urano.
-11**16**16 de noviembre: Se celebra el Día Internacional para la Tolerancia. "Trata a los demás como querrías que te trataran a ti" (Regla de oro de la ética). [Más frases célebres sobre la tolerancia].
-11**17**17 de noviembre: Se inaugura en 1869 el canal de Suez (vía artificial de navegación situada en Egipto que une el mar Mediterráneo con el mar Rojo. Es, además, el actual límite que separa África de Asia).
-11**18**18 de noviembre: Se estrena en 1928 el primer cortometraje de Mickey Mouse: "Steamboat Willie".
-11**19**19 de noviembre: Cristóbal Colón descubre la isla de Puerto Rico en 1493. [¿Puerto Rico es un país?]
-11**20**20 de noviembre: Se celebra el Día Universal del Niño. [10 frases célebres sobre la infancia].
-11**21**21 de noviembre: Nace en 1694 el filósofo y escritor francés Voltaire. [10 frases célebres de Voltaire]; en 1877 Thomas Edison presenta el fonógrafo, primera máquina mecánica capaz de grabar y reproducir sonido; se celebra el Día Mundial de la Televisión.
-11**22**22 de noviembre: Nace en 1859 Fusajiro Yamauchi, fundador y primer presidente de Nintendo; nace en 1901 Joaquín Rodrigo, compositor español de música clásica conocido por su "Concierto de Aranjuez" para orquesta y guitarra.
-11**23**23 de noviembre: El astrónomo estadounidense Edwin Hubble hace público en 1924 el descubrimiento de la galaxia de Andrómeda, demostrando así que la Vía Láctea no es la única galaxia del universo.
-11**24**24 de noviembre: Charles Darwin publica en 1859 "El origen de las especies" (libro en el que explicó, mediante un prisma científico, cómo toda forma de vida actual sería descendiente de un mismo antepasado común); nace en 1826 el creador de Pinocho: Carlo Collodi; el explorador neerlandés Abel Tasman descubre la isla de Tasmania en 1642.
-11**25**25 de noviembre: Nace en 1562 el poeta y dramaturgo español Lope de Vega [10 frases célebres de Lope de Vega]; nace en 1844 Karl Benz, ingeniero alemán conocido por inventar el primer automóvil de combustión interna alimentado por gasolina (se le reconoce popularmente como el inventor del automóvil) y por cofundar la empresa Mercedes-Benz; Surinam logra independizarse de los de Países Bajos en 1975.
-11**26**26 de noviembre: La NASA hace despegar la misión espacial «Curiosity» a las 16:02 del año 2011 [Vídeo del descenso del Curiosity a Marte en alta resolución]; nace en 1876 Willis Carrier, ingeniero estadounidense conocido por inventar el aire acondicionado.
-11**27**27 de noviembre: Nace en 1701 Anders Celsius, físico y astrónomo sueco creador de la escala centesimal de temperaturas (escala Celsius); nace en 1940 Bruce Lee [10 Frases célebres de Bruce Lee].
-11**28**28 de noviembre: Mauritania se independiza de Francia en 1960.
-11**29**29 de noviembre: Nace en 1803 el físico y matemático austriaco Christian Andreas Doppler, descubridor del «efecto Doppler».
-11**30**30 de noviembre: nace en 1835 el escritor estadounidense Mark Twain; en 1833 España queda dividida por decreto en 49 provincias. (*) En 1927, tras la división de las islas Canarias en dos provincias —Las Palmas y Santa Cruz de Tenerife—, el país adopta su actual organización provincial (50 provincias); nace en 1889 el médico británico Edgar Douglas Adrian, Premio Nobel de Medicina en 1932 por sus investigaciones sobre el funcionamiento de las neuronas; se celebra el Día de la Seguridad Informática.
-12**1**1 de diciembre: Se celebra el Día Mundial de la lucha Contra el Sida; Rosa Parks es encarcelada en 1955 al negarse a ceder su asiento de autobús a un pasajero blanco en Montgomery, Alabama (EE. UU.). Esto hecho inició un multitudinario boicot a los servicios de autobuses liderado por Martin Luther King, que consiguió, tras un año de protestas, que se declarara ilegal la segregación racial en el transporte público de la ciudad.
-12**2**2 de diciembre: Nace en 1859 Georges Pierre Seurat, pintor francés creador del "puntillismo" (dibujo mediante puntos); se celebra el Día Internacional para la Abolición de la Esclavitud.
-12**3**3 de diciembre: Se realiza en 1967 el primer trasplante exitoso de corazón; se celebra, desde el año 1992, el Día Internacional de las Personas con Discapacidad.
-12**4**4 de diciembre: Se declara, por primera vez en la historia democrática del país, el estado de alarma en España por la huelga de los controladores aéreos; nace en 1660 André Campra, compositor francés popularmente conocido por componer la primera ópera-ballet de la historia: "L'Europe galante".
-12**5**5 de diciembre: Nace en 1901 Walt Disney [10 de sus frases más célebres]; se celebra el Día Internacional de los Voluntarios; nace en 1901 Werner Heisenberg, físico y premio nobel alemán conocido por formular el principio de incertidumbre.
-12**6**6 de diciembre: Irlanda se independiza del Reino Unido en 1922.
-12**7**7 de diciembre: La Armada Imperial Japonesa bombardea en la base naval de Estados Unidos en Pearl Harbor (año 1941).
-12**8**8 de diciembre: Nace en 1730 Johannes Ingenhusz, científico conocido por el descubrimiento de la «fotosíntesis»; nace en 65 a. C. Quinto Horacio Flaco, poeta latino conocido por acuñar la famosa locución latina: «carpe diem»; se produce en 1585 el milagro de Empel, por el cual se celebra cada 8 de diciembre en España la festividad de la Inmaculada Concepción.
-12**9**9 de diciembre: Se celebra el Día Internacional contra la Corrupción.
-12**10**10 de diciembre: Se firma el Tratado de París de 1898 que pone fin a la guerra entre España y Estados Unidos (España pierde Cuba, Filipinas y Puerto Rico); se firma en 1948 la Declaración Universal de los Derechos Humanos.
-12**11**11 de diciembre: Se celebra el Día Internacional de las Montañas [La montaña más alta de cada continente (con imágenes)]; se funda UNICEF (United Nations International Children’s Emergency Fund) en el año 1946.
-12**12**12 de diciembre: Nace en 1915 el cantante y actor estadounidense Frank Sinatra. ["Fly me to the moon", "New York New York"]; la República de Kenia se independiza del Reino Unido en el año 1963.
-12**13**13 de diciembre: Nace en 1867 Kristian Birkeland, físico noruego conocido por dilucidar la naturaleza de las auroras polares.
-12**14**14 de diciembre: El explorador noruego Roald Amundsen llega en 1911, y por primera vez en la historia de la humanidad, al Polo Sur.
-12**15**15 de diciembre: Nace en 1852 Henri Becquerel, físico y premio nobel francés conocido por el descubrimiento de la radiactividad.
-12**16**16 de diciembre: Nace en 1770 el pianista y compositor alemán Beethoven.
-12**17**17 de diciembre: Nace en 1908 Willard Libby, químico y premio nobel estadounidense conocido por inventar el método de datación por Carbono-14.
-12**18**18 de diciembre: Nace en 1856 Joseph John Thomson, científico y premio nobel británico descubridor del electrón; se estrena en 1892 "El cascanueces".
-12**19**19 de diciembre: Se estrena en 1997 Titanic, la segunda película más exitosa de la historia del cine; nace en 1915 Édith Piaf, cantante francesa conocida por ser la voz y letra de éxitos como "La vie en rose".
-12**20**20 de diciembre: Se celebra el Día Internacional de la Solidaridad Humana. [Frases célebres sobre la solidaridad].
-12**21**21 de diciembre: Se produce el solsticio de invierno en el hemisferio norte (noche más larga del año) y el solsticio de verano en el hemisferio sur (noche más corta del año).
-12**22**22 de diciembre: Las Islas Marshall se independizan de los Estados Unidos en el año 1990.
-12**23**23 de diciembre: Nace en 1790 el egiptólogo que descifró la escritura jeroglífica egipcia: Jean-François Champollion [¿Qué es la piedra de Rosetta (gracias a la cuál Champollion descifró los jeroglíficos egipcios)?]; nace en 1722 Axel Fredrik Cronstedt, químico y mineralogista sueco famoso por el descubrimiento del Níquel en 1751.
-12**24**24 de diciembre: Nace en 1818 James Prescott Joule, físico británico conocido por descubrir la relación del calor con el trabajo mecánico (lo que condujo a formular la ley de la conservación de la energía). Hoy en día la unidad de energía, trabajo y calor del Sistema Internacional es denominada "julio" en su honor; Libia se independiza del Reino de Italia en 1951.
-12**25**25 de diciembre: Nace en 1906 Ernst Ruska, físico y premio nobel alemán conocido por el diseño del microscópico de efecto túnel (instrumento que permite tomar imágenes a nivel atómico).
-12**26**26 de diciembre: Nace en 1971 el matemático británico Charles Babbage, considerado “el padre de la computación“; se produce el terremoto submarino del océano Índico causante de los devastadores sunamis que acabaron con la vida de más de 275 000 personas en el año 2004 por todo el sur y sureste asiático.
-12**27**27 de diciembre: Nace en 1571 Johannes Kepler, célebre científico alemán conocido principalmente por describir las leyes que rigen el movimiento de los planetas en sus órbitas alrededor del Sol [Las tres leyes de Kepler]; nace en 1822 Louis Pasteur, químico francés considerado padre de la microbiología por demostrar la teoría de los microorganismos como causantes de enfermedades, inventar el proceso de pasteurización y desarrollar vacunas contra diversas enfermedades; Indonesia se independiza oficialmente de los Países Bajos en 1949.
-12**28**28 de diciembre: Nace en 1922 Stan Lee, historietista estadounidense conocido por cocrear algunos de los más famosos personajes/superhéroes de ficción: X-Men, Los 4 Fantásticos, Spider-Man, Iron Man...; nace en 1944 el bioquímico estadounidense Kary Banks Mullis, Premio Nobel de Química en el año 1993 por la invención de la técnica PCR (Reacción en Cadena de la Polimerasa).
-12**29**29 de diciembre: Nace en 1766 Charles Macintosh, químico escocés inventor de las prendas impermeables.
-12**30**30 de diciembre: nace en 1865 Rudyard Kipling, escritor y premio nobel británico conocido por obras como "El libro de la selva"; se funda la Unión Soviética en 1922 [¿Qué países actuales constituyeron la Unión Soviética]; nace en 1984 el jugador de baloncesto LeBron James.
-12**31**31 de diciembre: Nace en 1803 Johann Carl Fuhlrott, investigador alemán conocido por el descubrimiento del hombre Neandertal; se celebra Nochevieja [¿Por qué tomamos doce uvas en Nochevieja?].
+1**1**January 1: Euro coins and banknotes enter circulation (year 2002).
+1**2**January 2: Isaac Asimov, American (Russian-born) writer and biochemist popularly remembered for the "three laws of robotics" that most of the robots in his novels were designed to comply with, was born in 1920; In 1822, the German physicist and mathematician Rudolf Julius Emmanuel Clausius, father of thermodynamics and the introduction to the term entropy, was born.
+1**3**January 3: Born in 1892 by J. R. R. Tolkien, writer of "The Hobbit" and "Lord of the Rings"; Alaska becomes the 49th state of the United States in 1959.
+1**4**January 4: Isaac Newton was born in 1643; He was born in 1809 Louis Braille, a Visually impaired French educator known for designing the literacy system for blind people that bears his name; the world's tallest building opens in 2010: the Burj Khalifa (828 m).
+1**5**January 5 – Sha Jahan, emperor of the Mongol Empire of India responsible for the construction of the Taj Mahal, was born in 1592.
+1**6**January 6: Rolf M. Zinkernagel, a Swiss immunologist and Nobel laureate known for discovering the process by which immune system cells distinguish invasive microorganisms from the body's own cells , was born in 1944 [VIDEO: This is how our immune system responds to a parasitic worm]; New Mexico becomes the 47th state of the United States in 1912.
+1**7**January 7 – In 1610 Galileo discovers several small stars on the periphery of Jupiter that would turn out to be his four main moons, called "Galilean moons" in his honor;; in 1941 the English chemist John Ernest Walker, Nobel Prize in Chemistry in 1997 for the discovery of the synthesis of Adenosine Triphosphate (ATP).
+1**8**January 8: The theoretical physicist and scientific communicator Stephen Hawking was born in 1942; Monaco became independent from the Republic of Genoa in 1297.
+1**9**January 9: Born in 1868, Danish chemist known for introducing the concept of pH; Richard Abegg, a German chemist discoverer of the Abegg rule, was born in 1869.
+1**10**January 10 – The London Underground begins operating in 1863.
+1**11**January 11 – William Herschel discovers Uranus' two largest moons: Titania and Oberon; Carl David Anderson, an American physicist known for the discovery of positron (antielectron) and muon, was born in 1905.
+1**12**January 12: Charles Perrault, French writer of classic children's tales such as "Little Red Riding Hood", "Cinderella" or "The Cat in Boots" was born in 1628; The Swiss chemist Paul Hermann Muller, Nobel Prize in Physiology or Medicine in 1948, was born in 1899 for the discovery of DDT as an insecticide.
+1**13**January 13 – The 1927 South African biologist Sydney Brenner, Nobel Laureate in Physiology or Medicine in 2002, was born "for his research on organ development regulation and scheduled cell death."
+1**14**January 14 – Matthias Zurbriggen reaches the summit of Aconcagua (The highest mountain in America) in 1897, for the first time in history.
+1**15**January 15 – Martin Luther King was born in 1929.
+1**16**January 16: Born in 1932 Dian Fossey, an American primatologist known for having dedicated her life to the study and protection of mountain gorillas (she was allegedly killed at age 53 for denouncing and combating the activity of poachers).
+1**17**January 17 – The Spanish writer Calderón de la Barca was born in 1600; Benjamin Franklin, an American politician and scientist known for the invention of lightning rods, was born in 1706.
+1**18**January 18: American physicist Yoichiro Nambu, Nobel Prize in Physics in 2008, was born in 1921 "for the discovery of the origin of the problem of broken symmetry, which predicts the existence of at least three families of quarks in nature".
+1**19**January 19 – James Watt, Scottish mathematician and engineer inventor of the "horse of power" measure, was born in 1736; The American writer and poet Edgard Allan Poe was born in 1809.
+1**20**January 20: Buzz Aldrin, an American astronaut known for being the second person in history, was born in 1930. .
+1**21**January 21 : The "Nautilus" (SSN-571), the first nuclear-powered submarine, was launched in 1954; In 1912, the German chemist Konrad Bloch, Nobel Prize in Physiology or Medicine, was born in 1964 for his studies on cholesterol metabolism.
+1**22**January 22 – Christopher Columbus lands in 1498 in what is now St. Vincent and the Grenadines (American country). The main island was named "San Vicente" in honor of the saint of that day (San Vicente Mártir - 22 January); Albert Neisser, a German physician known for discovering the pathogen of gonorrhea, was born in 1855.
+1**23**January 23 – In 1960 Jacques Piccard and Don Walsh descend, for the first time in history, to the bottom of the deepest place in the ocean: the abyss of Challenger (11 km below sea level); In 1907, the Japanese physicist Hideki Yukawa, Nobel Prize in Physics in 1949, was born for the theoretical discovery of the mesons.
+1**24**January 24: born in the year 76 in Itálica, Hispania (now Seville, Spain), Adriano; famous roman philosopher and emperor from 117 to 138. During his reign the Roman Empire would reach the greatest territorial extension in its history; In 1941, the Israeli scientist Dan Shechtman, a Nobel prize in chemistry in 2011, was born for the discovery of quasi-crystals.
+1**25**January 25 – Robert Boyle, a British physicist and chemist known for describing the relationship between pressure and gas volume at constant temperature (Boyle's law), was born in 1627.
+1**26**26 January: Scottish physicist John Logie Baird, inventor of the television, made the first public demonstration of his invention; the world's largest diamond was discovered in 1905; Australia Day is celebrated in commemoration of arthur Phillip's arrival in the country in 1788 (governor of Australia's first European colony and founder of the city of Sydney).
+1**27**January 27 – The Austrian musician Wolfgang Amadeus Mozart was born in 1756; Born in 1832 Charles Lutwidge Dodgson (better known by his pseudonym Lewis Carroll), writer of "The Adventures of Alice in Wonderland".
+1**28**January 28 – Construction of the Eiffel Tower begins in 1887.
+1**29**January 29 – Friedrich Mohs, creator of the Mohs scale (used to measure the hardness of minerals), was born in 1773.
+1**30**January 30 – Since 1964, The School Day of Non-Violence and Peace (commemorating the day of Mahatma Gandhi's death) has been celebrated. .
+1**31**January 31: The Spanish explorer Alvaro Núñez Cabeza de Vaca discovers in 1542 the "Cataratas del Iguazu" (one of the seven natural wonders of the world); the Republic of Nauru became independent of Australia in 1968. [Countries of Oceania].
+2**1**February 1: The Italian-American physicist Emilio Gino Segré, a Nobel prize in physics in 1959, was born in 1905 for the discovery of the antiproton.
+2**2**February 2 – Scottish sailor Alexander Selkirk is rescued after spending more than four years living on a desert island (1709). The story of his survival is believed to have inspired the British writer Daniel Defoe to write the novel "Robinson Crusoe".
+2**3**February 3 – Greece became independent from the Ottoman Empire in 1830.
+2**4**February 4– Clyde Tombaugh, an American astronomer known for the discovery of Pluto , was born in 1906; World Cancer Day is celebrated.
+2**5**February 5 – In 1782 Spanish troops, with the help of 4000 French allies, recapture the island of Menorca after more than 70 years of British rule. [Islands of the Balearic Islands].
+2**6**February 6 – Jamaican musician Bob Marley was born in 1945[ 10 famous Bob Marley phrases]; Bob Marley Day is celebrated; International Zero Tolerance Day with Female Genital Mutilation is celebrated.
+2**7**February 7: Grenada (American country) became independent from the United Kingdom in 1974 [Countries of America (listing and map)]; Charles Dickens, an English writer known for works such as "Oliver Twist" or "Christmas Carol", was born in 1812.
+2**8**February 8– Dmitri Mendeleev, Russian chemist who created the periodic table of elements, was born in 1834; In 1828 the French writer Julio Verne was born, mainly known for novels such as: "The Round the World in Eighty Days", "Journey to the Center of the Earth" and/or "Twenty Thousand Leagues of Underwater Travel".
+2**9**February 9– Chris Gardner, an American philanthropist and billionaire, was born in 1954 on which the film "In Search of Happiness" is based.
+2**10**February 10 – Ira Remsen, an American co-inventor of saccharin, was born in 1846.
+2**11**February 11 – Thomas Edison, one of the most prolific inventors in history, was born in 1847 (he registered more than 1000 patents).
+2**12**February 12 – Charles Darwin was born in 1809.
+2**13**February 13: World Radio Day is celebrated.
+2**14**February 14– The inventor of the first fairground Ferris wheel was born in 1859: George Ferris Jr; Christopher Sholes, inventor of the QWERTY keyboard, was born in 1819.
+2**15**February 15– Galileo Galilei, the father of science and the forerunner of the scientific method, was born in 1642; International Children's Cancer Day is celebrated.
+2**16**February 16 – The Kyoto Protocol to reduce emissions from major gases caused by global warming entered into force in 2005.
+2**17**February 17– The Spanish poet Gustavo Adolfo Bécquer was born in 1836 [10 famous sentences of Bécquer]; Was born in 1963 by Michael Jordan, considered the "best basketball player ever" and one of the NBA's biggest jumpers [How to improve our vertical jump?].
+2**18**February 18 – Clyde Tombaugh discovers Pluto in 1930 (it was the ninth and smallest planet in the Solar System until 2006, in which it became a dwarf planet); Born in 1745 Alessandro Volta, an Italian physicist known for the invention of the electric battery (in his honor the SI unit was named "volt" for electrical potential and electrical voltage).
+2**19**February 19– Born in 1473 by Nicholas Copernicus, a Polish astronomer known, among other findings, by "heliocentric theory" (he discovered that the Earth revolved around the sun and not the other way around, as was thought at the time).
+2**20**February 20: World Social Justice Day is celebrated [10 famous phrases on justice]; "International Cat Day" is celebrated unofficially.
+2**21**February 21: Born in 1895 Henrik Dam, a Danish biochemist and nobel laureate known for the discovery of vitamin K (and its role in blood clotting) [Major vitamin deficiency diseases]; Nina Simone (American singer, songwriter and pianist) was born in 1933.
+2**22**February 22 – Heinrich Rudolf Hertz, a German physicist discovering the photoelectric effect and the propagation of electromagnetic waves, was born in 1857; Renato Dulbecco, an Italian physician and Nobel laureate known for discovering the effect of some viruses on the development of cancer, was born in 1914.
+2**23**February 23 – The birth of the first cloned mammal (the Dolly sheep) is announced in 1997.
+2**24**February 24 – Steve Jobs (founder of Apple) was born in 1955[10 of his most famous phrases]; Mexican Flag Day is celebrated; Pyotr Nikolayevich Lebedev, a Russian physicist pioneering the pressure of light on a solid, was born in 1866.
+2**25**February 25 – The British writer Anthony Burgess (author of "The Clockwork Orange" was born in 1917); American inventor and entrepreneur Samuel Colt patented the revolver in 1836.
+2**26**February 26 – In 1919, in order to protect the natural beauty of the Grand Canyon of Colorado, the Grand Canyon National Park was created.
+2**27**February 27 – The Dominican Republic became independent from Haiti in 1844; Physicists Martin Kamen and Sam Ruben discover carbon-14 in 1940 [What is carbon dating-14 for?].
+2**28**February 28 – American chemist and double nobel laureate Linus Pauling was born in 1901 (he received the Nobel Prize in Chemistry in 1954 for his description of the nature of chemical bonds and the Nobel Peace Prize in 1962 for his efforts to control the proliferation of nuclear weapons).
+2**29**February 29: Why are there leap years?; World Rare Disease Day is celebrated.
+3**1**March 1: Yellowstone becomes the first national park in the United States and the world in 1872; Chopin (one of the most important pianists and composers in the history of music) was born in 1810.
+3**2**March 2: The "Pioneer 10" (1972) is launched into space. This special American probe, in addition to its scientific mission (Study of Jupiter), will be famous for containing a plaque for aliens indicating the nature and provenance of the human being. [Pioneer 10's alien message].
+3**3**March 3: James Fossett becomes, after 67 hours of uninterrupted flight, the first person to go around the world by solo and non-stop aircraft (year 2005); Alexander Graham Bell, a Scottish inventor known, among other finds, was born in 1847 for obtaining a telephone patent. (*) It was believed until not long ago that he was the inventor of the device, although this find really belongs to the Italian inventor Antonio Meucci, who developed the first phone a few years earlier.
+3**4**March 4 – Italian musician Antonio Lucio Vivaldi was born in 1678.
+3**5**March 5 – Winston Churchill, during a conference in 1946 (USA), popularizes the term "iron curtain" (also translated as "iron curtain").
+3**6**March 6: The Italian sculptor, painter and architect Miguel Angel Buonarotti (famous for the sculpture of "El David" and the pictorial work covering the vault of the Sistine Chapel) was born in 1456; The Colombian writer and nobel laureate Gabriel García Márquez was born in 1927.
+3**7**March 7: The French physicist Albert Fert, Nobel Prize in Physics in 2007, was born in 1938 for the co-discovery of giant magnetoresistance; Joseph Nicéphore Niépce, a French lithographer known for the invention of the camera and for being the author of the first photograph in history, was born in 1765.
+3**8**8 March: International Women's Day is celebrated [10 famous phrases on women]; In 1879 the German chemist Otto Hahn, Nobel prize in chemistry in 1944 for the discovery of heavy cores' physication (he is considered the father of nuclear energy).
+3**9**March 9: Yuri Gagarin, a Soviet astronaut famous for being the first person to travel to outer space, was born in 1934; In 1454 the Italian navigator Americo Vespucio was born, famous for discovering that the lands to which Columbus arrived were actually a new continent and not part of Asia, as was believed at the time. In his honor, the cartographer Waldseem-ller would christen that continent with the name "America". [Where does the word America come from?].
+3**10**March 10: The Spanish poet Pedro Antonio de Alarcón was born in 1833; The Spanish composer and violinist Pablo Sarasate was born in 1844.
+3**11**11 March: The "European Day in Memory of the Victims of Terrorism" is celebrated in remembrance.
+3**12**March 12: The city of Canberra (capital of Australia) [Countries and capitals of Oceania (list and map)] was founded in 1913; Mauritius (African country) became independent from the United Kingdom in 1968; World Glaucoma Day, an eye disease that results in progressive vision loss (the second leading cause of blindness in the world).
+3**13**March 13 – German astronomer William Herschel announces the discovery of the planet Uranus in 1781.
+3**14**March 14: The physicist Albert Einstein was born in 1879, considered the best scientist of the twentieth century; "Pi Day" is celebrated in honor of the mathematical expression. This date was chosen because the American calendar (3/14) represents the first three digits that popularly simplifie this irrational number: 3.14..
+3**15**March 15 – The Roman emperor Julius Caesar was killed in 44 BC; John Snow, a British physician known for discovering and demonstrating that London's devastating cholera epidemic of 1854 was born in 1813, was due to the consumption of water contaminated with faecal matter. This discovery saved many lives and laid the foundations for modern epidemiology.
+3**16**March 16: Born in 1478 Francisco Pizarro, Spanish explorer famous for the conquest of the Inca Empire (present-day Peru); In 1789, the German physicist and mathematician Georg Simon Ohm, discoverer of ohm's Law; Luis Ernesto Miramontes, a Mexican chemist known for the co-invention of the first oral contraceptive, was born in 1925.
+3**17**March 17: St. Patrick's Day is celebrated; Walter Rudolf Hess, a Swiss physician and Nobel laureate known for mapping the areas of the brain responsible for the control of internal organs, was born in 1881.
+3**18**March 18 – Russian astronaut Aleskseei Leonov performs the first ever spacewalk in 1965 (he was out of the ship for 12 minutes and 9 seconds).
+3**19**March 19: The Mexican chemical engineer Mario Molina, a Nobel prize in chemistry in 1995, was born in 1943 for discovering the causes of the disintegration of the ozone layer.
+3**20**March 20: International Day of Happiness is celebrated [10 famous phrases on happiness]; Tunisia became independent from France in 1956.
+3**21**March 21: The famous Alcatraz prison is closed [Why was Alcatraz prison closed?]; International Forest Day is celebrated; World Down Syndrome Day is celebrated.
+3**22**22 March: World Water Day is celebrated to raise awareness of its responsible use.
+3**23**March 23 – Born in 1912 Wernher von Braun, German-American aerospace engineer known for designing the rocket that took man to the Moon; in 1881 the German chemist Hermann Staudinger, Nobel Prize in Chemistry in 1953 << for his discoveries in the field of macromolecular chemistry.
+3**24**March 24 – German physician and Nobel laureate Robert Koch announced the discovery of the bacteria responsible for tuberculosis on March 24, 1882. Recalling the importance of its finding for understanding and treating the disease, "World TB Day" is celebrated every 24 March.
+3**25**March 25: The Spanish writer and poet José de Espronceda was born in 1808 (surely you know this famous poem of his: Song of the Pirate); "International Waffle Day" is celebrated; In 1914, the American geneticist Norman Borlaug, Nobel Peace Prize laureate in 1970 <<for increasing agricultural productivity in the most deprived countries>>.
+3**26**March 26: Google co-founder Larry Page was born in 1973; Bernard Katz was born in 1911 by Bernard Katz, a German-British neuroscientist awarded the 1970 Nobel Prize in Medicine for his discoveries in the field of neurochemistry.
+3**27**March 27 – Born in 1845, German X-ray discoverer Wilhelm R'ntgen (he was the first Nobel prize in physics in history); World Theatre Day is celebrated.
+3**28**March 28 – The city of Byzantium (seventh century BC), renamed Constantinople in the 4th century, is renamed Istanbul definitively and officially in 1930; Jerome Isaac Friedman, Nobel laureate in physics in 1990, was born in 1930 for the experimental discovery of quarks.
+3**29**March 29 – Born in 1869, Czech anthropologist Ale-Hrdliska, known for having formulated the theory that all human races have a common origin.
+3**30**March 30 – The famous Dutch painter Vincent van Gogh was born in 1853.
+3**31**March 31 – The French philosopher and mathematician René Descartes was born in 1596, famous for his philosophical approach: "think, then I exist" (Latin: "cogito ergo sum"). [10 famous sentences of Descartes]; the Eiffel Tower was inaugurated in 1889; The German musician Johann Sebastian Bach was born in 1685.
+4**1**April 1: Abraham Maslow, an American psychologist known for hierarchical human needs, was born in 1908, known today as the "Maslow Pyramid".
+4**2**April 2: The writer of "The Little Mermaid" and "The Ugly Duckling" was born in 1805: Hans Christian Andersen; World Autism Awareness Day has been celebrated since 2008.
+4**3**April 3 – The United States signed the Marshall Plan in 1948 to help rebuild European countries affected by World War II.
+4**4**April 4: NATO is created (1949); Bill Gates and Paul Allen founded Microsoft in 1975.
+4**5**April 5 : Dutch explorer Jakob Roggeveen discovers Easter Island in 1722 (named after it because 5 April was Easter Sunday).
+4**6**April 6: The first Olympic Games of the Modern Era (Athens, Greece) opened in 1896; James Watson, american biologist co-discoverer of DNA structure, was born in 1928; International Day of Sport for Development and Peace is celebrated.
+4**7**April 7– The Chilean poet Gabriela Mistral, the first Latin American woman awarded the Nobel Prize in Literature, was born in 1889; World Health Day has been celebrated since 1950.
+4**8**April 8: Born in 1460 Juan Ponce de León, Spanish explorer known for the "discovery" of present-day Florida (he named it after him because he discovered it at Easter, also known as Easter Florida); In 1911, the American chemist Martin Calvin, Nobel Prize in Chemistry in 1961, was born for clarifying the process of photochemical assimilation of CO2 by plants, now known as the "Calvin cycle".
+4**9**April 9: Thomas Johann Seebeck, Estonian physician and physicist discovering the thermoelectric effect, was born in 1770; Georgia became independent of the Soviet Union in 1991.
+4**10**10 April: The Titanic began its maiden voyage from Southampton, England to New York [sank 5 days later, on the night of April 14-15]; The Researcher's Day is celebrated in honor of the birth of the first Latin American Nobel Prize: Bernardo Alberto Houssay (Argentina, 10 April 1887).
+4**11**April 11 – World Parkinson's Day is celebrated in honor of the birth of the discoverer of the disease: James Parkinson (England, 11 April 1755).
+4**12**April 12 : Soviet astronaut Yuri Gagarin made the first voyage into outer space in history.
+4**13**April 13: Born in 1808 Antonio Meucci, the (true) inventor of the telephone; Richard Trevithick, an English engineer inventor of the first steam locomotive, was born in 1771; Garri Kímovich Kasparov was born in 1963, one of the best chess players in history (world champion from 1985 to 2000); the Irish writer Samuel Beckett (Nobel Prize in Literature in 1969) was born in 1906; International KissIng Day is celebrated.
+4**14**April 14: Americas Day is celebrated.
+4**15**April 15 – The Italian genius Leonardo da Vinci was born in 1452. [10 of Leonardo Da Vinci's best phrases/reflections/teachings]; after crashing into an iceberg, the "Titanic" sinks into waters of the Atlantic Ocean (1912).
+4**16**April 16 – The British actor and comedian Charles Chaplin was born in 1889.
+4**17**April 17 – Jerrie Mock becomes the first woman to fly around the world (1964); ‪Syria became independent from the French empire in 1946.
+4**18**April 18 – Zimbabwe was born as a country in 1980 after officially independence from the United Kingdom (since it declared its independence – unofficial – in 1965 until this day, it was known as "Rodesia"); Since 1983, the International Day of Monuments and Sites has been celebrated with the aim of promoting the diversity of humanity's cultural heritage, its vulnerability and the efforts required for its protection and conservation.
+4**19**April 19: The first Spanish Nobel laureate, the mathematician and writer José Echegaray, was born in 1832; World Bicycle Day is celebrated; construction of the famous Golden Gate (San Francisco, USA) was completed in 1937.
+4**20**April 20: The Gravity Probe B satellite is launched in 2004 to test some predictions of Einstein's Theory of Relativity.
+4**21**April 21 – Rome is founded in 753 BC.
+4**22**April 22 – Earth Day has been celebrated since 1970.
+4**23**April 23: International Book Day is celebrated; in 1858 the "father of quantum physics" was born: Max Planck.
+4**24**April 24: The Hubble Space Telescope was put into orbit in orbit in 1990; Snoppy, the first cloned dog, was born in 2005; Chile officially became independent from Spain in 1844.
+4**25**April 25: "DNA Day" is celebrated; World Malaria Day has been celebrated since 2008, a disease that causes 1.3 million deaths annually.
+4**26**April 26: The largest nuclear accident and environmental disaster in history occurs in Chernobyl (present-day Ukraine) in Chernobyl (present-day Ukraine) (alongside the Fukushima accident in 2011) [Images]; In 1933, the German physicist Arno Allan Penzias, Nobel Prize in Physics in 1978, was born for the accidental discovery of cosmic microwave background radiation.
+4**27**April 27 – American inventor Samuel Morse, co-creator of the Telegraph and Morse code, was born in 1791.
+4**28**April 28 : Norwegian explorer Thor Heyerdahl and his crew set sail from Peru to Polynesia on a raft they themselves built with local raw materials to show that the American Indians could have colonized the Pacific islands before Asian explorers (they would arrive 101 days later thus demonstrating their theory); World Day for Safety and Health at Work has been celebrated since 2005.
+4**29**April 29 – International Dance Day has been celebrated since 1982 in honor of the birth of choreographer Jean Georges Noverre.
+4**30**April 30 – John Thomson announces the discovery of the electron in 1897; International Jazz Day is celebrated with the aim of raising awareness of its virtues as an educational and social tool.
+5**1**May 1: The Spanish physician and researcher Santiago Ramón y Cajal was born in 1852, a Nobel laureate in physiology or medicine in 1906 for his discoveries on the structure of the nervous system [Do you know how many nobel laureates Spain has?]; opened in 1931, which was the tallest building in the world until 1972: the Empire State Building (New York, United States).
+5**2**May 2: Born in 1955 by the Italian designer Donatella Versace (current head of design of the firm Versace).
+5**3**May 3: World Press Freedom Day is celebrated.
+5**4**May 4 – The inventor of the piano was born in 1655: Bartolomeo Cristofori di Francesco; Thomas Huxley was born in 1825, a key piece in the British scientific dissemination, defender of Darwin and his theory of evolution and creator of the term "agnostic".
+5**5**May 5 – Karl Marx, the father of modern communism and Marxism, was born in 1818. [Famous sentences by Karl Marx].
+5**6**May 6 – Sigmund Freud, the father of psychoanalysis, was born in 1856; Was born in 1856 by Robert Peary, an American explorer popularly known as the first man to reach the North Pole; the Eurotunnel (the underwater tunnel linking France with the United Kingdom) opened in 1994; In 1919 the inventor of Spanish football was born: Alejandro Finisterre.
+5**7**May 7 – Beethoven's 9th Symphony opens in 1824 (Vienna).
+5**8**May 8 – Henri Dunat, entrepreneur, philanthropist and Swiss Nobel peace prize known for his humanitarian activity at the Battle of Solferino( Italy) and especially the founding of the Red Cross, was born in 1828.
+5**9**May 9– The Spanish philosopher and writer José Ortega y Gasset was born in 1883[ James Matthew Barrie, a Scottish novelist known for creating the character Peter Pan, was born in 1860; is celebrated since Europe Day.
+5**10**May 10 – Nelson Mandela was proclaimed president of South Africa in 1994 by universal suffrage; in 1508 Michelangelo Buonarroti began to paint the vault of the Sistine Chapel; The Spanish writer Benito Pérez Galdós was born in 1843.
+5**11**May 11: The multifaceted Spanish artist Salvador Dalí was born in 1904; In 1918, physicist Richard Feynman, Nobel Prize in Physics in 1965, was born for his contribution to quantum electrodynamics.
+5**12**May 12: International Fibromyalgia and Nursing Day is celebrated in memory of the nativity of Florence Nightingale.
+5**13**May 13: Danish seismologist Inge Lehmann (discoverer of the Earth's inner core) [Classification (chemical and physical) of the inner layers of the Earth] was born in 1888; was born in 1857 Ronald Ross, Nobel Prize in Phyosology or Medicine in 1902 for the discovery of the malaria transmission route; singer Stevie Wonder was born in 1950.
+5**14**May 14 – John Charles Field, creator of the Fields Medal (equivalent to the Nobel Prize in Mathematics) was born in 1863: Facebook creator Mark Elliot Zuckerberg was born in 1984.
+5**15**May 15 – Pierre Curie (husband of Marie Curie), a French physicist and Nobel laureate known for his pioneering studies in the field of radioactivity and piezoelectricity, was born in 1859.
+5**16**May 16 – David Edward Hughes, British physicist inventor of Hughes' telegraph, was born in 1831; the first Academy Award ceremony is held in 1929.
+5**17**May 17: World Arterial Hypertension Day is celebrated to raise awareness of its danger and treatment; International Recycling Day is celebrated.
+5**18**May 18 – Mount St. Helena erupts in 1980, producing the greatest natural damage in U.S. history.
+5**19**May 19– Max Perutz, Nobel Prize in Chemistry in 1962, was born in 1914 for his studies on the structure of globular proteins; In 1955, the inventor of the Java programming language: James Gosling was born.
+5**20**May 20 – East Timor (country of Asia) becomes the first country born in the 21st century in 2002.
+5**21**May 21: "In my empire the sun never sets." It was born in 1527 Philip II of Spain, king of Spain who spread across five continents and lived his golden age in the arts and letters [Five of the best sentences of Philip II of Spain]; Born in 1860 the Dutch physician Willem Einthoven, Nobel Prize in Physiology or Medicine in 1924 for the discovery of the electrocardiogram mechanism.
+5**22**May 22 – Arthur Conan Doyle, writer who created Sherlock Holmes, was born in 1859; William Sturgeon, British physicist inventor of the first electromagnet, was born in 1783.
+5**23**May 23 – Carlos Linnaeus, a Swedish naturalist founder of the binomial nomenclature (system for naming and classifying living organisms, was born in 1707. Example: cat --> Felis silvestris catus).
+5**24**May 24: Daniel Gabriel Fahrenheit, a German physicist and engineer known for the invention of the mercury thermometer and the temperature scale that bears his name (Fahrenheit scale) was born in 1686; the Brooklyn Bridge was inaugurated in 1883.
+5**25**May 25: Friki Pride Day is celebrated [may 25 was chosen because it was the day the first film of "Star Wars" (25/05/1977)] premiered; Jack Steinberger, a German physicist co-discoverer of the neutrino muon, was born in 1921.
+5**26**May 26 – Guyana was born as a country in 1966 (after independence from the United Kingdom). Diomedes Díaz Maestre was born in 1957, recognized worldwide for being the largest Colombian singer-songwriter and sex symbol
+5**27**May 27: Rachel Carson, an American biologist, environmentalist and writer known for boosting modern environmental awareness through her book "Silent Spring," was born in 1907, enacting the harmful effects of pesticides on the environment and banning the use of DDT in the United States; Auguste Piccard became in 1931 the first person to reach the stratosphere ascending by balloon.
+5**28**May 28 – Patch Adams, an American physician inventor of risotherapy, was born in 1945.
+5**29**May 29 – Edmund Hillary and Tenzing Norgay crowned the summit of Everest in 1953, for the first time in history. [First ascent to the top of Everest].
+5**30**May 30 – The Russian cosmonaut Alexei Leonov was born in 1934, the first person to take a spacewalk.
+5**31**May 31 – World No Tobacco Day has been celebrated since 1987 to spread its negative health effects and promote campaigns to reduce its consumption.
+6**1**1 June Isaac Peral, scientist and marine carthaginian (Spain) inventor of the electric self-propelled torpedo submarine, was born in 1851.
+6**2**June 2, Clair Cameron Patterson, an American geochemist, pioneered accurately determining the age of the Earth, was born in 1922.
+6**3**3 June Torsten N. Wiesel was born in 1924, Swedish physician winner of the Nobel Prize for Physiology or Medicine 1981 for his discoveries on the processing of information in the visual system.
+6**4**4 June Brothers Joseph and Jacques Montgolfier make the first ever hot air balloon voyage in 1783.
+6**5**World Environment Day is celebrated on 5 June. [10 famous quotes on the importance of caring for our planet and the environment]. The Spanish writer Federico García Lorca was born in 1898.
+6**6**June 6 The Tetris video game was released in 1984. The Spanish painter Diego Velázquez was born in 1599.
+6**7**June 7, Dominican singer-songwriter Juan Luis Guerra was born in 1957.
+6**8**8 June Francis Crick, British physicist co-discovering the structure of DNA, was born in 1916. Timothy John Berners-Lee was born in 1955, a British physicist known for the invention and development of the web. World Oceans Day is celebrated.
+6**9**9 June Johann Gottfried Galle, a German astronomer discovering the planet Neptune, was born in 1812.
+6**10**June 10 The Alcoholics Anonymous Association (AA) was founded in 1935.
+6**11**11 June British explorer James Cook discovers in 1770 the "Great Barrier Reef" (the world's largest coral reef).
+6**12**June 12 World Day Against Child Labour is celebrated.
+6**13**13 June James Clerk Maxwell, a Scottish physicist known for having developed classical electromagnetic theory, was born in 1831.
+6**14**14 June Karl Landsteiner, an Austrian physician and Nobel laureate discovering blood groups and their compatibility to carry out blood transfusions, was born in 1868 (he will mark a before and after in the history of medicine). Charles Coulomb, a French physicist who created the law of attraction between electrical charges, was born in 1736.
+6**15**June 15 In 1667 the French physician Jean-Baptiste Denys performed the first blood transfusion in a human being.
+6**16**June 16 Valentina Tereshkova becomes in 1963 the first cosmonaut woman in history.
+6**17**June 17 Iceland became independent from Denmark in 1944. World Day to Combat Desertification and Drought is celebrated.
+6**18**June 18, the American chemist Jerome Karle, a Nobel prize in chemistry in 1985, was born in 1918 for the development of direct methods for the determination of crystalline structures. The French physician Charles Louis Alphonse Laveran, a Nobel prize in medicine in 1907, was born in 1845 "in recognition of his studies on the role played by protozoa in diseases".
+6**19**19 June Was born in 1623 Blaise Pascal, French mathematician and philosopher known for the invention of the calculator. Kuwait gained independence from the United Kingdom in 1961.
+6**20**20 June, the British biochemist Frederick Gowland Hopkins, a Nobel prize in medicine in 1929, was born in 1861 for discovering the importance of vitamins in the diet [Major Vitamin Deficiency Diseases]. World Refugee Day is celebrated.
+6**21**June 21 Music Day is celebrated.
+6**22**22 June 22, 1633, Galileo, fearing being burned at the stake by heresy, rejected before the Inquisition the theory that the Earth revolved around the Sun. According to some witnesses, just after abjuring, he uttered for himself his famous phrase "E pur si muove" ("And yet it moves"). In 1939, Israeli chemistry Ada Yonath, a 2009 Nobel laureate in chemistry, was born for his studies on the structure and function of ribosomes.
+6**23**June 23 Christopher Latham Sholes patented the typewriter in 1868.
+6**24**June 24 Martin Perl, Nobel Prize in Physics in 1995, was born in 1927 for the discovery of the elementary particle "Tau". He was born in 1987 by Argentine footballer Leo Messi.
+6**25**June 25th, the Spanish architect Antonio Gaudí (designer of the "Sagrada Familia" and the "Park Goell", among other renowned works, was born in 1852. Seafarers' Day is celebrated.
+6**26**June 26 Alessandro Volta presents in 1800 the discovery of the first electric battery. Madagascar became independent from France in 1960.
+6**27**27 June, dutch physicist Martinus Veltman, Nobel prize in physics in 1999, was born in 1931 for the discovery of the quantum structure of weak interaction. Djibouti (African country) became independent from France in 1977.
+6**28**June 28 The Treaty of Versailles is signed in 1919, ending the war between Germany and the Allied Countries (World War I).
+6**29**29 June Antoine de Saint-Exupéry, a French aviator and writer known as the author of "The Little Prince", the most read and translated French-language book in history and one of the best-selling in history, was born in 1900. [Famous sentences by Antoine de Saint-Exupéry]. The Republic of the Seychelles became independent from the United Kingdom in 1976.
+6**30**June 30th was born in 1985 the surely greatest Olympic swimmer and athlete in history (22 medals): Michael Phelps. Henry Ford, founder of Ford Motor Compan, was born in 1863
+7**1**July 1– Hong Kong returned to China in 1997 after more than 150 years of British rule (1841-1997); Gottfried Leibniz, a German mathematician and philosopher considered the last universal genius, was born in 1646.
+7**2**July 2: German-American physicist Hans Albercht Bethe, a Nobel prize in physics in 1967, was born in 1906 for discovering the mode of energy production in the stars.
+7**3**July 3: Idaho becomes 1890 in the 43rd state of the United States; Pierre Berthier, a French chemist and geologist famous for discovering bauxite, was born in 1782.
+7**4**July 4 – The United States of America officially declared its independence from the British empire in 1776; The Philippines officially became independent of the United States in 1946; Louis B. Mayer, a film producer famous for founding the Metro Goldwyn Mayer, was born in 1884.
+7**5**July 5 – Algeria became independent from France in 1962.
+7**6**July 6: The Spanish Red Cross was founded in 1864; Malawi became independent from the United Kingdom in 1964.
+7**7**July 7– On July 7: The seven new wonders of the world were unveiled on 07/07/07; Camillo Golgi, Nobel prize in medicine or physiology in 1906 for his studies on the structure of the nervous system.
+7**8**July 8 – The Vasco da Gama-led expedition that arrived in India bordering Africa - establishing a very important trade route between Western Europe and India - departs from Lisbon (Portugal) (1947); Alfred Binet, a French psychologist co-creator of the first intelligence test, was born in 1857.
+7**9**July 9– Argentina officially became independent from Spain in 1816; South Sudan became independent of Sudan in 2011 becoming the youngest official country in the world; In 1894, Soviet physicist Piotr Leonidovich Kapitsa, Nobel Prize in Physics in 1978, was born for his physics work at low temperatures (including the co-discovery of superfluidity).
+7**10**July 10– Nikola Tesla, an Austro-Hungarian-American inventor known primarily for the invention and development of alternating current, was born in 1856. [10 of Nikola Tesla's best phrases/reflections].
+7**11**July 11 – The Spanish poet Luis de Góngora was born in 1561.‪
+7**12**July 12: The Chilean poet Pablo Neruda was born in 1904 [10 of Pablo Neruda's best quotes/phrases]; in 1873 the Canton of Cartagena was stood as a repulsed to the First Spanish Republic.
+7**13**July 13 – Spain yielded in 1713 Gibraltar and Menorca to the Kingdom of Great Britain (treaties of Utrecht); Stanislao Cannizzaro, a pioneering chemist in the calculation of atomic masses, was born in 1826.
+7**14**July 14 – James W. Black, Scottish physician and Nobel laureate inventor of propranolol and cimetidine, was born in 1924.
+7**15**July 15: The Rosetta Stone is discovered in Egypt (year 1799) to decipher Egyptian hieroglyphics; Rembrandt was born in 1606, one of the best and most influential painters in history.
+7**16**July 16: The first ever atomic bomb in Los Alamos, USA, is detonated in 1945; was born in 1872 by Roald Amundsen, a Norwegian explorer known for leading the first expedition to the South Pole (14/12/1911); Muhammad began the Hegira (Journey from Mecca to Medina) in the year 622, a fact that marks the beginning of the Muslim calendar.
+7**17**July 17 – The astronomer who proposed the Big Bang theory: Georges Lemaitre was born in 1894; was born in 1932 "Quino" (Joaquín Salvador Lavado Tejón), Spanish-Argentine graphic humorist creator of the comic strip "Mafalda".
+7**18**July 18: Nelson Mandela was born in 1918; Nelson Mandela International Day is celebrated.
+7**19**July 19 – Laos became independent from France in 1949; Apollo XI is put into orbit around the Moon (1969), two days later Neil Armstrong would become the first person in history to set foot on the surface of this satellite.
+7**20**July 20 – The Austrian monk and naturalist Gregor Mendel, "father of genetics", was born in 1822. [Mendel's three laws].
+7**21**July 21 : Neil Armstrong steps on the Moon in 1969 and utters his famous phrase: "It is a small step for man, but a great leap for humanity"; the Burj Khalifa becomes the tallest building in the world in 2007.
+7**22**July 22 – The German physicist Gustav Hertz, Nobel Prize in Physics in 1925, was born in 1887 for his discoveries on the laws governing the impact of an electron on an atom; in 2005, the smallest human bone fossil was discovered in Atapuerca.
+7**23**July 23 – The creation of a vaccine against pneumonia and meningitis is published in Science.
+7**24**July 24 – Explorer Hiram Bingham rediscovers and introduces the ancient village of Machu Picchu (1911) to the world; Spanish (1980) the Organic Law on Religious Freedom enters into force.
+7**25**July 25 – Rosalind Elsie Franklin, a British chemist known primarily for his contribution to the discovery of DNA structure through X-ray diffraction images, was born in 1920.
+7**26**July 26 – The Spanish poet Antonio Machado was born in 1875. [Famous sentences by Antonio Machado].
+7**27**July 27: "International Street Dog Day" is celebrated.
+7**28**July 28– It is celebrated, coinciding with the day of birth of the discoverer of Hepatitis B (Baruch Samuel Blumberg), the World Hepatitis Day.
+7**29**July 29: The discovery of "Eris", the tenth planet of the Solar System, was announced in 2005. (*) However, just over a year later, on August 24, 2006, the International Astronomical Union classified it, along with Pluto, as a dwarf planet (no longer being considered a planet).
+7**30**July 30: International Friendship Day is celebrated.
+7**31**July 31: The U.S. Moon Probe Ranger 7 managed to take the first high-quality photos of the Moon in 1964; Born in 1800, a German chemist known for demonstrating, contrary to the scientific thought of his day, that an organic product such as urea could be obtained in the laboratory from inorganic matter.
+8**1**August 1: Benin (African country) became independent from France in 1960.
+8**2**August 2: Born in 1942 the Chilean writer and Nobel laureate of literature Isabel Allende [10 famous phrases by Isabel Allende]; in 1820 John Tyndall, an Irish physicist known for the optical phenomenon that bears his name (the "Tyndall effect" is observed, for example, when sunlight enters a dusty room or when the car headlights are used in a foggy night); Friedrich Stromeyer, a German chemist known for the discovery of Cadmium (Cd), was born in 1776.
+8**3**August 3: Mozilla Corporation was founded in 2005.
+8**4**August 4 – Celebrated American singer and trumpeter Louis Armstrong was born in 1901; John Venn, British mathematician inventor of the Venn diagram, was born in 1834.
+8**5**August 5 – Burkina Faso (African country) achieved independence from France in 1960.
+8**6**August 6 – Detonates in 1945 on Hiroshima the first atomic bomb in history for war.
+8**7**August 7 – Ivory Coast (African country) became independent from France in 1960.
+8**8**August 8 – Born in 1902 by british physicist Paul Dirac, Nobel laureate in physics in 1933 for his contribution to the development of quantum mechanics and electrodynamics.
+8**9**August 9 – Detonates the second atomic bomb in history in 1945 on Nagasaki for war.
+8**10**August 10 – Henry Nestlé, a German chemist founder of the Nestlé group, was born in 1814.
+8**11**August 11: Christiaan Eijkman, a Dutch physiologist and Nobel laureate known for demonstrating the relationship between a vitamin-deficient diet (then unknown) and the development of diseases, was born in 1858; the Republic of Chad (African country) became independent from France in 1960.
+8**12**August 12– The Austrian physicist Erwin Schrodinger, a Nobel laureate in physics in 1933 popularly known for the invention of the imaginary experiment of the schrodinger's cat, was born in 1887; Cantinflas was born in 1911.
+8**13**August 13: International Lefty Day is celebrated; Harry Brearley invents stainless steel.
+8**14**August 14 – Pakistan became independent from the United Kingdom in 1947.
+8**15**August 15: Born in 1769 Napoleon Bonaparte; In 1892 the French physicist Louis-Victor De Broglie, Nobel Prize in Physics in 1929, was born for the discovery of the undulating nature of electron.
+8**16**August 16 – Usain Bolt sets the record for 100 metres (9.58 s) at the 2009 World Athletics Championships in Berlin. [What speed do the 100-meter smooth runners reach?].
+8**17**17 August: Gabon (African country) became independent from France in 1960; the French mathematician Pierre de Fermat was born in 1601.
+8**18**August 18– Luc Montagnier, virologist and French Nobel laureate discovering the AIDS-causing virus, was born in 1932; American astronomer Asaph Hall discovers in 1877 Phobos, one of the two moons of Mars.
+8**19**August 19: World Photography Day is celebrated.
+8**20**August 20 – Estonia (European and Baltic country) became independent from the Soviet Union in 1991. [Which countries today constituted the Soviet Union?]; Jacob Berzelius, a Swedish chemist inventor of chemical symbols, was born in 1779.
+8**21**August 21 – Hawaii becomes the last state of the United States in 1959 (No. 50).
+8**22**August 22: The American surgeon who performed the first implant of a completely artificial heart was born in 1920: Denton A. Cooley; Masatoshi Shima, a Japanese chemist co-creator of the world's first microprocessor, was born in 1943.
+8**23**August 23 – The Lunar Orbiter satellite takes, in 1966, the first photograph of Earth seen from the Moon.
+8**24**August 24 – The International Astronomical Union excludes Pluto as a planet in 2006; The Argentine writer Jorge Luis Borges was born in 1899; the Brazilian writer Paulo Coelho was born in 1947.
+8**25**August 25 – Belarus declares itself officially independent of the Soviet Union in 1991.
+8**26**August 26: The nun and missionary Teresa of Calcutta was born in 1910 [10 famous phrases by Teresa of Calcutta].
+8**27**August 27 – The Japanese chemist Osamu Shimomura, Nobel Prize in Chemistry in 2008, was born in 1928 for the co-discovery and development of fluorescent green protein (GFP).
+8**28**August 28 – Martin Luther King recites his famous speech "I Have a Dream" in 1963; the German poet Johann Wolfgang von Goethe was born in 1749; In 1919, the electronic engineer Godfrey Newbold Hounsfield, Nobel Prize in Physiology or Medicine was born in 1979 for the development of computerized axial tomography (CT).
+8**29**August 29 – International Day Against Nuclear Tests is celebrated.
+8**30**August 30 – Born in 1871 Ernest Rutherford, a new Zealand chemist-physicist and Nobel laureate known for elucidating the structure of the atom.
+8**31**August 31: Edward Thorndike, an American psychologist and pedagogue known for the "law of effect" was born in 1874 (I leave you an excerpt from the series "The Big Bang Theory" where this conductist principle is briefly explained; Trinidad and Tobago (American country) became independent from the United Kingdom in 1962.
+9**1**September 1: Johann Pachelbel, a German musician known for his famous "Canon en D major" was born in 1653; Uzbekistan became independent of the Soviet Union in 1991.
+9**2**September 2– Ends in 1945, after six years and one day, the greatest war in history: World War II; In 1877, the British chemist Frederick Soddy, a Nobel laureate in chemistry in 1921, was born for his studies on radioactive elements and isotopes.
+9**3**September 3: It was founded in the year 301 "San Marino", the oldest current republic in the world; the Spanish basketball team was proclaimed World Champion in 2006.
+9**4**September 4: Born in 1906 by Max Delbruck, a biophysicist co-discoverer of the structure and replication of viruses; Larry Page and Sergey Brin founded Google in 1998; it is celebrated, in memory of its premiere as an Olympic sport, on International Taekwondo Day.
+9**5**September 5: International Charity Day is celebrated.
+9**6**September 6 – John Dalton, a British chemist known for establishing the first scientifically-based atomic model, was born in 1766.
+9**7**September 7 – The clock of London's Big Ben enters into operation in 1859; Friedrich Kekulé, a chemist discoverer of the structure of benzene, was born in 1829.
+9**8**September 8– International Literacy Day has been celebrated since 1965.
+9**9**September 9 – Luigi Galvani, an Italian physician discovering the electrical nature of the nervous system, was born in 1737.
+9**10**September 10: World Suicide Prevention Day is celebrated.
+9**11**September 11: Attacks on the Twin Towers of New York take place in 2001.
+9**12**September 12: Ends "Marathon Battle" in 490 bc. C. and Fidípedes travel the distance from Marathon to Athens (40 km) running to announce the Greek victory and avoid the burning of the city by the families of the same Athenian warriors —ordered to burn everything and commit suicide in case of falling into battle with the Persians - (this stoic feat would be remembered in the form of an athentic test at the first Olympic Games of the Modern Age; hence the origin of the word marathon and the athletic test); In 1897, French physics and chemistry Iréne Joliot-Curie (daughter of Pierre and Marie Curie), Nobel prize in chemistry in 1935 for obtaining the synthesis of radioactive elements, was born.
+9**13**September 13: "International Chocolate Day" is celebrated in commemoration of the birth of British novelist Roald Dahl, creator of "Charlie and the Chocolate Factory"; The 1985 video game Super Mario Bros. opens in Japan.
+9**14**September 14: The Spanish writer and poet Francisco de Quevedo [10 famous phrases by Francisco de Quevedo] was born in 1580; The 1849 Russian physiologist and Nobel laureate Ivan Pavlov, popularly known for the "Pavlov dogs" experiment; is launched in Japan (2007) the SELENE probe to study the moon.
+9**15**September 15: International Democracy Day is celebrated. [10 sentences from famous figures in history about the virtues and harms of democracy].
+9**16**September 16: International Ozone Layer Preservation Day is celebrated; Papua New Guinea was born as a country in 1975, after becoming independent from Australia.
+9**17**September 17: Reinhold Messner, an Italian mountaineer known for being the first person to crown the 14 mountains of the Earth of more than 8000 meters (the 14 eightmiles) was born in 1944; the "Father of Cosmonautics" was born in 1857: Konstantin Tsiolkovski (his ideas made it possible to put the first artificial satellite into orbit and bring humans to space for the first time).
+9**18**September 18: Léon Foucault, a French physicist known for demonstrating experimental terrestrial rotation through the "Foucault pendulum", measuring the speed of light, making the first photographs of the sun and inventing the gyroscope, was born in 1819; Jerzy Kukuczka becomes in 1987 the second man in the world to crown the 14 eight-thousand.
+9**19**September 19 – Born in 1983, after independence from the United Kingdom, the smallest country in America: St. Kitts and Nevis. [Countries of America sorted by surface].
+9**20**September 20: Freedom of Expression of Thought Day is celebrated. [10 famous sentences on freedom of expression].
+9**21**September 21: Born in 1895 Juan de la Cierva, Spanish engineer known for the invention of the autogyro (precursor of the helicopter); In 1927, after the division of the Canary Islands into two provinces (Las Palmas and Santa Cruz de Tenerife), Spain adopted its current provincial division; the Republic of Malta (European country) became independent from the United Kingdom in 1964.
+9**22**22 September: World Day Without Automobile is celebrated in order to discourage its use for public transport.
+9**23**September 23: Born in 1930 Ray Charles; World Day Against Sexual Harassment and Human Trafficking.
+9**24**September 24: Severo Ochoa, a Spanish biochemist Nobel Prize in Physiology or Medicine was born in 1905 by the co-discovery of the underlying mechanisms in the biological synthesis of DNA and RNA. [How many Spanish Nobel laureates have there been?].
+9**25**September 25: Born in 1866 was born Thomas Hunt Morgan, american geneticist and Nobel laureate known for demonstrating the role of chromosomes in genetic inheritance; International Ataxia Day has been celebrated since 2001.
+9**26**September 26: "International Day for the Total Elimination of Nuclear Weapons" is celebrated; the Anglo-American poet T. S. Eliot was born in 1888; was born in 1754 Louis Proust, a French chemist discoverer of the Law of Proust.
+9**27**September 27: "World Tourism Day" is celebrated [10 famous phrases on the importance of travel].
+9**28**September 28 – Alexander Fleming discovers Penicillin in 1928; the Chinese philosopher Confucius was born in 551 BC [10 teachings of Confucius].
+9**29**September 29: Born in 1547 Miguel de Cervantes, the highest figure in Spanish literature and author of "Don Quixote de la Mancha", one of the most published, read and translated works of history [10 famous phrases of Cervantes]; Miguel de Unamuno, Spanish writer and philosopher of the famous generation of 98, was born in 1864; World Heart Day is celebrated.
+9**30**September 30: "International Day of Translation" is celebrated in commemoration of the day of death of the Bible translator: Saint Jerome of Strydon; the Republic of Botswana became independent from the United Kingdom in 1966.
+10**1**October 1: World Vegetarian Day is celebrated; Tuvalu (Country of Oceania) became independent from the United Kingdom in 1978.
+10**2**October 2 – International Non-Violence Day (in memory of the birth and work of Mahatma Gandhi) is celebrated. [10 of Gandhi's most famous phrases/teachings].
+10**3**October 3 – Iraq became independent from the United Kingdom in 1932; Germany was reunited in 1990.
+10**4**October 4: World Animal Day is celebrated; the first artificial satellite to Earth's orbit, Sputnik I, was launched in 1957;
+10**5**October 5: World Teachers' Day is celebrated; In 1864 Louis Jean Lumiére, co-inventor, with his brother Auguste, was born from the first machine capable of filming and projecting moving images.
+10**6**October 6– Martin Behaim, a German geographer known for having built the oldest surviving globe, was born in 1459.
+10**7**October 7– Born in 1885 by Danish physicist Niels Bohr, Nobel Prize in Physics (1922) known for his contribution to the development of atomic theory and quantum mechanics.
+10**8**October 8 – Rodney Robert Porter, a biochemist and British Nobel laureate known for co-discovering the chemical structure of antibodies, was born in 1917. It was born in 1850 by Henry Le Chatelier, a French chemist known for the so-called "Principle de Le Chatelier or Principle of Chemical Balances".
+10**9**October 9 – Peter Mansfield, a 2003 Nobel Prize in Medicine award (shared with Paul Lauterbur) was born in 1933 by the invention and development of nuclear magnetic resonance imaging.
+10**10**October 10 – The Italian composer Giuseppe Verdi was born in 1813; World Mental Health Day is celebrated; Fiji (country of Oceania) became independent from the United Kingdom in 1970.
+10**11**October 11 – Henry John Heinz, inventor of ketchup and founder of the heinz company, was born in 1844. International Children's Day is celebrated.
+10**12**October 12 – Christopher Columbus discovered America in 1492; in 1935, the Italian lyrical tenor Luciano Pavarotti was born.
+10**13**October 13: International Day for Natural Disaster Reduction is celebrated; Nero was proclaimed emperor of Rome in 54 after the assassination of his stepfather Claudius.
+10**14**October 14: Felix Baumgartner becomes in 2012 the first person to overcome the speed of sound without mechanical support by jumping in free fall from the stratosphere [The jump from the Baumgartner stratosphere (video and records)]; Chuck Yeager becomes in 1947 the first person to surpass the speed of sound on an aircraft.
+10**15**October 15 – The German philosopher Friedrich Nietzsche was born in 1844[ 10 famous Nietzsche phrases]; Asaph Hall was born in 1829, an American astronomer known for the discovery of the two moons of Mars: Phobos and Deimos. [Mars in 10 data (and its comparison with Earth)].
+10**16**October 16 – Oscar Wilde, an Irish writer known for works such as "The Portrait of Dorian Gray", was born in 1854. [10 famous Oscar Wilde sentences]; Reinhold Messner became the first mountaineer to crown the 14 eight-thousand in 1986; "World Food Day" is celebrated.
+10**17**October 17: International Day for the Eradication of Poverty is celebrated; Spanish writer Miguel Delibes is born.
+10**18**October 18: World Nature Protection Day is celebrated; the Republic of Azerbaijan (post-Soviet, Caucasian and Eurasian country) was born as a country in 1991 after officially independence from the Soviet Union.
+10**19**October 19: International Breast Cancer Day is celebrated; The peseta is established in Spain.
+10**20**October 20: World Osteoporosis Day is celebrated; In 1891 the British physicist James Chadwick, Nobel Prize in Physics in 1935 for the discovery of neutron.
+10**21**October 21 – Alfred Bernhard Nobel, the Swedish chemist who created dynamite and nobel prizes, was born in 1833.
+10**22**October 22 – Franz Liszt, one of the most important composers and pianists of the 19th century, was born in 1811; André Jacques Garnerin performs in 1797 the first successful parachute jump in history; International Day of Knowledge of Stuttering is celebrated.
+10**23**October 23 – Born in 1875 by Gilbert Newton Lewis, American physicochemist famous for his representation of atomic links (Lewis structure or dot diagrams); Mol Day is celebrated.
+10**24**October 24 – Hippolyte M'ge-Mouriés, the inventor of margarine, was born in 1817; the UN was founded in 1945.
+10**25**October 25 – The "king of the waltz" was born in 1825: Johann Strauss II. [Listen: "Blue Danubio" does the melody sound to you from the 1:28 minute? 😉  ]
+10**26**October 26 – Norway officially became independent from Sweden in 1905.
+10**27**October 27 : Christopher Columbus discovered in 1492 the island of Cuba, of which he would say, "This is the most beautiful land that human eyes have ever seen".
+10**28**October 28– The Statue of Liberty (given by the French people to commemorate the first centenary of American independence) opens in 1886; American entrepreneur and philanthropist Bill Gates was born in 1955.
+10**29**October 29: The first message is sent over the Internet in 1969. [What was the first message sent over the Internet?].
+10**30**October 30 – The French physician Georges G. de la Tourette (tourette syndrome discoverer) was born in 1857.
+10**31**October 31: The world's population reaches 7 billion inhabitants; the 1978 Constitution is approved in Spain.
+11**1**November 1: Alfred Wegener, a German geologist known for developing the "theory of continental drift" was born in 1880 (Wegener conjected that the continents are in motion and that they were united in the past in a supercontinent called "Pangea"); World Veganism Day (Animal Respect Day).
+11**2**November 2: Founded in 1889 the U.S. states of North Dakota (state number 39) and South Dakota (state number 40).
+11**3**November 3: The bitch "Laika" becomes the first living earth being to orbit Earth.
+11**4**November 4 – British archaeologist Howard Carter discovers Tutankhamon's tomb in 1922.
+11**5**November 5 – American physicist William Daniel Phillips, Nobel prize in physics in 1997, was born in 1948 for the development of methods for cooling and trapping atoms with laser light.
+11**6**November 6– James Naismith, a Canadian Physical Education teacher known for inventing basketball, was born in 1861.
+11**7**November 7 – Physics, chemistry and double nobel laureate Marie Curie was born in Warsaw in 1867.
+11**8**November 8 – American physicist and engineer Jack Kilby, Nobel Prize in Physics in 2000, was born in 1923 for his contribution to the invention of microchip.
+11**9**November 9 – The Berlin Wall was demolished in 1989; Cambodia became independent from France in 1953.
+11**10**November 10 – Martin Luther was born in 1483, promoter of Protestant Reformation and Lutheranism. [10 of Martin Luther's most famous phrases/teachings].
+11**11**November 11: Hugh Everett, an American physicist known for proposing the theory of parallel universes, was born in 1930.
+11**12**November 12 – Auguste Rodin, a French sculptor known for works such as "the thinker", was born in 1840.
+11**13**November 13– The writer of "Treasure Island" was born in 1850: Robert Louis Stevenson.
+11**14**November 14– Robert Fulton, an American engineer and inventor known for developing the first commercially successful steamship, was born in 1765; World Diabetes Day is celebrated.
+11**15**November 15 – William Herschel, German-British astronomer discoverer of the planet Uranus, was born in 1738.
+11**16**November 16: International Day for Tolerance is celebrated. "Treat others the way you would want to be treated" (Golden Rule of Ethics). [More famous sentences about tolerance].
+11**17**November 17 – The Suez Canal (artificial navigational route located in Egypt linking the Mediterranean Sea with the Red Sea) opens in 1869. It is also the current boundary that separates Africa from Asia).
+11**18**November 18 – Mickey Mouse's first short film" "Steamboat Willie" opens in 1928.
+11**19**November 19 – Christopher Columbus discovered the island of Puerto Rico in 1493. [Is Puerto Rico a country?]
+11**20**November 20: Universal Children's Day is celebrated. [10 famous childhood sentences].
+11**21**November 21 – The French philosopher and writer Voltaire was born in 1694. [10 famous voltaire sentences]; in 1877 Thomas Edison introduced the phonograph, the first mechanical machine capable of recording and playing sound; World Television Day is celebrated.
+11**22**November 22 – Born in 1859, Fusajiro Yamauchi, Nintendo's founder and first president; Joaquín Rodrigo, a Spanish composer of classical music known for his "Concierto de Aranjuez" for orchestra and guitar, was born in 1901.
+11**23**November 23 – American astronomer Edwin Hubble makes public in 1924 the discovery of the Andromeda galaxy, demonstrating that the Milky Way is not the only galaxy in the universe.
+11**24**November 24 – Charles Darwin published in 1859 "The Origin of Species" (book in which he explained, through a scientific prism, how every form of life today would be descended from the same common ancestor); In 1826 the creator of Pinocchio was born: Carlo Collodi; Dutch explorer Abel Tasman discovered the island of Tasmania in 1642.
+11**25**November 25: The Spanish poet and playwright Lope de Vega [10 famous phrases by Lope de Vega] was born in 1562; Was born in 1844 by Karl Benz, a German engineer known for inventing the first gasoline-powered internal combustion car (he is popularly recognized as the inventor of the automobile) and for co-founding the Mercedes-Benz company; Suriname became independent from those of the Netherlands in 1975.
+11**26**November 26: NASA takes off the "Curiosity" space mission at 16:02 in 2011 [Video of Curiosity's Descent to Mars in High Resolution]; Born in 1876 Willis Carrier, an American engineer known for inventing air conditioning.
+11**27**November 27: Born in 1701 Anders Celsius, Swedish physicist and astronomer creator of the centesimal scale of temperatures (Celsius scale); Bruce Lee was born in 1940."
+11**28**November 28 – Mauritania became independent from France in 1960.
+11**29**November 29 – The Austrian physicist and mathematician Christian Andreas Doppler was born in 1803, discoverer of the "Doppler effect".
+11**30**November 30 – The American writer Mark Twain was born in 1835; in 1833 Spain is divided by decree into 49 provinces. (*) In 1927, after the division of the Canary Islands into two provinces (Las Palmas and Santa Cruz de Tenerife), the country adopted its current provincial organization (50 provinces); In 1889, the British physician Edgar Douglas Adrian, Nobel Prize in Medicine in 1932, was born for his research on the functioning of neurons; It is celebrated on Computer Security Day.
+12**1**December 1: World AIDS Day is celebrated; Rosa Parks was imprisoned in 1955 by refusing to give up her bus seat to a white passenger in Montgomery, Alabama. This led to a massive boycott of bus services led by Martin Luther King, who managed, after a year of protests, to declare racial segregation on public transport in the city illegal.
+12**2**December 2: Georges Pierre Seurat, French painter who created "pointillism" (dot drawing) was born in 1859; International Day for the Abolition of Slavery is celebrated.
+12**3**December 3: The first successful heart transplant is performed in 1967; International Day for Persons with Disabilities has been celebrated since 1992.
+12**4**December 4: The state of alarm in Spain for the strike of air traffic controllers is declared for the first time in the country's democratic history; André Campra, a French composer popularly known for composing the first opera-ballet in history, was born in 1660: "L'Europe Galante".
+12**5**December 5: Walt Disney was born in 1901[ 10 of his most celebrated phrases]; International Volunteer Day is celebrated; Werner Heisenberg, a German physicist and Nobel laureate known for formulating the principle of uncertainty, was born in 1901.
+12**6**December 6 – Ireland became independent from the United Kingdom in 1922.
+12**7**December 7 – The Imperial Japanese Navy bombs at the U.S. Naval Base at Pearl Harbor (1941).
+12**8**December 8– Johannes Ingenhusz, a scientist known for the discovery of "photosynthesis", was born in 1730; was born in 65 BC. Quinto Horacio Flaco, Latin poet known for coining the famous Latin phrase: "carpe diem"; In 1585, the miracle of Empel took place, for which every 8 December in Spain the feast of the Immaculate Conception takes place.
+12**9**December 9: International Anti-Corruption Day is celebrated.
+12**10**December 10: The 1898 Treaty of Paris is signed, ending the war between Spain and the United States (Spain loses Cuba, the Philippines and Puerto Rico); the Universal Declaration of Human Rights was signed in 1948.
+12**11**December 11: International Mountain Day [The highest mountain of each continent (with images)] is celebrated; UNICEF (United Nations International Children's Emergency Fund) was founded in 1946.
+12**12**December 12 – American singer and actor Frank Sinatra was born in 1915. ["Fly me to the moon", "New York New York"]; the Republic of Kenya became independent from the United Kingdom in 1963.
+12**13**December 13 – Kristian Birkeland, a Norwegian physicist known for elucidating the nature of the polar auroras, was born in 1867.
+12**14**December 14 – Norwegian explorer Roald Amundsen arrives in 1911, and for the first time in human history, at the South Pole.
+12**15**December 15 – Henri Becquerel, a French physicist and Nobel laureate known for the discovery of radioactivity, was born in 1852.
+12**16**December 16 – The German pianist and composer Beethoven was born in 1770.
+12**17**December 17 – Born in 1908 willard Libby, american chemist and nobel laureate known for inventing the carbon-14 dating method.
+12**18**December 18 – Joseph John Thomson, British scientist and Nobel laureate discovering the electron, was born in 1856; "The Nutcracker" premieres in 1892.
+12**19**December 19: Titanic, the second most successful film in film history, opens in 1997; Was born in 1915, a French singer known for being the voice and lyrics of hits such as "La vie en rose".
+12**20**December 20: International Human Solidarity Day is celebrated. [Famous sentences on solidarity].
+12**21**December 21: Winter solstice occurs in the northern hemisphere (longest night of the year) and summer solstice in the southern hemisphere (shortest night of the year).
+12**22**December 22 – The Marshall Islands became independent from the United States in 1990.
+12**23**December 23: In 1790, the Egyptologist who deciphered Egyptian hieroglyphic writing was born: Jean-Fran'ois Champollion [What is the rosetta stone (thanks to which Champollion deciphered Egyptian hieroglyphics)?]; Axel Fredrik Cronstedt, a Swedish chemist and mineralogist, was born in 1722, famous for the discovery of Nickel in 1751.
+12**24**December 24 – James Prescott Joule, a British physicist known for discovering the relationship of heat to mechanical work (which led to the law of energy conservation) was born in 1818. Today the energy, labor and heat unit of the International System is named "July" in his honor; Libya became independent from the Kingdom of Italy in 1951.
+12**25**December 25: Ernst Ruska, a German physicist and Nobel laureate known for the design of the tunnel-effect microscopic (instrument that allows images to be taken at the atomic level) was born in 1906.
+12**26**December 26 – The British mathematician Charles Babbage, considered "the father of computing", was born in 1971; the underwater earthquake in the Indian Ocean that caused the devastating Sunamis that killed more than 275,000 people in 2004 throughout South and Southeast Asia.
+12**27**December 27: Johannes Kepler, a celebrated German scientist known primarily for describing the laws governing the movement of planets in their orbits around the Sun [The Three Laws of Kepler] was born; Was born in 1822 Louis Pasteur, a French chemist considered the father of microbiology for demonstrating the theory of microorganisms as causing diseases, inventing the pasteurization process and developing vaccines against various diseases; Indonesia officially became independent from the Netherlands in 1949.
+12**28**December 28: Born in 1922 Stan Lee, American cartoonist known for co-creating some of the most famous fictional characters/superheroes: X-Men, Fantastic Four, Spider-Man, Iron Man...; In 1944, the American biochemist Kary Banks Mullis, Nobel Prize in Chemistry in 1993, was born for the invention of the PCR (Polymerase Chain Reaction) technique.
+12**29**December 29 – Charles Macintosh, a Scottish chemist inventor of waterproof garments, was born in 1766.
+12**30**December 30 – Rudyard Kipling, a British writer and Nobel laureate known for works such as "The Book of the Jungle", was born in 1865; the Soviet Union was founded in 1922 [Which countries today constituted the Soviet Union]; Basketball player LeBron James was born in 1984.
+12**31**December 31 – Johann Carl Fuhlrott, a German researcher known for the discovery of the Neanderthal man, was born in 1803; New Year's Eve [Why do we take twelve grapes on New Year's Eve?].
+

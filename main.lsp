@@ -175,22 +175,22 @@
   
 	(setq textObjHH2 (vla-AddText modelSpace textStringHH2 insertionPointDD2 200))
 	(setq ObjHH2 (entget(entlast)))
-   (setq vlaHoraDig (vlax-ename->vla-object (entlast)))
+  (setq vlaHoraDig (vlax-ename->vla-object (entlast)))
 	(setq textObjMM2 (vla-AddText modelSpace textStringMM2 insertionPointMM2 200))
 	(setq ObjMM2 (entget(entlast)))
-   (setq vlaMinDig (vlax-ename->vla-object (entlast)))
+  (setq vlaMinDig (vlax-ename->vla-object (entlast)))
 	(setq textObjSS2 (vla-AddText modelSpace textStringSS2 insertionPointAA2 80))
 	(setq ObjSS2 (entget(entlast)))
-   (setq vlaSegDig (vlax-ename->vla-object (entlast)))
+  (setq vlaSegDig (vlax-ename->vla-object (entlast)))
   		
   (setq ht (substr date 10 2))  ;sustraigo el valor del hora
   (setq mt (substr date 12 2))  ;sustraigo el valor del min
  	(setq st (substr date 14 2))  ;sustraigo el valor del seg
 
   
-  	(setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
+  (setq ObjHH2 (setq H22 (subst (cons 1  ht) (assoc 1 ObjHH2) ObjHH2)))
  	(entmod H22)
-  	(setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
+  (setq ObjMM2 (setq M22 (subst (cons 1  mt) (assoc 1 ObjMM2) ObjMM2)))
  	(entmod M22)
 	(setq ObjSS2 (setq S22 (subst (cons 1   st) (assoc 1 ObjSS2) ObjSS2)))
  	(entmod S22)
@@ -218,9 +218,12 @@
  	(entmod M22)
 	(setq ObjSS2 (setq S22 (subst (cons 1  st) (assoc 1 ObjSS2) ObjSS2)))
  	(entmod S22)
+  
+  (vlax-put-property vlaDiaDig "TextString" diat2)
+  (vlax-put-property vlaMesDig "TextString" mest2)
+  (vlax-put-property vlaAñoDig "TextString" anot2)
 
 )
-
 
 ;------------------------------------Recordatorio--------------------------
 
@@ -282,9 +285,6 @@
 		  (entmod objR12)
 		  (setq objR2 (setq objR22 (subst (cons 1 (nth 0 textRecordatorio)) (assoc 1 objR2) objR2)))
 		  (entmod objR22)
-
-		  (setq ObjMM1 (setq M12 (subst (cons 62 colorR) (assoc 62 ObjMM1) ObjMM1))) ;Cambia el color de el texto al color 7:Blanco
- 	     (entmod M12)
 		 
 		  (setq objR1 (setq objR12 (subst (cons 62 colorR) (assoc 62 objR1) objR1)))
 		  (entmod objR12)
@@ -1124,7 +1124,7 @@
 	(vl-cmdf "_text" baseanl3 100 0 "2. Analogo")
 	(vl-cmdf "_color" 7)
 	(analog 800 1550 "case" "hor" "min" "sec")
-  
+   (setq colorD 255)
 	;parte alarma (3)
   
 	(vl-cmdf "_color" 7)
@@ -1180,9 +1180,9 @@
 	(vl-cmdf "_color" 30)
 	(vl-cmdf "_text" baserecor3 100 0 "5. Recordatorio")
 	(c:initR)
-  (c:drawNextR)
+  (c:drawNextR) 
 
-  
+  (setq colorR 255)
   
 	;parte calendario (6)
 	(vl-cmdf "_color" 7)
@@ -1319,7 +1319,7 @@
   
 )
 
-;FUNCIÓN PARA ABRIR EL CRONOMETRO
+;FUNCIï¿½N PARA ABRIR EL CRONOMETRO
 (defun open_crono ()
   (vl-cmdf "CRONO" "")
   (vl-cmdf "_delay" 10000 "")
@@ -1564,3 +1564,4 @@
   
   (if (= condicionalarma T) (c:alarma))
 )
+
