@@ -1,0 +1,26 @@
+Instrucciones para instalar el cronómetro:
+
+1. Descargar la carpeta con todos los archivos del reloj.
+2. Agregar la carpeta desde la función "OPTIONS" a las carpetas donde autocad busca los archivos.
+3. Abrir AutoCAD y desde allí abrir el archivo acad.pgp (Manage -> Edit Aliases -> Edit Aliases).
+4. Dentro de este archivo buscar esta sección:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+; Examples of external commands for Windows
+
+EXPLORER,  START EXPLORER, 1,,
+NOTEPAD,   START NOTEPAD,  1,*File to edit: ,
+PBRUSH,    START PBRUSH,   1,,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+5. Pegar allí la siguiente línea de código:
+
+CRONO,	   <DISCO> & cd <PAD> & Cronometro.exe, 1,,
+
+<DISCO> Aquí va el disco del computador donde está ubicado el archivo.
+<PAD>	Aquí va la dirección donde está la carpeta con los archivos del reloj.
+
+EJEMPOLO:
+CRONO,	   D: & cd "D:\Desktop\TEST" & Cronometro.exe, 1,,
+
+6. Guardar el archivo acad.pgp con las modificaciones.
